@@ -1,0 +1,124 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+#Menu{
+    background-color: #1c1c1c;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+#Menu img{
+    width: 8rem;
+}
+.buttonLogin{
+    background-color: #1c1c1c;
+    border: solid 2px #ff9200;
+    padding: .1rem 1.2rem;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    font: 1rem 'Nunito', sans-serif;
+
+}
+.buttonCadastro{
+    background-color: #ff9200;
+    border: solid 2px #ff9200;
+    padding: .1rem 1.2rem;
+    outline: none;
+    color: #1c1c1c;
+    border-radius: 20px;
+    font: 700 1rem 'Nunito', sans-serif;
+    margin-left: -15px;
+}
+#Menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#Menu ul li{
+    margin-left: 2rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+#Menu ul li a{
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+}
+#cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cadastro .container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Login{
+    margin-top:5rem;
+    background-size: cover;
+   
+}
+#Login .container{
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+#cadastro .cadastro1 {
+    background-color: #dfdfdf;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    width: 25vw;
+}
+#cadastro .cadastro1 input{
+    margin: .5rem;
+    padding: .5rem;
+    border-radius:  10px;
+    border: none;
+    outline: nones;
+}
+#cadastro .cadastro2{
+    background-color: #1c1c1c;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: hidden;
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+#cadastro .cadastro3{
+    background-color: #1c1c1c;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: hidden;
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}

@@ -51,8 +51,8 @@ function home(){
                     
                 </ul>
                 <div className="botoes">
-                    <button className="btn_login">Entrar</button>
-                    <button className="btn_cadastro">Cadastrar</button>
+                   <a href="/login"><button className="btn_login">Entrar</button></a> 
+                    <a href="/cadastro"><button className="btn_cadastro">Cadastrar</button></a>
 
                 </div>
                 <img src={Close} className="icon close" alt="" srcset="" onclick={() => fechar()}></img>
