@@ -4,7 +4,8 @@ import "./css-images/css/styleHome.css";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import Home from "./pages/home";
-import Dash  from  './components/bar_chart.jsx'
+import Dash  from  './components/dashs/bar_chart.jsx'
+import Dash2 from './components/dashs/ranking.jsx'
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/home" element={<Home />} /> 
         <Route path="/" element={<Home />} />
         <Route path="/dash" element={<Dash />}/>
+        <Route path="/ranking" element={<Dash2 />}/>
       </Routes>
     </BrowserRouter>
     

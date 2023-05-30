@@ -1,0 +1,11 @@
+.infos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.foto{
+    margin-right: 80px;
+}

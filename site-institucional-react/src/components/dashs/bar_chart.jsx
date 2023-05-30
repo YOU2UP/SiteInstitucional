@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Chart as ChartJs, BarElement, CategoryScale, LinearScale, Tooltip, Legend} from 'chart.js'
 import {Bar} from 'react-chartjs-2'
+import api from '../../api'
 
 ChartJs.register(
     BarElement, 
@@ -11,6 +12,31 @@ ChartJs.register(
 )
 
 function Bar_chart() {
+
+ 
+ 
+
+    useEffect(() => {
+        const id = sessionStorage.getItem("id");
+        const token = sessionStorage.getItem("token");
+
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+        };
+
+
+
+        api.get(`/avaliacoes/media/${id}`, config).then((response) => {
+            console.log("Media de avaliação: ",response.data)
+        }).catch((error) => {
+            console.log("Erro media: ",error)
+        })
+
+
+    }, []);
+ 
 
     const data = {
         labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
@@ -29,6 +55,7 @@ function Bar_chart() {
 
     }
   return (
+
     <div>
         <Bar data={data} options={options}>
 
