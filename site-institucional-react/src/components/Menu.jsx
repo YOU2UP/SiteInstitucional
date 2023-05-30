@@ -11,7 +11,7 @@ return(
         </div>
         <nav id="NavBar">
             <ul>
-                <li><a href="home.jsx">Home</a></li>
+                <li><a href="/home">Home</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Ajuda</a></li>
                 <li><a href="#">Contato</a></li>

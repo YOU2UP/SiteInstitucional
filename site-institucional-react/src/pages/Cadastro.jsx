@@ -25,13 +25,11 @@ function Cadastro() {
             senha: senha,
             email: email,
             dataNascimento: dataNascimento,
-            sexo: "m",
             estagio: estagio,
             metaTreinos: 0,
             notificacoes: [],
             treinos: [],
             localTreino: {
-                idLocalTreino: 6,
                 nome: academia,
                 rua: rua,
                 numero: numero,
@@ -68,25 +66,38 @@ function Cadastro() {
     return (
         <>
             <Menu />
-            <main id="cadastro">
+            <main id="cadastro" >
                 <div className="container">
+                    
                     <div className="cadastro">
-                        <div className="Containerlinha">
-                            <div className="linha"></div>
-                            <div className="bola1">
-                            </div>
-                            <div className="bola2">
-                            </div>
-                            <div className="bola3">
-                            </div>
-                        </div>
+                   
                         <div className="cadastro1">
                             <h1>Dados pessoais:</h1>
+                            <div className="ordenar">
+
+                           
+                            <div className="labels">
+                            <p>Nome:</p>
+                            <p>Senha:</p>
+                            <p>Confirm. senha:</p>
+                            <p>E-mail:</p>
+                            <p>Data de nascimento:</p>
+                            </div>
+                           
+                            <div className="inputs">
+                           
                             <input type="text" placeholder="Nome" onInput={(e) => setNome(e.target.value)} />
-                            <input type="password" placeholder="Senha" onInput={(e) => setSenha(e.target.value)} />
+                            <input type="password" placeholder="Senha" onInput={(e) => setSenha(e.target.value)} />    
                             <input type="password" placeholder="Confirm. Senha" />
+                        
+                                
                             <input type="email" placeholder="E-mail" onInput={(e) => setEmail(e.target.value)} />
+                    
+                              
                             <input type="date" placeholder="Data Nascimento" onInput={(e) => setDataNascimento(e.target.value)} />
+                            </div>
+                            </div>
+                           
 
                             <button onClick={() => mostrarCadastro2()}> -- </button>
                         </div>
@@ -102,7 +113,7 @@ function Cadastro() {
                             <input type="text" placeholder="Nome da academia" onInput={(e) => setAcademia(e.target.value)} />
                             <input type="text" placeholder="CEP" />
                             <input type="text" placeholder="Rua" onInput={(e)=> setRua(e.target.value)} />
-                            <input type="text" placeholder="Numero" onInput={(e)=>setNumero(e.taget.value)}/>
+                            <input type="text" placeholder="Numero" onInput={(e)=>setNumero(e.target.value)}/>
                             <input type="text" placeholder="Bairro" onInput={(e) => setBairro(e.target.value)} />
                             <input type="text" placeholder="Cidade" onInput={(e) => setCidade(e.target.value)} />
                             <select name="UF" id="" placeholder="UF" onChange={(e)=>setUf(e.target.value)}>
