@@ -23,18 +23,21 @@ function Login() {
     <>
     <Menu/>
    <main id="Login">
-   <div className="container">
+  
       
       <div className="fundo">
+        
+      <div className="container">
         <div className="login">
-          <h1>Login</h1>
+          <h1 className="titulo">Login</h1>
        
-            <input type="text" placeholder="Email" onInput={(p) => getEmail(p.target.value)} />
-            <input type="password" placeholder="Senha" onInput={(p)=> getSenha(p.target.value)}/>
+            <input type="text" placeholder="Email" onInput={(p) => getEmail(p.target.value)} aria-label="Digite seu e-mail"/>
+            <input type="password" placeholder="Senha" onInput={(p)=> getSenha(p.target.value)} aria-label="Digite sua senha"/>
             <button onClick={() => logar()}>Entrar</button>
          
         </div>
       </div>
+      <div className="sobreposicao"></div>
     </div>
    </main>
     

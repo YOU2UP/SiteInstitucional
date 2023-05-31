@@ -1,0 +1,85 @@
+main#Login{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+
+}
+#Login .container{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1000;
+}
+.fundo{
+    background-image: url("../img/bannerLogin.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.fundo .sobreposicao{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+.fundo .container .login{
+    background-color: #f4f2f2;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 17rem;
+    border-radius: 10px;
+    box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
+    margin-top: 5rem;
+}
+.fundo .container .login .titulo{
+    font-family:  'inter';
+    color: #ff9200;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+.fundo .container .login input{
+        padding: .5rem .2rem;
+    margin-bottom: 3rem;
+    background-color: #f4f2f2;
+    border: none;
+    border-bottom:2px solid  #1c1c1cca;
+   outline: none;
+   width: 100%;
+}
+.fundo .container .login button{
+    background-color: #ff9200;
+    padding: .3rem 2rem;
+    border-radius: 5px;
+    outline: none;
+    border:solid 2px #ff9200;
+    color: #fff;
+    font-family: 'inter';
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s;
+}
+.fundo .container .login button:hover{
+    background-color: #ffffffcc;
+    color: #ff9200;
+   
+}

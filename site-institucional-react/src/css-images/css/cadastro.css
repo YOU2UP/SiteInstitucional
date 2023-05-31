@@ -8,7 +8,7 @@ a{
 li{
     list-style: none;
 }
-#Menu{
+header#Menu{
     background-color: #1c1c1c;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -17,8 +17,11 @@ li{
     justify-content: space-between;
     align-items: center;
     height: 5rem;
+    position: fixed;
+    z-index: 1000;
+    width: 96vw;
 }
-#Menu img{
+header#Menu #logo img{
     width: 8rem;
 }
 .buttonLogin{
@@ -41,20 +44,44 @@ li{
     font: 700 1rem 'Nunito', sans-serif;
     margin-left: -15px;
 }
-#Menu ul{
+header#Menu ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-#Menu ul li{
+header#Menu ul li{
     margin-left: 2rem;
     color: #fff;
     font-size: 1.2rem;
 }
-#Menu ul li a{
+header#Menu ul li a{
     color: #fff;
     font-family: 'Nunito', sans-serif;
+    transition: .2s;
+    font-size: 17px;
+}
+header#Menu ul li a:hover{
+    color: #ff9200;
+   font-size: 19px;
+}
+
+#menuMenor{
+    background-color: transparent;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0;
+}
+#menuMenor #links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.icon{
+    display: none;
 }
 #cadastro{
     width: 100vw;
@@ -69,82 +96,301 @@ li{
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-top: 5rem;
+   height: 100vh;
 }
 #cadastro .container{
     width: 80%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 5rem;
-}
-#Login{
-    margin-top:5rem;
-    background-size: cover;
    
 }
-#Login .container{
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+.container .cadastro label{
+    font: 400 .9rem 'Nunito', sans-serif;
+}
+.container .cadastro .titulo{
+    font-family:  'inter';
+    color: #ff9200;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 #cadastro .cadastro1 {
-    background-color: #dfdfdf;
+    background-color: #f4f2f2;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
+    width: 25rem;
+}
+
+.inputData{
+    width: 40%;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-end;
+    width: 100%;
+}
+.cadastro1 button{
+    background-color: #1c1c1c;
+    padding: .5rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+width: 45px;
+height: 45px;
+margin-right: 10px;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+margin-top: 1rem;
+}
+.setas{
+    width:30px;
+    height: 25px;
+}
+.sucesso{
+    width: 30px;
+}
+.inputs{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 5rem;
+    width: 100%;
 }
-.cadastro .ordenar{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-}
-.ordenar .labels{
+.inputs .data{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-.ordenar .labels p{
-    margin-bottom: 2rem;
-}
-.ordenar .inputs{
-    display: flex;
-    flex-direction: column;
+.contencao{
+    display: grid;
+    grid-template-columns: .4fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 #cadastro .cadastro1 input{
     margin: .5rem;
     padding: .5rem;
-    border-radius:  10px;
+   
+    background-color: #f4f2f2;
     border: none;
-    outline: none;
+    border-bottom:2px solid  #1c1c1cca;
+   outline: none;
+}
+#cadastro .cadastro1 input:focus,
+#cadastro .cadastro3 input:focus{
+    border-bottom:2px solid  #ff9200;
+    background-color: white;
 }
 #cadastro .cadastro2{
-    background-color: #1c1c1c;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: hidden;
+    background-color: #f4f2f2;
+    padding: 2rem 4rem;
+    display: none;
     visibility: hidden;
     opacity: 0;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    width: 17rem;
+    border-radius: 10px;
+    box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
+}
+
+#cadastro .cadastro2 button.estagio{
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: #ff9200;
+    background-color: white;
+    height: 2.5rem;
+    transition: .2s;
+    margin-top: 1rem;
+    cursor: pointer;
+    font: 700 1rem 'Nunito', sans-serif;
+}
+
+#cadastro .cadastro2 button.clicado{
+    background-color: #ff9200;
+    color: #ffffff;
+    font: 700 1rem 'Nunito', sans-serif;
+}
+.divButtons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.divButtons button{
+    background-color: #1c1c1c;
+    padding: .5rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+width: 45px;
+height: 45px;
+margin-right: 10px;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
 }
 #cadastro .cadastro3{
-    background-color: #1c1c1c;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: hidden;
+    background-color: #f4f2f2;
+    padding: 2rem 4rem;
+    display: none;
     visibility: hidden;
     opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    border-radius: 10px;
+    box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
+  
+}
+#cadastro .cadastro3 input{
+    padding: .5rem .2rem;
+    margin-bottom: 1rem;
+    background-color: #f4f2f2;
+    border: none;
+    border-bottom:2px solid  #1c1c1cca;
+   outline: none;
+}
+#cadatro .cadastro label{
+    margin-bottom: 1rem;
+}
+.inputsLocal{
+    width: 100%;
+}
+.inputsLocal input{
+    width: 100%;
+}
+#cadastro .cadastro3 select{
+    background-color: #f4f2f2;
+    border: none;
+    border-bottom:2px solid  #1c1c1cca;
+   outline: none;
+   height: 1.5rem;
+}
+#cadastro .cadastro3 select:focus{
+    border-bottom:2px solid  #ff9200;
+    background-color: white;
+}
+
+.cidadeUF{
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    width: 100%;
+
+}
+
+
+
+@media(max-width:768px) {
+    header#Menu{
+        padding-left: 0;
+    }
+    #menuMenor{
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: -20rem;
+        transition: 1s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+     
+    }
+#menuMenor.aberto{
+    position: absolute;
+    margin-top: 0;
+    top:0;
+    left: 0;
+    margin-left: 0;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color:#252525 ;
+
+}
+.buttonCadastro{
+    margin-left: 0;
+}
+#menuMenor.aberto #links{
+    justify-content: center;
+    
+}
+#menuMenor.aberto #links li{
+    margin: 0;
+    margin-bottom: 2rem;
+}
+#divLogo.some{
+    display: none;
+}
+.icon{
+   
+    display: block;
+    cursor: pointer;
+}
+#iconmenu{
+    width: 30px;
+    margin-left: -15px;
+}
+#menuMenor .icon{
+    width: 30px;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+}
+.logo img{
+    width: 150px;
+}
+#menuMenor #links{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+#menuMenor #links li,footer .menu ul li{
+    list-style: none;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+#menuMenor a{
+    color: #fff;
+    font-size: 1.25rem;
+    transition: .3s;
+}
+#menuMenor a:hover, .menu li a:hover{
+    color: #ff9200;
+    font-size: 1.30rem;
+    cursor: pointer;
+
+    
+}
+#cadastro .cadastro1{
+
+    width: 20rem;
+}
+
 }
