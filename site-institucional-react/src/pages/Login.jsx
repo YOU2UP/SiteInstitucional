@@ -19,7 +19,7 @@ function Login() {
       sessionStorage.setItem("id", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
-      window.location="/ranking";
+      window.location="/perfil";
     }).catch((error)=>{
       console.log(error);
     })

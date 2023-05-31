@@ -1,3 +1,11 @@
+.containerPerfil{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
 .infos{
     display: flex;
     flex-direction: row;
@@ -8,4 +16,163 @@
 
 .foto{
     margin-right: 80px;
+    border-radius: 120px;
+    display: flex;
+    width: 190px;
+    height: 190px;
+
+}
+
+.imgPerfil{
+    width: 190px;
+    height: 190px;
+}
+
+.nomeUsuarioPerfil{
+    margin-bottom: 20px;
+    font-size: 32px;
+
+}
+
+
+.informacaoes{
+    display: flex;
+    justify-content: center;
+}
+
+.metas{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.meta{
+    font-family: inter;
+    font-size:  40px;
+    color: #FF9200;
+}
+
+.btnMeta{
+    width: 531px;
+    height: 60px;
+    background-color: #FF9200;
+    color: white;
+    font-family: inter;
+    font-size: 36px;
+    border-width: 0;
+    border-radius: 67px;
+    cursor: pointer;
+}
+
+
+.treinosRealizados{
+    font-weight: bold;
+}
+
+.graficosUsuario{
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+
+.graficoBarra{
+    width: 1237px;
+    height: 574px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: -30px 27px 0px -5px #FF9200;
+    margin-top: 100px;
+}
+
+.tituloGraficoBarra{
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+
+.kapis{
+    margin-top: 50px;
+    display: flex;
+    width: 81vw;
+    justify-content: space-between;
+}
+
+.media{
+    width: 504px;
+    height: 521px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-bottom: 50px;
+    box-shadow: -30px 27px 0px -5px #FF9200;
+}
+
+.tituloAvaliacao{
+    font-size: 64px;
+    font-weight: 500;
+}
+
+.avaliacao{
+    font-size: 98px;
+}
+
+.subTituloAvaliacao{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.rankingTreino{
+    width: 504px;
+    height: 521px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    box-shadow: -30px 27px 0px -5px #FF9200;
+}
+
+.tituloRank{
+    font-size: 26px;
+    font-weight: 550;
+    margin-top: 50px;
+}
+
+.itensRank{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 100px;
+    justify-content: space-between;
+}
+
+.pessoaRank{
+    display: flex;
+    margin-top: 15px;
+    align-items:first baseline;
+    font-size: 28px;
+
+}
+
+
+.posicaoRank{
+    font-weight: bold;
+    margin-right: 10px;
 }

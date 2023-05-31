@@ -1,68 +1,58 @@
-import React, {useEffect, useState} from 'react'
-import {Chart as ChartJs, BarElement, CategoryScale, LinearScale, Tooltip, Legend} from 'chart.js'
-import {Bar} from 'react-chartjs-2'
-import api from '../../api'
+import React, { useEffect, useState } from 'react';
+import { Chart, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import api from '../../api';
+import '../../css-images/css/bar.css';
 
-ChartJs.register(
-    BarElement, 
-    CategoryScale, 
-    LinearScale, 
-    Tooltip, 
-    Legend 
-)
+
+Chart.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 function Bar_chart() {
+  const [dias, setDias] = useState([]);
+
+  useEffect(() => {
+    const id = sessionStorage.getItem("id");
+    const token = sessionStorage.getItem("token");
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+    };
 
  
- 
 
-    useEffect(() => {
-        const id = sessionStorage.getItem("id");
-        const token = sessionStorage.getItem("token");
+    api.get(`/usuarios/quantidade-treinos-semana/${id}`, config)
+      .then((response) => {
+        console.log('teste', response.data);
+        const diasArray = Object.values(response.data);
+        setDias(diasArray);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-        const config = {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-        };
+  const data = {
+    labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
+    datasets: [
+      {
+        label: 'Treinos',
+        data: dias,
+        backgroundColor: '#ff9200',
+        borderColor: 'black',
+        borderWidth: 1,
+      },
+    ],
+  };
 
+  const options = {};
 
-
-        api.get(`/avaliacoes/media/${id}`, config).then((response) => {
-            console.log("Media de avaliação: ",response.data)
-        }).catch((error) => {
-            console.log("Erro media: ",error)
-        })
-
-
-    }, []);
- 
-
-    const data = {
-        labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
-        datasets: [
-            {
-                label: 'Treinos',
-                data: [0, 10, 4, 3, 7, 5, 2],
-                backgroundColor: '#ff9200',
-                borderColor: 'black',
-                borderWidth: 1
-            }
-        ]
-    }
-
-    const options = {
-
-    }
   return (
-
     <div>
-        <Bar data={data} options={options}>
-
-        </Bar>
+      <Bar data={data} options={options} className='Grafiquinho' />
     </div>
-    
-  )
+  );
 }
 
-export default Bar_chart
+export default Bar_chart;
