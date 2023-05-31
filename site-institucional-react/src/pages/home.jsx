@@ -13,7 +13,7 @@ import Face from '../css-images/img/facebook.png'
 import Insta from '../css-images/img/instagram.png'
 import Yout from '../css-images/img/youtube.png'
 
-
+import Menu from "../components/Menu";
 function home(){
 
     function abrir(){
@@ -35,32 +35,7 @@ function home(){
 
         
         <>
-
-         <header class="MeuHeader" id="header">
-        <div class="Meucontainer" id="container">
-            <div class="logo" id="divLogo">
-                <img src={Logo} alt="logo"/>
-
-            </div>
-            <div id="menu">
-                <ul id="links">
-                    <li><a href="#carrouselPrincipal">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#ajuda">Ajuda</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    
-                </ul>
-                <div className="botoes">
-                   <a href="/login"><button className="btn_login">Entrar</button></a> 
-                    <a href="/cadastro"><button className="btn_cadastro">Cadastrar</button></a>
-
-                </div>
-                <img src={Close} className="icon close" alt="" srcset="" onclick={() => fechar()}></img>
-        </div>
-                <img src={More} alt="" className="icon" onclick={() => abrir()} id="iconmenu"/>
-        </div>
-
-    </header>
+        <Menu/>
     <main>
         <section id="carrouselPrincipal">
             <Carousel_primeiro/>

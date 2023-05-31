@@ -8,10 +8,9 @@
     text-align: center;
     height: 50vh;
 }
-
-h1{
+.containerDev h1{
     font-family: inter;
-    font-size: medium;
+    font-size: 2rem;
     font-weight: 600;
     margin-top: 10px;
 }
