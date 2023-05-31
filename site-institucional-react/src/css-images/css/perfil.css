@@ -176,3 +176,74 @@
     font-weight: bold;
     margin-right: 10px;
 }
+
+
+@media(max-width: 768px){
+    .infos {
+        flex-direction: column;
+    }
+
+    .foto {
+        margin-right: 0;
+        margin-bottom: 20px;
+        align-self: center;
+    }
+
+    .metas {
+        padding: 0;
+    }
+
+    .graficoBarra {
+        margin-top: 100px;
+        width: 600px;
+    }
+
+    .tituloGraficoBarra{
+        font-weight: 500;
+    }
+
+    .kapis {
+    
+        align-items: center;
+    }
+
+    .media,
+    .rankingTreino {
+        width: 60%;
+        max-width: none;
+        height: 300px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        
+    }
+
+    .rankingTreino{
+        margin-left: 50px;
+    }
+
+    .tituloAvaliacao {
+        font-size: 24px;
+    }
+
+    .avaliacao {
+        font-size: 36px;
+    }
+
+    .subTituloAvaliacao {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .itensRank {
+        margin-top: 20px;
+    }
+
+    .tituloRank{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .pessoaRank {
+        font-size: 16px;
+    }
+}
