@@ -8,9 +8,9 @@
     text-align: center;
     height: 50vh;
 }
-.containerDev h1{
+.nomeDev{
     font-family: inter;
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 10px;
 }
@@ -23,5 +23,19 @@ h2{
 
 .imgDev{
     width: 200px;
+}
+
+
+@media(max-width: 768px){
+    .imgDev{
+        width: 150px;
+    }
+
+    .nomeDev{
+        font-family: inter;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
 }
 

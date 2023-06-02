@@ -79,7 +79,7 @@ function Perfil() {
 
     return (
         <>
-            <Menu></Menu>
+            <Menu/>
 
 
             <div className="containerPerfil">
@@ -119,10 +119,6 @@ function Perfil() {
 
 
                 <div className="graficosUsuario">
-                    <div className="graficoBarra">
-                        <h1 className='tituloGraficoBarra'>Dias da Semana Em Que Seus Treinos Ocorreram</h1>
-                        <Barra className='graficoPerfil'></Barra>
-                    </div>
                     <div className="kapis">
                         <div className="media">
                             
@@ -158,6 +154,10 @@ function Perfil() {
                             </div>
 
                         </div>
+                    </div>
+                    <div className="graficoBarra">
+                        <h1 className='tituloGraficoBarra'>Dias da Semana Em Que Seus Treinos Ocorreram</h1>
+                        <Barra className='graficoPerfil'></Barra>
                     </div>
                 </div>
 

@@ -12,8 +12,8 @@ import Email from '../css-images/img/email.png'
 import Face from '../css-images/img/facebook.png'
 import Insta from '../css-images/img/instagram.png'
 import Yout from '../css-images/img/youtube.png'
-
-import Menu from "../components/Menu";
+import "../css-images/css/styleHome.css";
+import MenuIndex from "../components/MenuIndex.jsx";
 function home(){
 
     function abrir(){
@@ -35,7 +35,7 @@ function home(){
 
         
         <>
-        <Menu/>
+        <MenuIndex/>
     <main>
         <section id="carrouselPrincipal">
             <Carousel_primeiro/>
@@ -47,7 +47,7 @@ function home(){
                 <p className="title">O que é a YOU2UP?</p>
                 <p className="text"> A YOU2UP é um projeto que foi criado na faculdade SPTECH visando juntar você que gostaria de treinar com alguém a este alguém que vc procura</p>
             </div>
-            <img src={Foto1 } alt="" class="fundo"/>
+            <img src={Foto1 } alt=""/>
             
         </div>
         

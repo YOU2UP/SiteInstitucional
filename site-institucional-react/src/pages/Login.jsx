@@ -2,6 +2,7 @@
 import Menu from "../components/Menu";
 import api from "../api";
 import { useState } from "react";
+import "../css-images/css/login.css"
 function Login() {
   const[email,getEmail]=useState("");
   const[senha,getSenha]=useState("");
