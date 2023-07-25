@@ -2,8 +2,8 @@ import React from "react";
 import Logo from "../css-images/img/logo.png"
 import Close from '../css-images/img/close.png'
 import More from '../css-images/img/more.png'
-import '../css-images/css/menu.css'
-function Menu(){
+import "../css-images/css/menuIndex.css"
+function MenuIndex(){
     function abrir(){
         document.getElementById("menuMenor").classList.add('aberto');
         document.getElementById("logo").classList.add('some');
@@ -20,7 +20,7 @@ function Menu(){
     }
 return(
     <>
-    <header id="Menu">
+    <header id="MenuIndex">
         <div id="logo">
            <img src={Logo} alt="" />
                 
@@ -43,4 +43,4 @@ return(
 )
 }
 
-export default Menu
+export default MenuIndex

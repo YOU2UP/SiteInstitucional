@@ -5,7 +5,7 @@ import { useState } from "react";
 import seta from "../css-images/img/next.png";
 import setaE from "../css-images/img/prev.png";
 import sucesso from "../css-images/img/ok.png";
-
+import "../css-images/css/cadastro.css";
 function Cadastro() {
 
 
@@ -46,7 +46,7 @@ function Cadastro() {
         }
         api.post("/usuarios/cadastro", usuarioNovo).then((response) => {
             console.log(response.data);
-            window.location = "/dashboard";
+            window.location = "/login";
             console.log(usuarioNovo)
         }).catch((error) => {
             console.log(error);

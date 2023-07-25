@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-top: 5rem;
 }
 
 
@@ -107,25 +108,26 @@
     margin-top: 50px;
     display: flex;
     width: 81vw;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .media{
-    width: 504px;
-    height: 521px;
+    width: 404px;
+    height: 421px;
     background-color: #f6f6f6;
     display: flex;
     align-items: center;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: column;
-    margin-bottom: 50px;
-    box-shadow: -30px 27px 0px -5px #FF9200;
+    box-shadow: -25px 25px 0px -5px #FF9200;
 }
 
 .tituloAvaliacao{
-    font-size: 64px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 550;
+    margin-top: 50px;
 }
 
 .avaliacao{
@@ -139,14 +141,14 @@
 }
 
 .rankingTreino{
-    width: 504px;
-    height: 521px;
+    width: 404px;
+    height: 421px;
     background-color: #f6f6f6;
     display: flex;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    box-shadow: -30px 27px 0px -5px #FF9200;
+    box-shadow: -25px 25px 0px -5px #FF9200;
 }
 
 .tituloRank{

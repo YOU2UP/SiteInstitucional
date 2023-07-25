@@ -307,9 +307,9 @@ margin-bottom: 1rem;
 }
 #ajuda button{
     padding: .75rem 2rem;
-    background-color: #098ff5;
     color: white;
     border: none;
+    background-color: #ff9200;
     outline: none;
     border-radius: 10px;
     font-weight: 700;
@@ -319,7 +319,7 @@ margin-bottom: 1rem;
 }
 #ajuda button:hover{
     transform: scale(1.09);
-    background-color: #ff9200;
+    background-color: #098ff5;
     cursor: pointer;
 }
 

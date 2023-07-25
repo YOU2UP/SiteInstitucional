@@ -6,7 +6,7 @@ function Desenvolvedor(props) {
     <div>
       <div className="containerDev">
         <img src={props.img} alt={props.nome} className='imgDev'/>
-        <h1>{props.nome}</h1>
+        <h1 className='nomeDev'>{props.nome}</h1>
         <h2>{props.funcao}</h2>
       </div>
     </div>

@@ -8,7 +8,7 @@ return(
     <>
     <header id="Menu">
         <div className="logo">
-           <img src={Logo} alt="" srcSet="" />
+           <img src={Logo} alt="" srcSet="" className="iconLogado"/>
                 
         </div>
         <nav id="NavBar">
