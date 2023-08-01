@@ -1,8 +1,8 @@
 import React from "react";
-import Logo from "../css-images/img/logo.png"
-import Close from '../css-images/img/close.png'
-import More from '../css-images/img/more.png'
-import "../css-images/css/menuIndex.css"
+import Logo from "../../css-images/img/logo.png"
+import Close from '../../css-images/img/close.png'
+import More from '../../css-images/img/more.png'
+import "../../css-images/css/menuIndex.css"
 function MenuIndex(){
     function abrir(){
         document.getElementById("menuMenor").classList.add('aberto');

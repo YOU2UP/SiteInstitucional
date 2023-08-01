@@ -1,5 +1,5 @@
 
-import Menu from "../components/Menu";
+import Menu from "../components/menu/Menu.jsx";
 import api from "../api";
 import { useState } from "react";
 import "../css-images/css/login.css"
