@@ -17,7 +17,7 @@ return(
                 <li><a href="">Chat</a></li>
                 <li><a href="">Avaliação</a></li>
                 <li><a href="">Agenda</a></li>
-                <li><a href=""><img src={Usuario} alt=""  className="usuarioNav"/></a></li>
+                <li><a href="/perfil"><img src={Usuario} alt=""  className="usuarioNav"/></a></li>
             </ul>
         </nav>
     </header>

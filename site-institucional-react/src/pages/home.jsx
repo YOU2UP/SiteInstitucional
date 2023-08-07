@@ -133,7 +133,7 @@ function home(){
         </div>
         <div className="divisao"></div>
         <div className="copy">
-            <p className="copyText"><img src={Copy} width="15"/> 2020 - Todos os direitos reservados YOU2UP - SPTECH</p>
+            <p className="copyText"><img src={Copy} width="15"/> 2023 - Todos os direitos reservados YOU2UP - SPTECH</p>
         </div>
     </footer>
 
