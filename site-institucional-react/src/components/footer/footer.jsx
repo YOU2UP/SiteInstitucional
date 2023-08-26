@@ -15,7 +15,7 @@ function Footer() {
 
             <div className="contatos_footer">
               <span className="texto_redes">
-                Contact Us:
+                Entre Em Contato:
               </span>
 
               <span className="contatos">
@@ -29,7 +29,7 @@ function Footer() {
             </div>
             <div className="redes_footer">
               <span className="texto_redes">
-                Follow Us:
+                Nossas Redes:
               </span>
 
               <div className="icones_redes">
