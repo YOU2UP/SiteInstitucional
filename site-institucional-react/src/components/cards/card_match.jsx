@@ -10,9 +10,9 @@ function Card_match(props) {
         <div className="match">
             <img src={props.img} className='pessoa' alt={props.nome} />
             <div className="infos_match">
-            <h1>{props.nome}</h1>
+            <span className='nome_match'>{props.nome}</span>
             {props.descricao_pessoa}
-            <br></br>
+            <p></p>
             {props.idade} anos
              <div className="localizacao">
                 <img src={marcador} alt="" className="marcador" />

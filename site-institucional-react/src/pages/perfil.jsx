@@ -82,9 +82,10 @@ function Perfil() {
     return (
         <>
             <Menu/>
-            {/* <BreadcrumbsItem to="/page-one">Page One</BreadcrumbsItem> */}
+            
         
             <div className="containerPerfil">
+        
 
                 <div className="infos">
                     <div className="foto">
