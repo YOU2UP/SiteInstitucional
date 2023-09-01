@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Dash  from  './components/dashs/bar_chart.jsx'
 import Dash2 from './pages/perfil.jsx'
 import Home_logado from './pages/home_logado'
+import Avaliacao from './pages/avaliacao'
 import { RouteProvider } from './routecontext';
 
 
@@ -19,6 +20,7 @@ function Rotas() {
         <Route path="/" element={<Home />} />
         <Route path="/dash" element={<Dash />}/>
         <Route path="/perfil" element={<Dash2 />}/>
+        <Route path="/avaliacao" element={<Avaliacao/>}/>
         <Route path="/pagina_inicial" element={<Home_logado/>}/>
   </Routes>
   </BrowserRouter>

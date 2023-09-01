@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.containerAvaliacao{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin-top: 20px;
+}
+
+.botoesAvaliacao{
+    border: 1px solid red;
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.cardsAvaliacao{
+    border: 1px solid blue;
+    width: 100vw;
+    height: 100vh;
+}

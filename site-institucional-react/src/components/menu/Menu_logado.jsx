@@ -15,7 +15,7 @@ return(
             <ul>
                 <li><a href="/pagina_inicial">Home</a></li>
                 <li><a href="">Chat</a></li>
-                <li><a href="">Avaliação</a></li>
+                <li><a href="/avaliacao">Avaliação</a></li>
                 <li><a href="">Agenda</a></li>
                 <li><a href="/perfil"><img src={Usuario} alt=""  className="usuarioNav"/></a></li>
             </ul>

@@ -15,7 +15,7 @@ function Home_logado() {
     <div className="containerHome">
     
       
-      {/* <Card_match img={foto} nome="Julia Silva " descricao_pessoa='Iniciante, tenho dificuldade com os exercícios' idade='24' localizacao='Academia Salvador - SP'/> */}
+      <Card_match img={foto} nome="Julia Silva " descricao_pessoa='Iniciante, tenho dificuldade com os exercícios' idade='24' localizacao='Academia Salvador - SP'/>
     </div>
     <Footer/>
     </>
