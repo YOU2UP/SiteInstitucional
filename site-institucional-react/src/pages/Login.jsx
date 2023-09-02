@@ -20,7 +20,7 @@ function Login() {
       sessionStorage.setItem("id", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
-      window.location="/perfil";
+      window.location="/pagina_inicial";
     }).catch((error)=>{
       console.log(error);
     })

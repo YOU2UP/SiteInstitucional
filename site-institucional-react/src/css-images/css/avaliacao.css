@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -7,20 +9,69 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    margin-top: 20px;
+    /* margin-top: 50px; */
 }
 
 .botoesAvaliacao{
-    border: 1px solid red;
+    border-right: 1px solid black;
     width: 30vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .cardsAvaliacao{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 100vw;
     height: 100vh;
+    /* margin-top: 30px; */
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.agrupaCards{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.btnAvaliacao{
+    margin-top: 100px;
+    background-color: white;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btnAvaliacao:hover{
+    color: #FF9200;
+}
+
+.btnAvaliacao.ativo {
+    color: #FF9200; 
+}
+
+.btnHistorico{
+    margin-top: 100px;
+    background-color: white;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btnHistorico:hover{
+    color: #FF9200;
+}
+
+.btnHistorico.ativo {
+    color: #FF9200; 
 }

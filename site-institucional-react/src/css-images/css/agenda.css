@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.containerAgenda{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tituloAgenda{
+    margin-top: 50px;
+    font-family: Inter;
+    color: #FF9200;
+    font-weight:Bold;
+    font-size: 24px;
+}
