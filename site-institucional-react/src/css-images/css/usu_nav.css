@@ -1,12 +1,46 @@
-.usuarioNav{
-    width: 60px !important;
-    height: 60.57;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.liLogado{
-    color: #FF9200;
-} 
+.navlogado{
+    width: 100vw;
+    background-color: #1C1C1C;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 100px; */
+}
+
+ul{
+    display: flex;
+    align-items: center;
+
+}
+
+ul li{
+    margin-right: 20px;
+}
+
+ul li a{
+    color: white;
+    font-family: Inter;
+    
+}
+
+ul li a:hover{
+    color: orange;
+    transition: color 0.3s;
+}
 
 .iconLogado{
     width: 200px;
 }
+
+.usuarioNav{
+    width: 50px;
+}
+

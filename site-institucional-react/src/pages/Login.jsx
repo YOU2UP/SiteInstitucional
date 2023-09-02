@@ -1,5 +1,5 @@
 
-import Menu from "../components/Menu";
+import Menu from "../components/menu/Menu.jsx";
 import api from "../api";
 import { useState } from "react";
 import "../css-images/css/login.css"
@@ -20,7 +20,7 @@ function Login() {
       sessionStorage.setItem("id", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
-      window.location="/perfil";
+      window.location="/pagina_inicial";
     }).catch((error)=>{
       console.log(error);
     })

@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../components/Menu";
+import Menu from "../components/menu/Menu.jsx";
 import api from "../api";
 import { useState } from "react";
 import seta from "../css-images/img/next.png";

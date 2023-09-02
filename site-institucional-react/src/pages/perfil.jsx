@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Menu from '../components/Menu_logado'
+import Menu from '../components/menu/Menu_logado'
+import Footer from '../components/footer/footer';
+import { BreadcrumbsItem } from 'react-breadcrumbs-dynamic';
 import api from '../api';
 import '../css-images/css/perfil.css'
 import Img from '../css-images/img/natalia.png'
@@ -80,9 +82,10 @@ function Perfil() {
     return (
         <>
             <Menu/>
-
-
+            
+        
             <div className="containerPerfil">
+        
 
                 <div className="infos">
                     <div className="foto">
@@ -162,6 +165,7 @@ function Perfil() {
                 </div>
 
             </div>
+            <Footer/>
 
         </>
     )

@@ -1,0 +1,183 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header#MenuIndex{
+    background-image:linear-gradient(to bottom,rgb(0, 0, 0),rgba(0, 0, 0, 0.645),#00000000);
+      background-color: transparent;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    position: fixed;
+    z-index: 1000;
+    width: 96vw;
+}
+header#MenuIndex #logo img{
+    width: 8rem;
+}
+.buttonLogin{
+    background-color: transparent;
+    border: solid 2px #ff9200;
+    padding: .1rem 1.2rem;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    font: 1rem 'Nunito', sans-serif;
+
+}
+.buttonCadastro{
+    background-color: #ff9200;
+    border: solid 2px #ff9200;
+    padding: .1rem 1.2rem;
+    outline: none;
+    color: #1c1c1c;
+    cursor: pointer;
+    border-radius: 20px;
+    font: 700 1rem 'Nunito', sans-serif;
+    margin-left: -15px;
+}
+header#MenuIndex ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header#MenuIndex ul li{
+    margin-left: 2rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+header#MenuIndex ul li a{
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    transition: .2s;
+    font-size: 17px;
+}
+header#MenuIndex ul li a:hover{
+    color: #ff9200;
+   font-size: 19px;
+}
+
+#menuMenor{
+    background-color: transparent;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0;
+}
+#menuMenor #links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.icon{
+    display: none;
+}
+
+#teste{}
+
+@media(max-width:768px) {
+    header#Menu{
+        padding-left: 0;
+    }
+    #menuMenor{
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: -20rem;
+        transition: 1s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+     
+    }
+#menuMenor.aberto{
+    position: absolute;
+    margin-top: 0;
+    top:0;
+    left: 0;
+    margin-left: 0;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color:#252525 ;
+
+}
+.buttonCadastro{
+    margin-left: 0;
+}
+#menuMenor.aberto #links{
+    justify-content: center;
+    
+}
+#menuMenor.aberto #links li{
+    margin: 0;
+    margin-bottom: 2rem;
+}
+#divLogo.some{
+    display: none;
+}
+.icon{
+   
+    display: block;
+    cursor: pointer;
+}
+#iconmenu{
+    width: 30px;
+    margin-left: -15px;
+}
+#menuMenor .icon{
+    width: 30px;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+}
+.logo img{
+    width: 150px;
+}
+#menuMenor #links{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+#menuMenor #links li,footer .menu ul li{
+    list-style: none;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+#menuMenor a{
+    color: #fff;
+    font-size: 1.25rem;
+    transition: .3s;
+}
+#menuMenor a:hover, .menu li a:hover{
+    color: #ff9200;
+    font-size: 1.30rem;
+    cursor: pointer;
+
+    
+}
+
+
+}

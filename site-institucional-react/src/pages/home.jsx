@@ -13,7 +13,7 @@ import Face from '../css-images/img/facebook.png'
 import Insta from '../css-images/img/instagram.png'
 import Yout from '../css-images/img/youtube.png'
 import "../css-images/css/styleHome.css";
-import MenuIndex from "../components/MenuIndex.jsx";
+import MenuIndex from "../components/menu/MenuIndex.jsx";
 function home(){
 
     function abrir(){
@@ -35,6 +35,7 @@ function home(){
 
         
         <>
+         <link rel="icon" type="image/x-icon" href=""/>
         <MenuIndex/>
     <main>
         <section id="carrouselPrincipal">
@@ -132,7 +133,7 @@ function home(){
         </div>
         <div className="divisao"></div>
         <div className="copy">
-            <p className="copyText"><img src={Copy} width="15"/> 2020 - Todos os direitos reservados YOU2UP - SPTECH</p>
+            <p className="copyText"><img src={Copy} width="15"/> 2023 - Todos os direitos reservados YOU2UP - SPTECH</p>
         </div>
     </footer>
 
