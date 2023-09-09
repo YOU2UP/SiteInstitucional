@@ -21,3 +21,20 @@
     font-weight:Bold;
     font-size: 24px;
 }
+
+.seguraCard{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.duplaCard{
+    width: 100vw;
+    height: 25vh;
+    display: flex;
+    justify-content: space-evenly;
+}
