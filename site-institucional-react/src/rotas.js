@@ -8,7 +8,7 @@ import Dash2 from './pages/perfil.jsx'
 import Home_logado from './pages/home_logado'
 import Avaliacao from './pages/avaliacao'
 import Agenda from './pages/agenda'
-import Chat from './pages/chat'
+import Chat from './pages/Chat'
 import { RouteProvider } from './routecontext';
 
 
