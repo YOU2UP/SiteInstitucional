@@ -30,34 +30,35 @@ const Chat = () => {
   const [carregouConversas, setCarregouConversas] = useState(false);
   const [idUsuarioConversa, setIdUsuarioConversa] = useState(0)
 
-  sessionStorage.setItem("idUsuario", 1);
-  sessionStorage.setItem("tipo", "aluno");
+  sessionStorage.getItem("idUsuario");
   sessionStorage.setItem("nomeUsuario", "Vinícius")
+  sessionStorage.getItem("requisitante")
 
 
   useEffect(() => {
     const q = query(
       collection(db, "chats"),
       or(
-        where("idProfessor", "==", Number(sessionStorage.idUsuario)),
-        where("idAluno", "==", Number(sessionStorage.idUsuario))
+        where("idRequisitante", "==", Number(sessionStorage.idUsuario)),
+        where("idRequisitado", "==", Number(sessionStorage.idUsuario))
       ),
       orderBy("timestamp", "desc")
     );
+
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setChats("");
       setChats(
         snapshot.docs.map((doc) => ({
           id: doc.id,
           data: {
-            idAluno: doc.data().idAluno,
-            idProfessor: doc.data().idProfessor,
+            idRequisitado: doc.data().idRequisitado,
+            idRequistante: doc.data().idRequisitado,
             nome:
-              sessionStorage.tipo === "aluno"
+              sessionStorage.tipo === "requisitante"
                 ? doc.data().nomeProfessor
                 : doc.data().nomeAluno,
             src:
-              sessionStorage.tipo === "aluno"
+              sessionStorage.tipo === "requisitado"
                 ? doc.data().srcProfessor
                 : doc.data().srcAluno,
             ultimaMensagem: doc.data().ultimaMensagem,
