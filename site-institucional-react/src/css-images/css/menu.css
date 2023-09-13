@@ -32,7 +32,11 @@ header#Menu #logo img{
     color: white;
     border-radius: 20px;
     font: 1rem 'Nunito', sans-serif;
+    transition: background-color 0.5s ease;
 
+}
+.buttonLogin:hover{
+    background-color: #ff9200;
 }
 .buttonCadastro{
     background-color: #ff9200;

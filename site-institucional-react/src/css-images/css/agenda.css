@@ -37,4 +37,25 @@
     height: 25vh;
     display: flex;
     justify-content: space-evenly;
+    
+}
+
+.botoesNavegacao{
+    margin-top: 40px;
+    width: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.btnPagina{
+    background-color: white;
+    transition: color 0.3;
+    cursor: pointer;
+}
+
+
+.btnPagina:hover{
+    color: blue;
+    text-decoration: underline;
 }

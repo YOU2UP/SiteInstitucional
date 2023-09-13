@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -13,4 +15,30 @@
     align-items: center;
 }
 
+.tituloHomeLogado{
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 'Inter';
+    color: #FF9200;
+}
+
+.botoesNavegacao{
+    margin-top: 40px;
+    width: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnPagina{
+    background-color: white;
+    transition: color 0.3;
+    cursor: pointer;
+}
+
+
+.btnPagina:hover{
+    color: blue;
+    text-decoration: underline;
+}
 

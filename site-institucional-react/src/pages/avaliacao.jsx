@@ -1,19 +1,32 @@
-import React, {useState} from 'react'
-import Menu from '../components/menu/Menu_logado.jsx'
-import Footer from '../components/footer/footer.jsx'
-import Card from '../components/cards/card_avaliacao.jsx'
-import Elaine from '../css-images/img/elaine.png'
-import '../css-images/css/avaliacao.css'
+import React, { useState } from 'react';
+import Menu from '../components/menu/Menu_logado.jsx';
+import Footer from '../components/footer/footer.jsx';
+import CardAvaliacao from '../components/cards/card_avaliacao.jsx';
+import Elaine from '../css-images/img/elaine.png';
+import '../css-images/css/avaliacao.css';
+import Historico from '../components/canvas/historico.jsx';
+import CanvaAvaliacao from '../components/canvas/canva_avalia.jsx'
+
 
 function Avaliacao() {
+  const id = sessionStorage.getItem("id");
+  const token = sessionStorage.getItem("token");
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
+  };
 
   const [ativoAvaliacao, setAtivoAvaliacao] = useState(false);
   const [ativoHistorico, setAtivoHistorico] = useState(false);
 
+  const [dadosAvaliacao, setDadosAvaliacao] = useState([]);
+  const [dadosHistorico, setDadosHistorico] = useState([]);
+
   const activeAvaliacao = () => {
     setAtivoAvaliacao(true);
     setAtivoHistorico(false);
-
 
   };
 
@@ -22,35 +35,47 @@ function Avaliacao() {
     setAtivoHistorico(true);
   };
 
+ 
+  let componenteAuxiliar = null;
+
+  if (ativoAvaliacao) {
+    componenteAuxiliar = <CanvaAvaliacao dados={dadosAvaliacao} />;
+  } else if (ativoHistorico) {
+    componenteAuxiliar = <Historico dados={dadosHistorico} />;
+  }
+
   return (
     <>
-        <Menu/>
+      <Menu />
 
-        <div className="containerAvaliacao"> 
+      <div className="containerAvaliacao">
+        <div className="botoesAvaliacao">
+          <button
+            className={`btnAvaliacao ${ativoAvaliacao ? 'ativo' : ''}`}
+            onClick={activeAvaliacao}
+          >
+            Avaliações
+          </button>
 
-            <div className="botoesAvaliacao">
-                <button className={`btnAvaliacao ${ativoAvaliacao ? 'ativo' : ''}`} onClick={activeAvaliacao}>
-                    Avaliações
-                </button>
-
-                <button className={`btnHistorico ${ativoHistorico ? 'ativo' : ''}`} onClick={activeHistorico}>
-                  Histórico
-                </button>
-            </div>
-            <div className="cardsAvaliacao">
-              <div className="agrupaCards">
-
-                <Card img={Elaine} nome='Elaine Souza' descricao_pessoa='Nunca treinei antes por medo de ir sozinha' />
-              </div>
-
-            </div>
+          <button
+            className={`btnHistorico ${ativoHistorico ? 'ativo' : ''}`}
+            onClick={activeHistorico}
+          >
+            Histórico
+          </button>
         </div>
 
-        <Footer/>
+        <div className="auxiliar">
+          {componenteAuxiliar}
+        </div>
+      </div>
+      <div className="espaco">
+        
+      </div>
 
-    
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Avaliacao
+export default Avaliacao;
