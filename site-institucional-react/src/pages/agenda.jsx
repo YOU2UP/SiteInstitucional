@@ -21,7 +21,7 @@ function Agenda() {
 
   const [agendamentos, setAgendamentos] = useState([]);
   const [paginaAtual, setPaginaAtual] = useState(0); // Índice inicial da página
-  const cardsPorPagina = 3;
+  const cardsPorPagina = 2;
 
   useEffect(() => {
     api.get(`treinos/usuario/${id}`, config)
