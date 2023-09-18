@@ -38,7 +38,8 @@ function Home_logado() {
   useEffect(() => {
 
     api.get(`matches/usuario/${id}`, config).then((response) => {
-      setMatches(response.data)
+      const filteredMatches = response.data.filter((match) => match.usuario2.id != id);
+      setMatches(filteredMatches);
       console.log("matches", response.data)
       console.log(token)
     })

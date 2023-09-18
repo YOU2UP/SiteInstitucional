@@ -20,7 +20,7 @@ function Agenda() {
   };
 
   const [agendamentos, setAgendamentos] = useState([]);
-  const [paginaAtual, setPaginaAtual] = useState(0); // Índice inicial da página
+  const [paginaAtual, setPaginaAtual] = useState(0); 
   const cardsPorPagina = 2;
 
   useEffect(() => {
@@ -30,6 +30,7 @@ function Agenda() {
         setAgendamentos(response.data);
       })
       .catch((error) => {
+        console.log("teste");
         console.log("Erro: ", error);
       });
   }, []);
@@ -109,26 +110,48 @@ function Agenda() {
           Esses são os treinos agendados com você
         </span>
         <div className="seguraCard">
-          {agendamentos.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((agenda, index) => (
-            <div className="duplaCard" key={index}>
-              {isDataFutura(agenda.inicioTreino) ? (
-                <CardFuturo
-                  dataTreino={defineData(agenda)}
-                  horaTreino={defineHora(agenda)}
-                  nome={agenda.usuarios[1].nome}
-                  img={defineImg(agenda)}
-                  localTreino={agenda.usuarios[1].localTreino.nome}
-                />
-              ) : (
-                <CardMarcado
-                  dataTreino={defineData(agenda)}
-                  horaTreino={defineHora(agenda)}
-                  nome={agenda.usuarios[1].nome}
-                  img={defineImg(agenda)}
-                  localTreino={agenda.usuarios[1].localTreino.nome}
-                />
-              )}
-            </div>
+  {agendamentos.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((agenda, index) => (
+    <div className="duplaCard" key={index}>
+      {isDataFutura(agenda.inicioTreino) ? (
+        <>
+          <CardFuturo
+            dataTreino={defineData(agenda)}
+            horaTreino={defineHora(agenda)}
+            nome={agenda.usuarios[1].nome}
+            img={defineImg(agenda)}
+            localTreino={agenda.usuarios[1].localTreino.nome}
+          />
+          {index + 1 < cardsPorPagina && ( // Verifique se há espaço para outro card
+            <CardFuturo
+              dataTreino={defineData(agendamentos[index + 1])}
+              horaTreino={defineHora(agendamentos[index + 1])}
+              nome={agendamentos[index + 1].usuarios[1].nome}
+              img={defineImg(agendamentos[index + 1])}
+              localTreino={agendamentos[index + 1].usuarios[1].localTreino.nome}
+            />
+          )}
+        </>
+      ) : (
+        <>
+          <CardMarcado
+            dataTreino={defineData(agenda)}
+            horaTreino={defineHora(agenda)}
+            nome={agenda.usuarios[1].nome}
+            img={defineImg(agenda)}
+            localTreino={agenda.usuarios[1].localTreino.nome}
+          />
+          {index + 1 < cardsPorPagina && (
+            <CardMarcado
+              dataTreino={defineData(agendamentos[index + 1])}
+              horaTreino={defineHora(agendamentos[index + 1])}
+              nome={agendamentos[index + 1].usuarios[1].nome}
+              img={defineImg(agendamentos[index + 1])}
+              localTreino={agendamentos[index + 1].usuarios[1].localTreino.nome}
+            />
+          )}
+        </>
+      )}
+    </div>
           ))}
         </div>
         <div className="botoesNavegacao">

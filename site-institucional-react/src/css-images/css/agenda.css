@@ -33,11 +33,15 @@
 }
 
 .duplaCard{
-    width: 100vw;
+    width: 80vw;
     height: 25vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     
+}
+
+.duplaCard > :only-child {
+    margin-right: 600px;
 }
 
 .botoesNavegacao{
