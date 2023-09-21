@@ -46,7 +46,7 @@ function home(){
         <div className="containerGrid">
             <div>
                 <p className="title">O que é a YOU2UP?</p>
-                <p className="text"> A YOU2UP é um projeto que foi criado na faculdade SPTECH visando juntar você que gostaria de treinar com alguém a este alguém que vc procura</p>
+                <p className="textoQuemSomos">Somos uma comunidade de entusiastas do fitness, conectando pessoas determinadas a alcançar seus objetivos de treinamento. Nossa plataforma cria oportunidades para compartilhar conhecimento, motivação e apoio mútuo. Unimos aqueles que desejam transformar seus estilos de vida, promovendo o bem-estar e a força da coletividade. Junte-se a nós enquanto trilhamos o caminho para a superação e o sucesso juntos.</p>
             </div>
             <img src={Foto1 } alt=""/>
             

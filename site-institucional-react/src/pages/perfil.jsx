@@ -4,6 +4,7 @@ import Footer from '../components/footer/footer';
 import { BreadcrumbsItem } from 'react-breadcrumbs-dynamic';
 import api from '../api';
 import '../css-images/css/perfil.css'
+import foto from  '../css-images/img/icone_card.png'
 import Img from '../css-images/img/natalia.png'
 import Barra from '../components/dashs/bar_chart'
 
@@ -78,6 +79,33 @@ function Perfil() {
         <div key={index}>{nome}</div>
     ));
 
+    function defineImg(nome) {
+        var imagem;
+    
+        if (nome === "Christopher Nolan") {
+          imagem = "https://ca-times.brightspotcdn.com/dims4/default/2f89e42/2147483647/strip/true/crop/5400x7200+0+0/resize/1200x1600!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F0b%2F71%2F301a805d4250aea241fcf4d02dd9%2F1312323-et-christopher-nolan-2.jpg"
+        }
+        else if (nome === "Steven Spielberg") {
+          imagem = "https://www.planocritico.com/wp-content/uploads/2016/12/steven-spielberg-veredito-cinefilo-melhores-piores-filmes-plano-critico.jpg"
+        }
+        else if (nome === "Quentin Tarantino") {
+          imagem = "https://img.etimg.com/thumb/width-1200,height-900,imgsize-121638,resizemode-75,msid-98682598/magazines/panache/end-of-an-era-quentin-tarantino-is-reportedly-working-on-his-last-film.jpg"
+        }
+        else if (nome === "Alfred Hitchcock") {
+          imagem = "https://br.web.img2.acsta.net/c_310_420/pictures/15/02/25/20/43/378174.jpg"
+        }
+        else if (nome === "Martin Scorsese") {
+          imagem = "https://multiversonoticias.com.br/wp-content/uploads/2023/05/Martin-Scorsese-1024x650.jpg"
+        }
+        else {
+          imagem = foto;
+        }
+    
+        return imagem;
+    
+    
+      }
+
 
     return (
         <>
@@ -89,7 +117,7 @@ function Perfil() {
 
                 <div className="infos">
                     <div className="foto">
-                        <img src={Img} alt="" className='imgPerfil'/>
+                        <img src={defineImg(nome)} alt={nome} className='imgPerfil'/>
                     </div>
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{nome}</h1>
@@ -121,7 +149,12 @@ function Perfil() {
                 </div>
 
 
-                <div className="graficosUsuario">
+
+            </div>
+
+            <div className="containerPerfil2">
+                
+            <div className="graficosUsuario">
                     <div className="kapis">
                         <div className="media">
                             
@@ -163,7 +196,6 @@ function Perfil() {
                         <Barra className='graficoPerfil'></Barra>
                     </div>
                 </div>
-
             </div>
             <Footer/>
 

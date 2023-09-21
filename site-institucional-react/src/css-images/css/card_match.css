@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Karma:wght@300&display=swap');
 
 .card{
     width: 900px;
@@ -36,7 +37,9 @@
 }
 
 .nome_match{
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Inter';
 }
 
 .localizacao{

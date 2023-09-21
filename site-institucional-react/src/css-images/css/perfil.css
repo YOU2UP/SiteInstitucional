@@ -1,8 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 .containerPerfil{
     display: flex;
+    width: 100vw;
+    height: 80vh;
     justify-content: center;
     flex-direction: column;
-    padding-top: 5rem;
+}
+
+.containerPerfil2{
+    height: 100vh;
+    width: 100vw;
+    justify-content: flex-start;
+    margin-bottom: 100px;
 }
 
 
@@ -14,6 +28,10 @@
     align-items: center;
     margin-top: 80px;
     margin-right: 500px;
+}
+
+.descricao{
+    font-size: 20px;
 }
 
 .foto{
@@ -28,6 +46,7 @@
 .imgPerfil{
     width: 190px;
     height: 190px;
+    border-radius: 120px;
 }
 
 .nomeUsuarioPerfil{
@@ -76,13 +95,13 @@
 }
 
 .graficosUsuario{
-    margin-top: 300px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
 }
 
 

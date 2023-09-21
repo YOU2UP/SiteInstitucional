@@ -1,0 +1,8 @@
+
+.cardsAvaliacao{
+    width: 75vw;
+    height: 100vh;
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+}

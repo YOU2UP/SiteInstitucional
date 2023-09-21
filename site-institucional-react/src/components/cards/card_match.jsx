@@ -23,7 +23,7 @@ function Card_match(props) {
             {props.idade} anos
              <div className="localizacao">
                 <img src={marcador} alt="" className="marcador" />
-                <span>{props.localizacao}</span>
+                <span>{props.localizacao} - {props.uf}</span>
              </div> 
             </div>
         </div>
