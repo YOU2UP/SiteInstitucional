@@ -7,7 +7,7 @@ import Dash  from  './components/dashs/bar_chart.jsx'
 import Dash2 from './pages/perfil.jsx'
 import Home_logado from './pages/home_logado'
 import Avaliacao from './pages/avaliacao'
-import Agenda from './pages/agenda'
+import Agenda from './pages/agenda_treinos'
 import Chat from './pages/chat'
 import { RouteProvider } from './routecontext';
 

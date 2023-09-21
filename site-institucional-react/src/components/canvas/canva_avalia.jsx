@@ -19,7 +19,6 @@ function Canva_avalia() {
     useEffect(() => {
 
         api.get(`/treinos/nao-avaliados/${id}`, config).then((response) => {
-            console.log("teste", response.data)
             setDadosAvaliacao(response.data)
         })
         .catch((error) => {

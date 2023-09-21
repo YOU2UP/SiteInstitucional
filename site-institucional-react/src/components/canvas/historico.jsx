@@ -22,7 +22,6 @@ function Historico() {
   useEffect(() => {
 
     api.get(`/avaliacoes/avaliador/${id}`, config).then((response) => {
-      console.log("teste", response.data)
       setHistorico(response.data)
     })
       .catch((error) => {

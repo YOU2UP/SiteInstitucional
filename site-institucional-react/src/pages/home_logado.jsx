@@ -19,7 +19,8 @@ function Home_logado() {
   };
 
   const [matches, setMatches] = useState([]);
-  const [paginaAtual, setPaginaAtual] = useState(0); 
+  const [lol, setLol] = useState("a");
+  const [paginaAtual, setPaginaAtual] = useState(0);
   const cardsPorPagina = 3;
 
 
@@ -37,11 +38,10 @@ function Home_logado() {
 
   useEffect(() => {
 
+
     api.get(`matches/usuario/${id}`, config).then((response) => {
       const filteredMatches = response.data.filter((match) => match.usuario2.id != id);
       setMatches(filteredMatches);
-      console.log("matches", response.data)
-      console.log(token)
     })
       .catch((error) => {
         console.log("Erro: ", error)
@@ -98,7 +98,7 @@ function Home_logado() {
         <span className="tituloHomeLogado">Pessoas que mais combinam com você!</span>
 
         {matches.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((match, index) => (
-          <CardMatch key ={index}
+          <CardMatch key={index}
             img={defineImg(match)}
             nome={match.usuario2.nome}
             descricao_pessoa={match.usuario2.descricao}
