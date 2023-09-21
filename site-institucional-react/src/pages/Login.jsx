@@ -18,7 +18,7 @@ function Login() {
       const id = response.data.userId
       const token = response.data.token;
       const nome = response.data.nome;
-      sessionStorage.setItem("id", id)
+      sessionStorage.setItem("idUsuario", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
       window.location="/pagina_inicial";
