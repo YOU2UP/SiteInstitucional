@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -5,8 +7,6 @@
 
 
 .containerHomeLogado{
-    /* margin-top: 150px; */
-    border: 1px solid red;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -14,3 +14,32 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+.tituloHomeLogado{
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: Inter;
+    font-weight: bold;
+    color: #FF9200;
+}
+
+.botoesNavegacao{
+    margin-top: 40px;
+    width: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnPagina{
+    background-color: white;
+    transition: color 0.3;
+    cursor: pointer;
+}
+
+
+.btnPagina:hover{
+    color: blue;
+    text-decoration: underline;
+}
+

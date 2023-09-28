@@ -2,7 +2,7 @@ import React from 'react'
 import Estrela from '../../css-images/img/avalia.png'
 import '../../css-images/css/card_avaliacao.css'
 
-function Card_avaliacao(props) {
+function CardAvaliacao(props) {
   return (
     <div className="card">
         
@@ -17,7 +17,7 @@ function Card_avaliacao(props) {
     </div>
    
         <button className="avaliar">
-            Avaliar
+            {props.nota}
             <img src={Estrela} className='estrela' alt="" />
         </button>
     
@@ -25,4 +25,4 @@ function Card_avaliacao(props) {
   )
 }
 
-export default Card_avaliacao
+export default CardAvaliacao

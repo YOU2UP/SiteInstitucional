@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+.cardAgendado{
+    width: 25vw;
+    height: 25vh;
+    background-color: #EFEFEF;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-family: Inter;
+}
+
+.containerAgendado{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+.pessoaAgendada{
+    width: 110px;
+    height: 110px;
+    border-radius: 80px;
+    /* border: 1px solid black; */
+    margin-left: 20px;
+}           
+
+.infosAgenda{
+    /* border: 1px solid blue; */
+    width: 250px;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 15px;
+}
+
+.nomeAgenda{
+    font-weight: bold;
+    font-family: Inter;
+}
+
+.botoesAgenda{
+    width: 90%;
+    /* border: 1px solid green; */
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+
+.cancelar{
+    width: 95px;
+    height: 30px;
+    background-color: #FF4242;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    font-family: Inter;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

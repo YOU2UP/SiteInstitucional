@@ -21,3 +21,41 @@
     font-weight:Bold;
     font-size: 24px;
 }
+
+.seguraCard{
+    width: 60vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.duplaCard{
+    width: 390px;
+}
+
+.duplaCard > :only-child {
+    margin-right: 610px;
+}
+
+.botoesNavegacao{
+    margin-top: 40px;
+    width: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.btnPagina{
+    background-color: white;
+    transition: color 0.3;
+    cursor: pointer;
+}
+
+
+.btnPagina:hover{
+    color: blue;
+    text-decoration: underline;
+}

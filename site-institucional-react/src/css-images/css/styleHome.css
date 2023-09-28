@@ -109,6 +109,11 @@ section{
     font-size:1rem;
 }
 
+.textoQuemSomos{
+    font-size: 20px;
+    margin-top: 40px;
+}
+
 #propaganda{
     width: 100vw;
     height: 500px;
