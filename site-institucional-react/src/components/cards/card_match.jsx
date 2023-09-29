@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import marcador from '../../css-images/img/map_marker.png'
 import '../../css-images/css/card_match.css'
 
 function Card_match(props) {
+
+  const [requisitante, setRequisitante] = useState(0);
+
+  sessionStorage.setItem("requisitante", requisitante);
+  
+  
+
   return (
     <div className="card">
         
@@ -21,7 +28,7 @@ function Card_match(props) {
             </div>
         </div>
        
-            <button className="conversar">
+            <button className="conversar" onClick={setRequisitante}>
                 Conversar
             </button>
         

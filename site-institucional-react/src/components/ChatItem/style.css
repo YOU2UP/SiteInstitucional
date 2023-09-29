@@ -1,0 +1,61 @@
+.chat_item {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    background: rgba(0, 0, 0, 0);
+}
+
+.ultima_mensagem {
+    min-Width: 100%;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #383838;
+}
+
+.data_box {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: min-content;
+    align-self: flex-end;
+}
+
+.data_notificacao {
+    width: min-content;
+    height: min-content;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 14px;
+}
+
+.tempo{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #797979;
+}
+
+.notificacao {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notificacao_numero {
+    background-color: #1db95440;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 600;
+    size: 10px;
+}
+
+.divider_chat{
+    background: #F5F4F7;
+}
