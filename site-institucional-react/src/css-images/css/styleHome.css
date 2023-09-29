@@ -84,7 +84,7 @@ section{
     justify-content: center;
     width: 100vw;
     position: relative;
-    height: 500px;
+    height: 300px;
     text-align: center;
    margin-bottom: 15rem;
 
@@ -94,7 +94,7 @@ section{
     width: 80%;
 }
 .containerGrid img{
-    width: 100%;
+    width: 400px;
 
  
 }
@@ -112,6 +112,7 @@ section{
 .textoQuemSomos{
     font-size: 20px;
     margin-top: 40px;
+    width: 80%;
 }
 
 #propaganda{
@@ -121,7 +122,7 @@ section{
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     position: relative;
 }
 #propaganda .textoEmCima{
@@ -179,6 +180,7 @@ section{
     align-items: center;
 flex-direction: column;
     text-align: center;
+   
 }
 .global-page-container {
 	width: 100%;
@@ -189,7 +191,7 @@ flex-direction: column;
 }
 
 .watch-slider, .watch-slider2 {
-  padding: 80px 0 60px 0;
+  padding: 30px 0 60px 0;
   overflow: hidden;
 
 }
