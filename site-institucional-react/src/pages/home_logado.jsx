@@ -19,7 +19,6 @@ function Home_logado() {
   };
 
   const [matches, setMatches] = useState([]);
-  const [lol, setLol] = useState("a");
   const [paginaAtual, setPaginaAtual] = useState(0);
   const cardsPorPagina = 3;
 

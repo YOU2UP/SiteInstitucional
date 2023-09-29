@@ -5,8 +5,7 @@ import { BreadcrumbsItem } from 'react-breadcrumbs-dynamic';
 import api from '../api';
 import '../css-images/css/perfil.css'
 import foto from  '../css-images/img/icone_card.png'
-import Img from '../css-images/img/natalia.png'
-import Barra from '../components/dashs/bar_chart'
+import Grafico from '../components/canvas/canvas_dash'
 
 function Perfil() {
 
@@ -26,7 +25,6 @@ function Perfil() {
 
 
     useEffect(() => {
-
         api.get(`/treinos/contagem-treinos/${id}`, config).then((response) => {
             setTreinos(response.data)
 
@@ -152,52 +150,11 @@ function Perfil() {
 
             </div>
 
+                <Grafico/>
             <div className="containerPerfil2">
-                
-            <div className="graficosUsuario">
-                    <div className="kapis">
-                        <div className="media">
-                            
-                        <h1 className='tituloAvaliacao'>Sua Avaliação</h1>
-                    
-
-                        <span className='avaliacao'>{media}</span>
-                        
-
-                        <h1 className='subTituloAvaliacao'>Média das avaliações que seus parceiros te Deram</h1>
-                        </div>
-                        <div className="rankingTreino">
-                            <h1 className="tituloRank">
-                            Parceiros Com quem <br/>Você mais Treinou
-                            </h1>
-                            <div className="itensRank">
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">1° </span> {data[0]}
-                                </div>
-
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">2° </span> {data[1]}
-                                </div>
-
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">3° </span> {data[2]}
-                                </div>
-
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">4° </span> {data[3]}
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="graficoBarra">
-                        <h1 className='tituloGraficoBarra'>Dias da Semana Em Que Seus Treinos Ocorreram</h1>
-                        <Barra className='graficoPerfil'></Barra>
-                    </div>
-                </div>
+            
             </div>
-            <Footer/>
+            
 
         </>
     )

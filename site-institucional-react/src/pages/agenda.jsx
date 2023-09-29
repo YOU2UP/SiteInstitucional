@@ -23,9 +23,7 @@ function Agenda() {
   useEffect(() => {
     api.get(`treinos/usuario/${id}`, config)
       .then((response) => {
-        // console.log("agendamentos", response.data);
         setAgendamentos(response.data);
-        // console.log("agendamentos", agendamentos)
       })
       .catch((error) => {
         console.log("teste");

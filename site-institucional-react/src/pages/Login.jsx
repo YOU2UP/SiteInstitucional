@@ -11,13 +11,14 @@ function Login() {
   function logar(){
     const usuario={
       email:email,
-      senha:senha
+      senha:senha,
     }
     api.post("/usuarios/login",usuario).then((response)=>{
       console.log(response.data);
       const id = response.data.userId
       const token = response.data.token;
       const nome = response.data.nome;
+      sessionStorage.setItem("senha", senha)
       sessionStorage.setItem("id", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
