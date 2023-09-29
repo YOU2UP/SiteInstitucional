@@ -13,7 +13,7 @@ $(function() {
 
 $(".watch-slider").slick({
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     centerMode: true,
@@ -21,7 +21,7 @@ $(".watch-slider").slick({
     nextArrow: $("#arrow-next"),
     responsive : [
         {
-            breakpoint: 768,
+            breakpoint: 700,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -49,7 +49,7 @@ $(".watch-slider").slick({
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     
             }
