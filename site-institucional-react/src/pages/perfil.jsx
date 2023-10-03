@@ -149,7 +149,6 @@ function Perfil() {
 
 
             </div>
-
                 <Grafico/>
             <div className="containerPerfil2">
             
