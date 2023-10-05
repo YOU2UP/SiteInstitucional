@@ -21,7 +21,6 @@ function Carousel_devs() {
     speed: 300,
     autoplay: true,
     autoplaySpeed: 3000,
-    responsividade
     slidesToShow: 4,
     slidesToScroll: 1,
     infinite: true,
