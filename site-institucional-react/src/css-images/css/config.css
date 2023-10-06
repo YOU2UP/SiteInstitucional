@@ -11,6 +11,11 @@
     display: flex;
 }
 
+.btnAltera.active,
+.btnSair.active {
+  background-color: #FFEBB9;
+}
+
 .botoesConfig{
     height: 100vh;
     width: 25vw;
@@ -23,15 +28,13 @@
 .btnAltera{
     background-color: white;
     font-family: 'Inter';
+    width: 335px;
+    height: 70px;
     font-size: 20px;
     margin-top: 90px;
     cursor: pointer;
     align-items: center;
     transition: color 0.3s;
-}
-
-.btnAltera:hover{
-    color: #FF9200;
 }
 
 .btnSair{
@@ -48,5 +51,5 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    align-items: center;
 }

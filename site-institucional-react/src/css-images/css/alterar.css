@@ -1,0 +1,53 @@
+.containerAltera{
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.tituloAltera{
+    font-family: 'Inter';
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.seguraInput{
+    width: 60vw;
+    height: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.inputBtn{
+    /* border: 1px solid black; */
+    width: 40vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ipt{
+    background-color: #e7e6e6;
+    width: 30vw;
+    height: 5vh;
+}
+
+.Alterar{
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #FF9200;
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.Alterar:active{
+    color: black;
+}
+

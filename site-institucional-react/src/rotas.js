@@ -8,7 +8,6 @@ import Dash2 from './pages/perfil.jsx'
 import Home_logado from './pages/home_logado'
 import Avaliacao from './pages/avaliacao'
 import Agenda from './pages/agenda_treinos'
-import Teste from './components/canvas/canvas_dash'
 import Configuracao from './pages/config.jsx'
 import { RouteProvider } from './routecontext';
 
@@ -26,7 +25,6 @@ function Rotas() {
         <Route path="/avaliacao" element={<Avaliacao/>}/>
         <Route path="/pagina_inicial" element={<Home_logado/>}/>
         <Route path="/agenda" element={<Agenda/>}/>
-        <Route path='/teste' element={<Teste/>}/>
         <Route path='/configuracao' element={<Configuracao/>}/>
   </Routes>
   </BrowserRouter>
