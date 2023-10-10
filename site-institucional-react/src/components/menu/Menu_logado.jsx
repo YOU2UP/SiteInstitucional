@@ -8,7 +8,9 @@ return(
     <>
     <header className="navlogado">
         <div className="logoNavLogado">
+            <a href="/pagina_inicial">
            <img src={Logo} alt=""  className="iconLogado"/>    
+            </a>
         </div>
         <nav className="botoesNavLogado">
             <ul>

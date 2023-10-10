@@ -27,7 +27,8 @@ function Config() {
                     </button>
                 </div>
                 <div className="telaConfig">
-                    <Altera/>
+                    {/* <Altera/> */}
+                    
                 </div>
             </div>
 

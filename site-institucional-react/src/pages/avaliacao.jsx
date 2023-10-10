@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import Menu from '../components/menu/Menu_logado.jsx';
-import Footer from '../components/footer/footer.jsx';
-import CardAvaliacao from '../components/cards/card_avaliacao.jsx';
-import Elaine from '../css-images/img/elaine.png';
 import '../css-images/css/avaliacao.css';
 import Historico from '../components/canvas/historico.jsx';
 import CanvaAvaliacao from '../components/canvas/canva_avalia.jsx'
@@ -73,7 +70,6 @@ function Avaliacao() {
         
       </div>
 
-      <Footer />
     </>
   );
 }

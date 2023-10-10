@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { differenceInYears } from 'date-fns';
 import Menu from '../components/menu/Menu_logado'
-import Footer from '../components/footer/footer'
 import '../css-images/css/home_logado.css'
 import CardMatch from '../components/cards/card_match'
 import foto from '../css-images/img/meninona.png'
@@ -116,7 +115,6 @@ function Home_logado() {
           </button>
         </div>
       </div>
-      <Footer />
     </>
   )
 }

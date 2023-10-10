@@ -121,7 +121,6 @@ function Agenda() {
           </button>
         </div> 
       </div>
-      <Footer />
     </>
   );
 }
