@@ -10,6 +10,17 @@ function Config() {
         setActiveButton(buttonName);
     };
 
+    const renderComponent = () => {
+        if(activeButton === 'config') {
+            return <Altera />
+        } else if(activeButton === 'meta') {
+            return <h1>Meta</h1>
+        } 
+        else{
+            return null;
+        }
+    }
+
     return (
         <>
             <Menu />
@@ -27,7 +38,7 @@ function Config() {
                     </button>
                 </div>
                 <div className="telaConfig">
-                    {/* <Altera/> */}
+                    {renderComponent()}
                     
                 </div>
             </div>
