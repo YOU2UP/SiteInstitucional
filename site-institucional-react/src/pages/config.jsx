@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Menu from '../components/menu/Menu_logado.jsx';
 import '../css-images/css/config.css';
 import Altera from '../components/comp_config/alterar.jsx';
+import Meta from '../components/comp_config/meta.jsx'
 
 function Config() {
     const [activeButton, setActiveButton] = useState(null);
@@ -14,11 +15,16 @@ function Config() {
         if(activeButton === 'config') {
             return <Altera />
         } else if(activeButton === 'meta') {
-            return <h1>Meta</h1>
+            return <Meta/>
         } 
         else{
             return null;
         }
+    }
+
+    function sair(){
+        sessionStorage.clear();
+        window.location.href = '/'
     }
 
     return (
@@ -33,7 +39,7 @@ function Config() {
                     <button className={`btnAltera ${activeButton === 'meta' ? 'active' : ''}`} onClick={() => handleButtonClick('meta')}>
                         Definir Meta
                     </button>
-                    <button className={`btnSair ${activeButton === 'sair' ? 'active' : ''}`}>
+                    <button className={`btnSair ${activeButton === 'sair' ? 'active' : ''}`} onClick={sair}>
                         Sair
                     </button>
                 </div>

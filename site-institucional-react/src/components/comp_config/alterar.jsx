@@ -10,7 +10,7 @@ function alterar(id, token) {
 
         <div className="seguraInput">
           <div>
-            <label for="nome">Nome:</label>
+            <label htmlFor="nome">Nome:</label>
             <div className="inputBtn">
               <input className='ipt' type="text" name="nome" id="nome" />
               <button className='Alterar'>Alterar</button>
@@ -18,7 +18,7 @@ function alterar(id, token) {
           </div>
 
           <div>
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <div className="inputBtn">
               <input className='ipt' type="text" name="email" id="email" />
               <button className='Alterar'>Alterar</button>
@@ -26,7 +26,7 @@ function alterar(id, token) {
           </div>
 
           <div>
-            <label for="descricao">Descrição:</label>
+            <label htmlFor="descricao">Descrição:</label>
             <div className="inputBtn">
               <input className='ipt' type="text" name="descricao" id="descricao" />
               <button className='Alterar'>Alterar</button>
@@ -35,7 +35,7 @@ function alterar(id, token) {
 
 
           <div>
-            <label for="senha">Senha:</label>
+            <label htmlFor="senha">Senha:</label>
             <div className="inputBtn">
               <input className='ipt' type="text" name="senha" id="senha" />
               <button className='Alterar'>Alterar</button>
