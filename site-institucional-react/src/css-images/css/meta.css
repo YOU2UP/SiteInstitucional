@@ -1,11 +1,10 @@
 .containerMeta{
     width: 60vw;
     height: 80vh;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 .tituloMeta{
@@ -30,7 +29,6 @@
 .defineMeta{
     width: 60vw;
     height: 40vh;
-    border: 1px solid blue;
     font-size: 20px;
     font-family: 'Inter';
     display: flex;
@@ -47,4 +45,13 @@
     padding: 0 8px;
     margin-top: 4px;
     background-color: #e7e6e6;
+}
+
+.btnDefineMeta{
+    width: 200px;
+    height: 40px;
+    background-color: #FF9200;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }

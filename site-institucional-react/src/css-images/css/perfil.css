@@ -95,6 +95,12 @@
     font-weight: bold;
 }
 
+.info2{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+
 
 
 @media(max-width: 768px){

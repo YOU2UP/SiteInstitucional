@@ -97,6 +97,7 @@ function Home_logado() {
 
         {matches.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((match, index) => (
           <CardMatch key={index}
+            id={match.usuario2.id}
             img={defineImg(match)}
             nome={match.usuario2.nome}
             descricao_pessoa={match.usuario2.descricao}

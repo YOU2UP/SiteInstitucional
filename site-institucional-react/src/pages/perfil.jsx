@@ -12,6 +12,7 @@ function Perfil() {
     const nome = sessionStorage.getItem("nome");
     const id = sessionStorage.getItem("id");
     const token = sessionStorage.getItem("token");
+    const [usuario, setUsuario] = useState([]);
 
     const config = {
         headers: {
@@ -25,6 +26,14 @@ function Perfil() {
 
 
     useEffect(() => {
+
+        api.get(`/usuarios/${id}`, config).then((response) => {
+            setUsuario(response.data)
+            console.log(response.data)
+        }).catch((error) => {   
+            console.log("Erro: ", error)
+        })
+
         api.get(`/treinos/contagem-treinos/${id}`, config).then((response) => {
             setTreinos(response.data)
 
@@ -120,7 +129,7 @@ function Perfil() {
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{nome}</h1>
                         <span className='descricao'>
-                            Sou muito extrovertida e sempre quis treinar com um parceiro,<br />
+                            Sou muito extrovertida e sempre quis treinar com um parceiro,<br/>
                             porém, por conta dos horários não consigo achar ninguém.
                         </span>
                         <br />
@@ -138,12 +147,19 @@ function Perfil() {
                 <div className="metas">
                     
                     <h1 className='meta'>Meta</h1>
-                    <br/>
-                    <br/>
-                    <span>Você ainda não Possui Metas</span>
-                    <br />
-                    <br />
-                    <button className='btnMeta'>Defina Uma Meta</button>
+
+                    {usuario.MetaTreinos === 0 ? (
+                        <div>
+                        <span>Você ainda não Possui Metas</span>
+                        
+                        <button className='btnMeta'>Defina Uma Meta</button>
+                        </div>
+                    ) : (
+
+                        <span className="metaAtual">Sua meta atual é: {usuario.MetaTreinos} treinos</span>
+                    )}
+
+                    
                 </div>
 
 

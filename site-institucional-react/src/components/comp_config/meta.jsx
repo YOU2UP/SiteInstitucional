@@ -49,8 +49,9 @@ function Meta() {
           </div>
 
           <div className="defineMeta">
-          O que você gostaria de alcançar?
+          Quantos treinos você gostaria de alcançar?
           <input type="text" name='meta' placeholder='Ex: Eu gostaria de alcançar 150 treinos' className='iptMeta' />
+          <button className="btnDefineMeta">Definir meta</button>
           </div>
 
         </div>
