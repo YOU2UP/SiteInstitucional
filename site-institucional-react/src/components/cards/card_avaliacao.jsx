@@ -1,16 +1,28 @@
 import React from 'react'
 import Estrela from '../../css-images/img/avalia.png'
+import { useNavigate } from 'react-router-dom';
 import '../../css-images/css/card_avaliacao.css'
 
 function CardAvaliacao(props) {
+  const navigate = useNavigate(); 
+  
+  const handleNomeClick = () => {
+    navigate(`/perfil_match/${props.id}`);
+  };
+
+  const handleFotoClick = () => {
+    navigate(`/perfil_match/${props.id}`);
+  };
+
+
   return (
     <div className="card">
         
         
     <div className="avaliacao">
-        <img src={props.img} className='pessoaAvaliar' alt={props.nome} />
+        <img src={props.img} className='pessoaAvaliar' alt={props.nome} onClick={handleFotoClick}/>
         <div className="infosAvalia">
-        <span className='nomeAvalia'>{props.nome}</span>
+        <span className='nomeAvalia' onClick={handleNomeClick}>{props.nome}</span>
         {props.descricao_pessoa}
        
         </div>

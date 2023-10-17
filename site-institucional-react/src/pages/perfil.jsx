@@ -6,6 +6,7 @@ import api from '../api';
 import '../css-images/css/perfil.css'
 import foto from  '../css-images/img/icone_card.png'
 import Grafico from '../components/canvas/canvas_dash'
+import Barra from '../components/barra/barra'
 
 function Perfil() {
 
@@ -132,18 +133,14 @@ function Perfil() {
                             Sou muito extrovertida e sempre quis treinar com um parceiro,<br/>
                             porém, por conta dos horários não consigo achar ninguém.
                         </span>
-                        <br />
-                        <br />
-                        <br />
+                      
 
 
-                        <div>
+                        <div style={{marginTop: 30}}>
 
                         <span className="treinosRealizados">Treinos Realizados: </span> {qtdTreinos}
                         </div>
 
-                    </div>
-                </div>
                 <div className="metas">
                     
                     <h1 className='meta'>Meta</h1>
@@ -155,11 +152,13 @@ function Perfil() {
                         <button className='btnMeta'>Defina Uma Meta</button>
                         </div>
                     ) : (
-
-                        <span className="metaAtual">Sua meta atual é: {usuario.MetaTreinos} treinos</span>
+                        <Barra qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos}/>
+                        
                     )}
 
                     
+                </div>
+                    </div>
                 </div>
 
 

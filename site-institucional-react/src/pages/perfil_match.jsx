@@ -4,6 +4,7 @@ import '../css-images/css/perfil.css'
 import api from '../api'
 import foto from  '../css-images/img/icone_card.png'
 import Menu from '../components/menu/Menu_logado'
+import Barra from '../components/barra/barra'
 
 function Perfil_match() {
     const { id } = useParams();
@@ -105,10 +106,16 @@ function Perfil_match() {
                 </div>
                 <div className="metas">
 
-                    <h1 className='meta'>Meta</h1>
-                    <br />
-                    <br />
+                    
                   
+
+                    {usuario.Metatreinos === 0 ? (
+                        <div>
+                            <span>Esse usuário não possui metas </span>
+                        </div>
+                    ) : (            
+                     <Barra qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos}/>
+                    )}
                 </div>
             </div>    
 

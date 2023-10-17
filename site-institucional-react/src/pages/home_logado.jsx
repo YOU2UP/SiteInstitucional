@@ -40,6 +40,7 @@ function Home_logado() {
     api.get(`matches/usuario/${id}`, config).then((response) => {
       const filteredMatches = response.data.filter((match) => match.usuario2.id != id);
       setMatches(filteredMatches);
+        console.log(response.data)
     })
       .catch((error) => {
         console.log("Erro: ", error)
