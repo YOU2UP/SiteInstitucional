@@ -8,6 +8,8 @@ import Dash2 from './pages/perfil.jsx'
 import Home_logado from './pages/home_logado'
 import Avaliacao from './pages/avaliacao'
 import Agenda from './pages/agenda_treinos'
+import Configuracao from './pages/config.jsx'
+import Perfil_match from './pages/perfil_match'
 import { RouteProvider } from './routecontext';
 
 
@@ -24,9 +26,11 @@ function Rotas() {
         <Route path="/avaliacao" element={<Avaliacao/>}/>
         <Route path="/pagina_inicial" element={<Home_logado/>}/>
         <Route path="/agenda" element={<Agenda/>}/>
+        <Route path='/configuracao' element={<Configuracao/>}/>
+        <Route path='/perfil_match/:id' element={<Perfil_match/>}/>
   </Routes>
   </BrowserRouter>
   )
 }
 
-export default Rotas;
+export default Rotas; 

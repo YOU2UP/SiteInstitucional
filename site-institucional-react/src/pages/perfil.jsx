@@ -4,14 +4,15 @@ import Footer from '../components/footer/footer';
 import api from '../api';
 import '../css-images/css/perfil.css'
 import foto from  '../css-images/img/icone_card.png'
-import Img from '../css-images/img/natalia.png'
-import Barra from '../components/dashs/bar_chart'
+import Grafico from '../components/canvas/canvas_dash'
+import Barra from '../components/barra/barra'
 
 function Perfil() {
 
     const nome = sessionStorage.getItem("nome");
     const id = sessionStorage.getItem("id");
     const token = sessionStorage.getItem("token");
+    const [usuario, setUsuario] = useState([]);
 
     const config = {
         headers: {
@@ -25,6 +26,13 @@ function Perfil() {
 
 
     useEffect(() => {
+
+        api.get(`/usuarios/${id}`, config).then((response) => {
+            setUsuario(response.data)
+            console.log(response.data)
+        }).catch((error) => {   
+            console.log("Erro: ", error)
+        })
 
         api.get(`/treinos/contagem-treinos/${id}`, config).then((response) => {
             setTreinos(response.data)
@@ -121,81 +129,46 @@ function Perfil() {
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{nome}</h1>
                         <span className='descricao'>
-                            Sou muito extrovertida e sempre quis treinar com um parceiro,<br />
+                            Sou muito extrovertida e sempre quis treinar com um parceiro,<br/>
                             porém, por conta dos horários não consigo achar ninguém.
                         </span>
-                        <br />
-                        <br />
-                        <br />
+                      
 
 
-                        <div>
+                        <div style={{marginTop: 30}}>
 
                         <span className="treinosRealizados">Treinos Realizados: </span> {qtdTreinos}
                         </div>
 
-                    </div>
-                </div>
                 <div className="metas">
                     
                     <h1 className='meta'>Meta</h1>
-                    <br/>
-                    <br/>
-                    <span>Você ainda não Possui Metas</span>
-                    <br />
-                    <br />
-                    <button className='btnMeta'>Defina Uma Meta</button>
-                </div>
 
-
-
-            </div>
-
-            <div className="containerPerfil2">
-                
-            <div className="graficosUsuario">
-                    <div className="kapis">
-                        <div className="media">
-                            
-                        <h1 className='tituloAvaliacao'>Sua Avaliação</h1>
-                    
-
-                        <span className='avaliacao'>{media}</span>
+                    {usuario.MetaTreinos === 0 ? (
+                        <div>
+                        <span>Você ainda não Possui Metas</span>
                         
-
-                        <h1 className='subTituloAvaliacao'>Média das avaliações que seus parceiros te Deram</h1>
+                        <button className='btnMeta'>Defina Uma Meta</button>
                         </div>
-                        <div className="rankingTreino">
-                            <h1 className="tituloRank">
-                            Parceiros Com quem <br/>Você mais Treinou
-                            </h1>
-                            <div className="itensRank">
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">1° </span> {data[0]}
-                                </div>
+                    ) : (
+                        <Barra qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos}/>
+                        
+                    )}
 
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">2° </span> {data[1]}
-                                </div>
-
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">3° </span> {data[2]}
-                                </div>
-
-                                <div className="pessoaRank">
-                                <span className="posicaoRank">4° </span> {data[3]}
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="graficoBarra">
-                        <h1 className='tituloGraficoBarra'>Dias da Semana Em Que Seus Treinos Ocorreram</h1>
-                        <Barra className='graficoPerfil'></Barra>
+                    
+                </div>
                     </div>
                 </div>
+
+
+
             </div>
+                <Grafico/>
+            <div className="containerPerfil2">
+            
+            </div>
+            
+
 
         </>
     )

@@ -10,17 +10,16 @@ Chart.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 function Bar_chart() {
   const [dias, setDias] = useState([]);
 
+  const id = sessionStorage.getItem("id");
+  const token = sessionStorage.getItem("token");
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
+  };
+
   useEffect(() => {
-    const id = sessionStorage.getItem("id");
-    const token = sessionStorage.getItem("token");
-
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`
-      },
-    };
-
- 
 
     api.get(`/usuarios/quantidade-treinos-semana/${id}`, config)
       .then((response) => {
@@ -31,6 +30,7 @@ function Bar_chart() {
       .catch((error) => {
         console.log(error);
       });
+      
   }, []);
 
   const data = {

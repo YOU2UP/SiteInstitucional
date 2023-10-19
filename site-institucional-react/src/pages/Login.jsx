@@ -11,14 +11,15 @@ function Login() {
   function logar(){
     const usuario={
       email:email,
-      senha:senha
+      senha:senha,
     }
     api.post("/usuarios/login",usuario).then((response)=>{
       console.log(response.data);
       const id = response.data.userId
       const token = response.data.token;
       const nome = response.data.nome;
-      sessionStorage.setItem("idUsuario", id)
+      sessionStorage.setItem("senha", senha)
+      sessionStorage.setItem("id", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
       window.location="/pagina_inicial";
@@ -40,7 +41,7 @@ function Login() {
           <h1 className="titulo">Login</h1>
        
             <input type="text" placeholder="Email" onInput={(p) => getEmail(p.target.value)} aria-label="Digite seu e-mail"/>
-            <input type="password" placeholder="Senha" onInput={(p)=> getSenha(p.target.value)} aria-label="Digite sua senha"/>
+            <input type="password" onKeyPress={(event) => {if(event.key === 'Enter') logar()}} placeholder="Senha" onInput={(p)=> getSenha(p.target.value)} aria-label="Digite sua senha"/>
             <button onClick={() => logar()}>Entrar</button>
          
         </div>

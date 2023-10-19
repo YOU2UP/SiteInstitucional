@@ -1,0 +1,57 @@
+.containerMeta{
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.tituloMeta{
+    font-family: 'Inter';
+    color: #FF9200;
+    font-weight: bold;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.textoMeta{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    height: 40vh;
+    font-size: 20px;
+    font-family: 'Inter';
+}
+
+.defineMeta{
+    width: 60vw;
+    height: 40vh;
+    font-size: 20px;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.iptMeta{
+    width: 35vw;
+    height: 5vh;
+    padding: 0 8px;
+    margin-top: 4px;
+    background-color: #e7e6e6;
+}
+
+.btnDefineMeta{
+    width: 200px;
+    height: 40px;
+    background-color: #FF9200;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}

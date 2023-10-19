@@ -1,9 +1,10 @@
 .Grafiquinho{
-    width: 400px;
+    width: 800px;
+    height: 800px;
 }
 
-@media(max-width: 768px){
+/* @media(max-width: 768px){
     .Grafiquinho{
         width: 500px;
     }
-}
+} */

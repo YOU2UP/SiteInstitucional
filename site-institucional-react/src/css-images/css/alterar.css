@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.containerAltera{
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.tituloAltera{
+    font-family: 'Inter';
+    color: #FF9200;
+    font-weight: bold;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.seguraInput{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.inputBtn{
+    /* border: 1px solid black; */
+    width: 40vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ipt{
+    background-color: #e7e6e6;
+    width: 30vw;
+    height: 5vh;
+    padding: 0 8px;
+    margin-top: 4px;
+}
+
+.Alterar{
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #FF9200;
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.Alterar:active{
+    color: black;
+}
+
+
+.ExecutaAltera{
+    width: 60vw;
+    margin-right: 330px;
+    display: flex;
+    justify-content: end;
+}
+
+.btnSalvaAltera{
+    width: 15vw;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: #098FF5;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter';
+    cursor: pointer;
+}
+

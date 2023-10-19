@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
 import marcador from '../../css-images/img/map_marker.png'
+import { useNavigate } from 'react-router-dom'; 
 import '../../css-images/css/card_match.css'
 
 function Card_match(props) {
 
   const [requisitante, setRequisitante] = useState(0);
+  const navigate = useNavigate(); 
+
+  const handleNomeClick = () => {
+    navigate(`/perfil_match/${props.id}`);
+  };
+
+  const handleFotoClick = () => {
+    navigate(`/perfil_match/${props.id}`);
+  };
 
   sessionStorage.setItem("requisitante", requisitante);
   
@@ -15,9 +25,9 @@ function Card_match(props) {
         
         
         <div className="match">
-            <img src={props.img} className='pessoa' alt={props.nome} />
+            <img src={props.img} className='pessoa' alt={props.nome} onClick={handleFotoClick}/>
             <div className="infos_match">
-            <span className='nome_match'>{props.nome}</span>
+            <span className='nome_match' onClick={handleNomeClick}>{props.nome}</span>
             {props.descricao_pessoa}
             <p></p>
             {props.idade} anos

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { differenceInYears } from 'date-fns';
 import Menu from '../components/menu/Menu_logado'
-import Footer from '../components/footer/footer'
 import '../css-images/css/home_logado.css'
 import CardMatch from '../components/cards/card_match'
 import foto from '../css-images/img/meninona.png'
@@ -19,7 +18,6 @@ function Home_logado() {
   };
 
   const [matches, setMatches] = useState([]);
-  const [lol, setLol] = useState("a");
   const [paginaAtual, setPaginaAtual] = useState(0);
   const cardsPorPagina = 3;
 
@@ -42,6 +40,7 @@ function Home_logado() {
     api.get(`matches/usuario/${id}`, config).then((response) => {
       const filteredMatches = response.data.filter((match) => match.usuario2.id != id);
       setMatches(filteredMatches);
+        console.log(response.data)
     })
       .catch((error) => {
         console.log("Erro: ", error)
@@ -99,6 +98,7 @@ function Home_logado() {
 
         {matches.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((match, index) => (
           <CardMatch key={index}
+            id={match.usuario2.id}
             img={defineImg(match)}
             nome={match.usuario2.nome}
             descricao_pessoa={match.usuario2.descricao}

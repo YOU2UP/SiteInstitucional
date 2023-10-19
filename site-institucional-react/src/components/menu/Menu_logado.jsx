@@ -26,7 +26,10 @@ return(
     <>
     <header className="navlogado">
         <div className="logoNavLogado">
-           <img src={Logo} alt=""  className="logo"/>    
+
+            <a href="/pagina_inicial">
+           <img src={Logo} alt=""  className="iconLogado"/>    
+            </a>
         </div>
         <nav id="botoesNavLogado" className={isActive ? 'aberto' : ''}>
             <ul>
