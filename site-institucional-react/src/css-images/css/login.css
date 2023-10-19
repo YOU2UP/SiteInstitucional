@@ -9,7 +9,7 @@ main#Login{
 
 }
 #Login .container{
-    width: 80%;
+   
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@ main#Login{
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 17rem;
     border-radius: 10px;
@@ -82,4 +82,8 @@ main#Login{
     background-color: #ffffffcc;
     color: #ff9200;
    
+}
+
+@media(max-width : 768px){
+    
 }
