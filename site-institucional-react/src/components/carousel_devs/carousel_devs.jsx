@@ -18,11 +18,32 @@ function Carousel_devs() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 300,
     autoplay: true,
     autoplaySpeed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: true,
     slidesToShow: 5,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive : [
+      {
+          breakpoint: 768,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+          }
+      },
+
+      {
+          breakpoint: 1024,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              
+      }
+  }
+  ]
   }
 
   return (

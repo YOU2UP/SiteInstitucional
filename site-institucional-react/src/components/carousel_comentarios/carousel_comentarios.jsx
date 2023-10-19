@@ -29,16 +29,24 @@ function Carousel_comentarios() {
     }
 
     const [imageIndex, setImageIndex] = useState(0);
-
     const settings = {
         infinite: true,
         lazyLoad: true,
         speed: 300,
-        slidesToShow: 4,
+        slidesToShow: 3,
         centerPadding: 0,
+        centerMode:true,
         nextArrow: <NextArrow/>,
-        prevArrow: <PrevArrow/>,
-        beforeChange: (curent, next) => setImageIndex(next) 
+        prevArrow: <PrevArrow/>,            
+        responsive : [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }  
+    ]
     }
 
   return (

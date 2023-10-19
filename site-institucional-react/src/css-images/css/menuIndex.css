@@ -11,16 +11,14 @@ li{
 header#MenuIndex{
     background-image:linear-gradient(to bottom,rgb(0, 0, 0),rgba(0, 0, 0, 0.645),#00000000);
       background-color: transparent;
-    padding-left: 2rem;
-    padding-right: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 5rem;
     position: fixed;
     z-index: 1000;
-    width: 96vw;
+    width: 100vw;
 }
 header#MenuIndex #logo img{
     width: 8rem;
@@ -83,11 +81,21 @@ header#MenuIndex ul li a:hover{
     flex-direction: row;
     justify-content: space-around;
 }
-.icon{
+
+.iconmenu{
     display: none;
 }
-
 @media(max-width:768px) {
+    .iconmenu{
+        display: block;
+    }
+    .textoQuemSomos{
+        width: 100%;
+    }
+    #sobre{
+        height: min-content;
+        margin-bottom: 0;
+    }
     header#Menu{
         padding-left: 0;
     }
@@ -135,10 +143,7 @@ header#MenuIndex ul li a:hover{
     display: block;
     cursor: pointer;
 }
-#iconmenu{
-    width: 30px;
-    margin-left: -15px;
-}
+
 #menuMenor .icon{
     width: 30px;
     position: absolute;
