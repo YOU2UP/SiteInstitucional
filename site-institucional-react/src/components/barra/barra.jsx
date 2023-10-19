@@ -15,7 +15,7 @@ function Barra(props) {
         <div className="progresso" style={{ width: `${porcentagem}%` }}></div>
         
     </div>
-        {porcentagem}%
+        {porcentagem.toFixed(0)}%
     </div>
     </>
 

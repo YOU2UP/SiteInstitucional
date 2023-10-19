@@ -74,7 +74,9 @@ function Perfil_match() {
             <div className="containerPerfil">
 
 
-                <div className="infos">
+                <div className="infosMatch">
+                    <div className='fotosInfo'>
+
                     <div className="foto">
                         <img src={defineImg(usuario.nome)} alt={usuario.nome} className='imgPerfil' />
                     </div>
@@ -103,8 +105,8 @@ function Perfil_match() {
                         </div>
 
                     </div>
-                </div>
-                <div className="metas">
+                    </div>
+                <div className="metasMatch">
 
                     
                   
@@ -116,6 +118,7 @@ function Perfil_match() {
                     ) : (            
                      <Barra qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos}/>
                     )}
+                </div>
                 </div>
             </div>    
 
