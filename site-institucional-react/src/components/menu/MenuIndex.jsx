@@ -36,7 +36,7 @@ return(
             </ul>
             <img src={Close} className="icon close" alt="" onClick={() => fechar()}></img>
         </nav>
-                <img src={More} alt="" className="icon" onClick={() => abrir()} id="iconmenu"/>
+                <img src={More} alt="" className="iconmenu" onClick={() => abrir()} id="iconmenu"/>
    
     </header>
     </>

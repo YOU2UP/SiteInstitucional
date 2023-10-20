@@ -4,6 +4,7 @@
 }
 
 .containerCarousel{
+    margin-top: 2rem;
     justify-content: center;
     height: 45vh;
     width: 100vw;

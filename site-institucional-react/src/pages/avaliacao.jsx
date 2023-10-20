@@ -6,7 +6,7 @@ import CanvaAvaliacao from '../components/canvas/canva_avalia.jsx'
 
 
 function Avaliacao() {
-  const id = sessionStorage.getItem("id");
+  const id = sessionStorage.getItem("idUsuario");
   const token = sessionStorage.getItem("token");
 
   const config = {

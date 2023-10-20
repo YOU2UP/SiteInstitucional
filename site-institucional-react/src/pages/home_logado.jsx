@@ -8,7 +8,7 @@ import api from '../api'
 
 function Home_logado() {
 
-  const id = sessionStorage.getItem("id");
+  const id = sessionStorage.getItem("idUsuario");
   const token = sessionStorage.getItem("token");
 
   const config = {
