@@ -29,7 +29,6 @@
     justify-content: center;
     margin-top: 80px;
     margin-right: 20%;
-    border: 1px solid red;
 }
 
 .fotosInfo{
@@ -44,6 +43,7 @@
     margin-top: 80px;
     margin-right: 20%;
     align-items: center;
+    /* border: 1px solid black; */
 
 }
 
@@ -124,9 +124,21 @@
 }
 
 .info2{
-    width: 30vw;
+    width: 45vw;
+    height: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid plum; */
+}
+
+.btnConversaMatch{
+    width: 110px;
+    height: 30px;
+    color: #FF9200;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #1C1C1C;
 }
 
 
