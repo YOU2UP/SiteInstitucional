@@ -1,55 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.navlogado{
+
+.navlogado {
     width: 100vw;
     background-color: #1C1C1C;
     height: 15vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* margin-bottom: 100px; */
 }
 
-ul{
+ul {
     display: flex;
     align-items: center;
 
 }
 
-ul li{
+ul li {
     margin-right: 20px;
 }
 
-ul li a{
+ul li a {
     color: white;
     font-family: Inter;
-    
+    font-size: 16px;
+
 }
 
-ul li a:hover{
+ul li a:hover {
     color: orange;
     transition: color 0.3s;
 }
 
-.logo{
+.logo {
     width: 150px;
 }
 
-.usuarioNav{
+.usuarioNav {
     width: 50px;
 }
-#botoesNavLogado.aberto{
+
+#botoesNavLogado.aberto {
     justify-content: center;
-    
+
 }
-header#Menu{
+
+header#Menu {
     padding-left: 0;
 }
-#botoesNavLogado{
+
+#botoesNavLogado {
     display: none;
     visibility: hidden;
     opacity: 0;
@@ -58,12 +62,13 @@ header#Menu{
     display: flex;
     flex-direction: row;
     align-items: center;
- 
+
 }
-#botoesNavLogado.aberto{
+
+#botoesNavLogado.aberto {
     position: absolute;
     margin-top: 0;
-    top:0;
+    top: 0;
     left: 0;
     margin-left: 0;
     display: flex;
@@ -71,37 +76,43 @@ header#Menu{
     opacity: 1;
     width: 100vw;
     height: 100vh;
-    background-color:#252525 ;
+    background-color: #252525;
 
 }
-#botoesNavLogado.aberto #links{
+
+#botoesNavLogado.aberto #links {
     justify-content: center;
-    
+
 }
-#botoesNavLogado.aberto #links li{
+
+#botoesNavLogado.aberto #links li {
     margin: 0;
     margin-bottom: 2rem;
 }
-#divLogo.some{
+
+#divLogo.some {
     display: none;
 }
-.icon{
-   
+
+.icon {
+
     display: block;
     cursor: pointer;
 }
-#iconmenu{
+
+#iconmenu {
     width: 30px;
     margin-left: -15px;
 }
-#botoesNavLogado .icon{
+
+#botoesNavLogado .icon {
     width: 30px;
     position: absolute;
     right: 2rem;
     top: 1rem;
 }
 
-#botoesNavLogado ul{
+#botoesNavLogado ul {
     width: 100%;
     height: 100%;
     display: flex;
@@ -110,60 +121,68 @@ header#Menu{
     justify-content: center;
     margin: 0;
 }
-#botoesNavLogado ul li{
+
+#botoesNavLogado ul li {
     list-style: none;
     font-size: 16px;
     color: #ffffff;
     font-weight: 600;
     margin-top: 2rem;
 }
-#botoesNavLogado a{
+
+#botoesNavLogado a {
     color: #fff;
-    font-size: 1.25rem;
     transition: .3s;
+    font-family: Inter;
 }
-#botoesNavLogado a:hover, .menu li a:hover{
+
+#botoesNavLogado a:hover,
+.menu li a:hover {
     color: #ff9200;
     font-size: 1.30rem;
     cursor: pointer;
-
-    
 }
+
 @media (min-width:768px) {
-    .navlogado{
+    .navlogado {
         justify-content: space-between;
     }
-header#Menu{
-    background-color: #1c1c1c;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 5rem;
-    position: fixed;
-    z-index: 1000;
-    width: 96vw;
-}
-#botoesNavLogado{
-    background-color: transparent;
-    display: flex;
-    visibility: visible;
-    opacity: 1;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 0;
-}
-#botoesNavLogado ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.icon{
-    display: none;
-}
-#botoesNavLogado ul li {
-    margin-top: 0;
-}
+
+    header#Menu {
+        background-color: #1c1c1c;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 5rem;
+        position: fixed;
+        z-index: 1000;
+        width: 96vw;
+    }
+
+    #botoesNavLogado {
+        background-color: transparent;
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 0;
+    }
+
+    #botoesNavLogado ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    #botoesNavLogado ul li {
+        margin-top: 0;
+    }
 }

@@ -96,17 +96,20 @@ function Home_logado() {
 
         <span className="tituloHomeLogado">Pessoas que mais combinam com você!</span>
 
+        <div className='seguraCardMatch'>
+
         {matches.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((match, index) => (
           <CardMatch key={index}
-            id={match.usuario2.id}
-            img={defineImg(match)}
-            nome={match.usuario2.nome}
-            descricao_pessoa={match.usuario2.descricao}
-            localizacao={match.usuario2.localTreino.nome}
-            uf={match.usuario2.localTreino.uf}
-            idade={calculaIdade(match.usuario2.dataNascimento)}
+          id={match.usuario2.id}
+          img={defineImg(match)}
+          nome={match.usuario2.nome}
+          descricao_pessoa={match.usuario2.descricao}
+          localizacao={match.usuario2.localTreino.nome}
+          uf={match.usuario2.localTreino.uf}
+          idade={calculaIdade(match.usuario2.dataNascimento)}
           />
-        ))}
+          ))}
+          </div>
 
         <div className="botoesNavegacao">
           <button onClick={handlePaginaAnterior} disabled={paginaAtual === 0} className='btnPagina'>

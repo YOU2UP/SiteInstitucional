@@ -27,11 +27,12 @@ function CardAvaliacao(props) {
        
         </div>
     </div>
-   
+        <div className='seguraBtnAvaliar'>
         <button className="avaliar">
             {props.nota}
             <img src={Estrela} className='estrela' alt="" />
         </button>
+        </div>
     
 </div>
   )
