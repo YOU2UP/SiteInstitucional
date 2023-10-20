@@ -6,7 +6,7 @@ import api from '../../api.js'
 
 function Historico() {
 
-  const id = sessionStorage.getItem("idUsuario")
+  const id = sessionStorage.getItem("id")
   const token = sessionStorage.getItem("token")
   const [historico, setHistorico] = useState([])
   const [paginaAtual, setPaginaAtual] = useState(0);

@@ -25,22 +25,26 @@ function Card_match(props) {
         
         
         <div className="match">
-            <img src={props.img} className='pessoa' alt={props.nome} onClick={handleFotoClick}/>
+          <div className='contencaolog'>
+            <img src={props.img} className='pessoa txtcard' alt={props.nome} onClick={handleFotoClick}/>
             <div className="infos_match">
-            <span className='nome_match' onClick={handleNomeClick}>{props.nome}</span>
+            <span className='nome_match txtcard' onClick={handleNomeClick}>{props.nome}</span>
             {props.descricao_pessoa}
-            <p></p>
+            <p className='txtcard'>
             {props.idade} anos
-             <div className="localizacao">
+            </p>
+             <div className="localizacao txtcard" >
                 <img src={marcador} alt="" className="marcador" />
                 <span>{props.localizacao} - {props.uf}</span>
              </div> 
+             </div>
             </div>
-        </div>
-       
             <button className="conversar" onClick={setRequisitante}>
                 Conversar
             </button>
+        </div>
+       
+          
         
     </div>
   )
