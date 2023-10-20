@@ -28,7 +28,7 @@ return(
         <div className="logoNavLogado">
 
             <a href="/pagina_inicial">
-           <img src={Logo} alt=""  className="iconLogado"/>    
+           <img src={Logo} alt=""  className="logo"/>    
             </a>
         </div>
         <nav id="botoesNavLogado" className={isActive ? 'aberto' : ''}>
