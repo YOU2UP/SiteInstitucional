@@ -8,7 +8,7 @@ function Canva_avalia() {
     const token = sessionStorage.getItem("token");
     const [dadosAvaliacao, setDadosAvaliacao] = useState([]);
     const [paginaAtual, setPaginaAtual] = useState(0); 
-    const cardsPorPagina = 3;
+    const cardsPorPagina = 2;
 
     const config = {
         headers: {

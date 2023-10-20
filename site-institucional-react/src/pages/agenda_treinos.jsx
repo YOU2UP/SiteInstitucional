@@ -9,7 +9,7 @@ import Julia from '../css-images/img/meninona.png';
 import usu from '../css-images/img/elaine.png';
 import api from '../api';
 function Agenda() {
-  const id = sessionStorage.getItem("idUsuario");
+  const id = sessionStorage.getItem("id");
   const token = sessionStorage.getItem("token");
   const config = {
     headers: {

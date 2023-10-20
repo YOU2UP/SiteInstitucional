@@ -8,7 +8,7 @@ import api from '../api'
 
 function Home_logado() {
 
-  const id = sessionStorage.getItem("idUsuario");
+  const id = sessionStorage.getItem("id");
   const token = sessionStorage.getItem("token");
 
   const config = {
@@ -19,7 +19,7 @@ function Home_logado() {
 
   const [matches, setMatches] = useState([]);
   const [paginaAtual, setPaginaAtual] = useState(0);
-  const cardsPorPagina = 3;
+  const cardsPorPagina = 2;
 
 
   function handleProximaPagina() {

@@ -2,18 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Karma:wght@300&display=swap');
 
 .card{
-    width: 900px;
+    width: min-content;
     height: 170px;
-    flex-shrink: 0;
     border-radius: 10px;
     background: #D9D9D9;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-family: Inter;
+    position: relative;
 }
 
-.match{
+.contencaolog{
     height: 180px;
     width: 700px;
     display: flex; 
@@ -64,5 +64,54 @@
     font-family: Inter;
     font-size: 14px;
     cursor: pointer;
-    margin-top: 80px;
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+}
+.match{
+    display: flex;
+    flex-direction: row;
+}
+.contencaolog{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .card{
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        height: 350px;
+        margin: 0;
+        width: 200px;
+    }
+    .contencaolog{
+        flex-direction: column;
+        margin: 0;
+        margin-top: 2rem;
+    }
+    .localizacao{
+        justify-content: center;
+        align-items: center;
+    }
+    .match{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .pessoa{
+        margin: 0;
+    }
+    .infos_match{
+
+        justify-content: space-around;
+    }
+    .conversar{
+        right:inherit;
+    }
 }

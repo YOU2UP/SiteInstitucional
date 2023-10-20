@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
 .card{
-    width: 900px;
+    width: min-content;
     height: 170px;
-    flex-shrink: 0;
     border-radius: 10px;
     background: #D9D9D9;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-family: Inter;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .avaliacao{
@@ -62,4 +64,28 @@
 .estrela{
     width: 25px;
     margin-left: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .card{
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: center;
+        width: 200px;
+        height: 350px;
+        
+    }
+    .match{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 1rem;
+    }
+    .txtcard{
+        margin-top: 10px;
+    }
+
+    
 }
