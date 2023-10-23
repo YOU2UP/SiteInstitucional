@@ -3,9 +3,25 @@
     padding: 0;
 }
 
+.seguraBrad{
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnConfig{
+    background-color: transparent;
+}
+
+.imgConfig{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
 
 .containerPerfil{
-    /* border: 1px solid blue; */
     display: flex;
     width: 80vw;
     margin-left: 200px;

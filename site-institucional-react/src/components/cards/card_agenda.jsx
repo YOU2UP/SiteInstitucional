@@ -2,8 +2,29 @@ import React from 'react'
 import '../../css-images/css/card_agenda.css'
 import Aceitar from '../../css-images/img/aceitar.png'
 import Negar from '../../css-images/img/negar.png'
+import api from '../../api'
 
 function card_agena(props) {
+
+  const token = sessionStorage.getItem("token");
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
+  };
+
+  function handleAceitar(){
+      const id = props.id;
+
+      api.get(`/treinos/realizar/${id}`, config).then((response) => { 
+        console.log(response.data)
+      }).catch((error) => {
+        console.log("Erro: ", error)
+      })
+  }
+
+  
   return (
     <div className="cardAgendado">
         
@@ -17,7 +38,7 @@ function card_agena(props) {
        
      <div className="botoesAgenda">
      <button className="confirma">
-          <img src={Aceitar} alt="Aceitar" className='imgBtnAgenda' />
+          <img src={Aceitar} alt="Aceitar" className='imgBtnAgenda' onClick={handleAceitar()}/>
           </button>
           <button className="nega" >
           <img src={Negar} alt="Negar" className='imgBtnAgenda' />

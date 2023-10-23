@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Menu from '../components/menu/Menu_logado'
-import Footer from '../components/footer/footer';
 import api from '../api';
 import '../css-images/css/perfil.css'
 import foto from  '../css-images/img/icone_card.png'
+import Config from '../css-images/img/config.png'
 import Grafico from '../components/canvas/canvas_dash'
 import Barra from '../components/barra/barra'
+import Breadcrumb from '../components/Breadcrumb/breadcrumb';
 
 function Perfil() {
 
@@ -19,6 +20,13 @@ function Perfil() {
             Authorization: `Bearer ${token}`
         },
     };
+
+    const breadcrumbLinks = [
+        { label: 'Home', to: '/pagina_inicial' },
+        { label: 'Perfil', to: '/perfil' },
+    ];
+
+    const currentPage = '/perfil';
 
     const [treinos, setTreinos] = useState([]);
     const [media, setMedia] =useState();
@@ -117,10 +125,17 @@ function Perfil() {
     return (
         <>
             <Menu/>
-            
+
+
+            <div className="seguraBrad">
+                <Breadcrumb links={breadcrumbLinks}  currentPage={currentPage}/>
+                    <a href='/configuracao' className='btnConfig'>
+                        <img src={Config} alt="engrenagem"  className='imgConfig'/>
+                        
+                    </a>
+            </div>
         
             <div className="containerPerfil">
-        
 
                 <div className="infos">
                     <div className="foto">
@@ -129,8 +144,7 @@ function Perfil() {
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{nome}</h1>
                         <span className='descricao'>
-                            Sou muito extrovertida e sempre quis treinar com um parceiro,<br/>
-                            porém, por conta dos horários não consigo achar ninguém.
+                            {usuario.descricao}
                         </span>
                       
 

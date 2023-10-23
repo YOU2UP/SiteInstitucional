@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../api'
 import '../../css-images/css/meta.css'
+import Breadcrumb from '../Breadcrumb/breadcrumb'
 
 function Meta() {
 
@@ -13,6 +14,12 @@ function Meta() {
     },
   };
 
+  const breadcrumbLinks = [
+    { label: 'Home', to: '/pagina_inicial' },
+    { label: 'Perfil', to: '/perfil' },
+    { label: 'Meta', to: '/configuracao' }
+  ];
+
   const [meta, setMeta] = useState(0)
 
 
@@ -24,8 +31,8 @@ function Meta() {
       console.log("meta de treinos: ", meta)
     }).catch((error) => {
       console.log("Erro: ", error)
-    })  
-  
+    })
+
   }, [])
 
 
@@ -35,12 +42,16 @@ function Meta() {
     <div>
       <>
 
+        <div className="Breadcrub">
+          <Breadcrumb links={breadcrumbLinks} currentPage='/configuracao' />
+        </div>
+
         <div className="containerMeta">
           <div className='textoMeta'>
-          <span className="tituloMeta">Defina sua Meta</span>
-             Sua meta atual é...
+            <span className="tituloMeta">Defina sua Meta</span>
+            Sua meta atual é...
 
-             {meta === 0 ? (
+            {meta === 0 ? (
               <span className="metaAtual">Você ainda não possui uma meta... defina uma!</span>
             ) : (
               <span className="metaAtual">{meta} treinos</span>
@@ -49,9 +60,9 @@ function Meta() {
           </div>
 
           <div className="defineMeta">
-          Quantos treinos você gostaria de alcançar?
-          <input type="text" name='meta' placeholder='Ex: Eu gostaria de alcançar 150 treinos' className='iptMeta' />
-          <button className="btnDefineMeta">Definir meta</button>
+            Quantos treinos você gostaria de alcançar?
+            <input type="text" name='meta' placeholder='Ex: Eu gostaria de alcançar 150 treinos' className='iptMeta' />
+            <button className="btnDefineMeta">Definir meta</button>
           </div>
 
         </div>

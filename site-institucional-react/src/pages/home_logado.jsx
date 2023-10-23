@@ -41,6 +41,7 @@ function Home_logado() {
       const filteredMatches = response.data.filter((match) => match.usuario2.id != id);
       setMatches(filteredMatches);
         console.log(response.data)
+        console.log(token)
     })
       .catch((error) => {
         console.log("Erro: ", error)

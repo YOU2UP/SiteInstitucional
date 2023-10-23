@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+.Breadcrub{
+    width: 80vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
 .containerAltera{
     width: 60vw;
     height: 80vh;
@@ -77,4 +84,6 @@
     font-family: 'Inter';
     cursor: pointer;
 }
+
+
 
