@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
 .cardAgendado{
-    width: 25vw;
     height: 25vh;
     background-color: #EFEFEF;
     display: flex;
@@ -97,23 +96,28 @@
 
 @media(max-width: 768px){
     .cardAgendado{
-        width: 20vw;
+        width: 100vw;
         height: 30vh;
     }
     .pessoaAgendada{
         width: 100px;
         height: 100px;
         border-radius: 50px;
-        border: 1px solid black;
+
         margin-left: 20px;
     }           
     .infosAgenda{
-        border: 1px solid blue;
-        width: 250px;
         height: 30vh;
     }
     .nomeAgenda{
         font-weight: bold;
         font-family: Inter;
     }
+    .duplaCard > :only-child{
+        margin-right: 0;
+    }
+    .containerAgenda{
+        align-items: inherit;
+    }
 }
+

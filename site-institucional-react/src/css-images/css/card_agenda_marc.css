@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
 .cardAgendado{
-    width: 25vw;
+    width: min-content;
     height: 25vh;
     background-color: #EFEFEF;
     display: flex;
     align-items: center;
     border-radius: 10px;
     font-family: Inter;
+    margin-bottom: 1rem;
 }
 
 .containerAgendado{
@@ -27,7 +28,7 @@
 
 .infosAgenda{
     /* border: 1px solid blue; */
-    width: 250px;
+    
     height: 20vh;
     display: flex;
     flex-direction: column;
@@ -62,4 +63,10 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+@media(max-width:678px){
+    .cardAgendado{
+        width: inherit;
+        margin-bottom: 1rem;
+    }
 }

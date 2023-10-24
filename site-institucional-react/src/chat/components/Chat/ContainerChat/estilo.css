@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}
+.messages{
+    height: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 20px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+}
+
+.inputField{
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: start;
+    background-color: red;
+    padding: 10px;
+    
+}

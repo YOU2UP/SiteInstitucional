@@ -21,6 +21,8 @@
     color: #FF9200;
     font-weight:Bold;
     font-size: 24px;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .seguraCard{
@@ -33,13 +35,7 @@
     margin-top: 20px;
 }
 
-.duplaCard{
-    width: 390px;
-}
 
-.duplaCard > :only-child {
-    margin-right: 610px;
-}
 
 .botoesNavegacao{
     width: 20vw;
@@ -52,6 +48,15 @@
     background-color: white;
     transition: color 0.3;
     cursor: pointer;
+}
+
+@media (max-width : 678px){
+    .seguraCard{
+        width: 100vw;
+        flex-direction: column;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 }
 
 
