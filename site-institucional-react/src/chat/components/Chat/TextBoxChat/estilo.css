@@ -1,0 +1,17 @@
+.convidado{
+    background:#787474;
+    height: 7%;
+    color: #ffffff;
+    width: fit-content;
+    max-width: 50%; 
+    margin: 25px;
+    padding: 10px;
+}
+.usuario{
+    background:#88d4dc;
+    color: #ffffff;
+    height: 7%; 
+    min-width: 50%; 
+    margin: 25px;
+    padding: 10px;
+}
