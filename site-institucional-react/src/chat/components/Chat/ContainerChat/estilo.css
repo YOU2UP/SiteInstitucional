@@ -1,5 +1,5 @@
-.container{
-    display: flex;
+.Chatcontainer{
+overflow-y: hidden;
     flex-direction: column;
     justify-content: center;
     width: 80%;

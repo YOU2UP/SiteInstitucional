@@ -1,23 +1,23 @@
-.container{
-    display: flex;
+.Chatcontainer{
+    overflow-y: hidden;
     background-color: rgb(255, 255, 255);
     flex-direction: column;
     justify-content: center;
     width: 80%;
     height: 100%;
 }
-.messages{
-    height: 80%;
+.Chatmessages{
+    height: 70%;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.inputContainer {
+.ChatinputContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 20%;
+    height: 15%;
 }
 
 .inputField{

@@ -19,6 +19,7 @@ function    MessageContainer(props) {
     const idRequisitante = sessionStorage.getItem("idRequisitante");
     const idRequisitado = sessionStorage.getItem("idRequisitado");
 
+
     const enviarMensagem = async () => {
         try {
             const docRef = await addDoc(collection(db, `chat/${idConversa}/conversas`), {
@@ -34,7 +35,7 @@ function    MessageContainer(props) {
 
 
         } catch (e) {
-            console.log(idRequisitante)
+            console.log("requisitante" + idRequisitante)
             console.error("Error adding document: ", e);
         }
     }
@@ -61,7 +62,7 @@ function    MessageContainer(props) {
 
     return (
         <>
-            <div className="messages">
+            <div className="Chatmessages">
                 {
                     messages.map((m) => {
                         var horario = m.timestamp.toDate();
@@ -76,7 +77,7 @@ function    MessageContainer(props) {
                     })
                 }
             </div>
-            <div className="inputContainer">
+            <div className="ChatinputContainer">
                 <InputBase style={{padding:"10px"}}
                     sx={{ ml: 1, flex: 1 }}
                     placeholder="Insira aqui a sua mensagem"

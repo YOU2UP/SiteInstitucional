@@ -6,7 +6,7 @@ import MessageContainer from "../MessageContainer/MessageContainer"
 
 const ChatPage = (props) => {
     return (
-        <div className="container">
+        <div className="Chatcontainer">
             <MessageContainer id={props.id}/>
         </div>
     );
