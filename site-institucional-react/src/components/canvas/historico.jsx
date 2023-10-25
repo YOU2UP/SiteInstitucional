@@ -87,6 +87,7 @@ function Historico() {
     <div className='cardsAvaliacao'>
       {historico.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((cards, index) => (
         <CardAvaliacao key={index}
+          idTreino={cards.id}
           id={cards.avaliado.id}
           img={defineImg(cards)}
           nome={cards.avaliado.nome}

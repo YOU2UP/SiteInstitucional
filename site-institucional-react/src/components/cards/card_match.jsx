@@ -5,18 +5,31 @@ import '../../css-images/css/card_match.css'
 
 function Card_match(props) {
 
-  const [requisitante, setRequisitante] = useState(0);
   const navigate = useNavigate(); 
+  const id = sessionStorage.getItem("id");
+  const idMatch = props.idMatch;
 
   const handleNomeClick = () => {
-    navigate(`/perfil_match/${props.id}`);
+    navigate(`/perfil_match/${props.idMatch}`);
   };
 
   const handleFotoClick = () => {
-    navigate(`/perfil_match/${props.id}`);
+    navigate(`/perfil_match/${props.idMatch}`);
   };
 
-  sessionStorage.setItem("requisitante", requisitante);
+
+  function atribuicao(id, idMatch, nome){
+
+    sessionStorage.setItem("idRequisitante", id);
+    sessionStorage.setItem("idRequisitado", idMatch);
+    sessionStorage.setItem("nomeRequisitado", nome);
+
+    console.log("idRequisitante", sessionStorage.getItem("idRequisitante"));
+    console.log("idRequisitado", sessionStorage.getItem("idRequisitado")); 
+
+    window.location.href = "/chat";
+  
+  }
   
   
 
@@ -39,7 +52,7 @@ function Card_match(props) {
              </div> 
              </div>
             </div>
-            <button className="conversar" onClick={setRequisitante}>
+            <button className="conversar" onClick={() => atribuicao(id, idMatch, props.nome)}>
                 Conversar
             </button>
         </div>

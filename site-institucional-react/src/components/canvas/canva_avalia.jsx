@@ -26,6 +26,7 @@ function Canva_avalia() {
 
         api.get(`/treinos/nao-avaliados/${id}`, config).then((response) => {
             setDadosAvaliacao(response.data)
+            console.log(response.data)
         })
         .catch((error) => {
             console.log("erro", error)
@@ -85,6 +86,7 @@ function Canva_avalia() {
       {dadosAvaliacao.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((dados, index) => (
         <Card
           key={index}
+          idTreino={dados.id}
           id={dados.usuarios[1].id}
           nome={dados.usuarios[1].nome}
           img={defineImg(dados)}

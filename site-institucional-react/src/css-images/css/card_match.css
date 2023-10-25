@@ -31,8 +31,9 @@
 }
 
 .pessoa{
-    width: 150px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
     margin-right: 20px;
     cursor: pointer;
 }

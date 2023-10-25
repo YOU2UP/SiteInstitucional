@@ -16,13 +16,15 @@ function    MessageContainer(props) {
     const [messages, setMessages] = useState([]);
     const [mes, setMes] = useState("");
     const [idConversa, setIdConversa] = useState(props.id);
-
+    const idRequisitante = sessionStorage.getItem("idRequisitante");
+    const idRequisitado = sessionStorage.getItem("idRequisitado");
 
     const enviarMensagem = async () => {
         try {
             const docRef = await addDoc(collection(db, `chat/${idConversa}/conversas`), {
                 menssagem: mes,
-                idUsuario: sessionStorage.idUsuario,
+                idRequisitante: idRequisitante,
+                idRequisitado: idRequisitado,
                 timestamp: Timestamp.now()
             });
             const banco = await updateDoc(doc(db, `chat`,idConversa), {
@@ -32,6 +34,7 @@ function    MessageContainer(props) {
 
 
         } catch (e) {
+            console.log(idRequisitante)
             console.error("Error adding document: ", e);
         }
     }
@@ -68,7 +71,7 @@ function    MessageContainer(props) {
                         }
                         horario = hora+":"+horario.getMinutes();
                         return (
-                            <TextBoxChat horario={horario} menssagem={m.menssagem} idUsuario={m.idUsuario}></TextBoxChat>
+                            <TextBoxChat horario={horario} menssagem={m.menssagem} idUsuario={m.idRequisitado}></TextBoxChat>
                         )
                     })
                 }

@@ -1,7 +1,10 @@
 import React from 'react'
 import '../../css-images/css/card_agenda_marc.css'
+import Modal from '../modal/modal_cancelar.jsx'
 
 function Card_agenda_marc(props) {
+
+  const [open, setOpen] = React.useState(false);
   return (
     <div className="cardAgendado">
         
@@ -14,12 +17,13 @@ function Card_agenda_marc(props) {
         Local: {props.localTreino}
        
      <div className="botoesAgenda">
-        <button className="cancelar">
+        <button className="cancelar" onClick={() => setOpen(true)}>
             Cancelar
         </button>
      </div>
         </div>
     </div>
+    <Modal open={open} setOpen={setOpen}/>
     </div>
   )
 }

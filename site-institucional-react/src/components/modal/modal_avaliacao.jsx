@@ -9,33 +9,68 @@ import {
   Box,
 } from '@mui/material';
 
-function AvaliacaoModal() {
-  const [open, setOpen] = useState(false);
+import api from '../../api.js'
+import { set } from 'date-fns';
+
+function AvaliacaoModal(props) {
   const [avaliacao, setAvaliacao] = useState(0);
+  const id = sessionStorage.getItem('id');
+  const token = sessionStorage.getItem('token');
+
+  
 
   const handleClickOpen = () => {
-    setOpen(true);
+    props.setOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    props.setOpen(false);
   };
 
   const handleAvaliar = () => {
-    // Aqui você pode enviar a avaliação para o servidor ou fazer o que for necessário com a avaliação.
-    console.log('Avaliação:', avaliacao);
-    setOpen(false);
+    // console.log('Avaliação:', avaliacao);
+    // console.log(token)
+    
+    const headers = {
+        'Authorization': `Bearer ${token}`,
+    };
+
+    const data = {
+        nota: avaliacao,
+        avaliador: {
+          idUsuario: id,
+        },
+
+        avaliado:{
+          idUsuario: props.id,
+        },
+
+        treino:{
+            idTreino: props.idTreino,
+        }
+
+      };
+
+    // console.log(config.body);
+
+    api.post('/avaliacoes', data, { headers }).then((response) => {
+      console.log(response);
+    }
+    ).catch((error) => {
+      console.log(error);
+    }
+    );
+
+    props.setOpen(false);
+    window.location.reload();
   };
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Avaliar
-      </Button>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={props.open} onClose={handleClose}>
         <DialogTitle>Avaliação</DialogTitle>
         <DialogContent>
-          <Typography variant="body1" align="center">
+          <Typography variant="body3" align="center">
             Selecione a sua avaliação:
           </Typography>
           <Box display="flex" justifyContent="center" alignItems="center">

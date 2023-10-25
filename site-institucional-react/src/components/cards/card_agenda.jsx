@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../../css-images/css/card_agenda.css'
 import Aceitar from '../../css-images/img/aceitar.png'
 import Negar from '../../css-images/img/negar.png'
 import api from '../../api'
 
-function card_agena(props) {
+function Card_agenda(props) {
 
   const token = sessionStorage.getItem("token");
 
@@ -22,7 +22,10 @@ function card_agena(props) {
       }).catch((error) => {
         console.log("Erro: ", error)
       })
+
+      window.location.reload();
   }
+
 
   
   return (
@@ -38,18 +41,17 @@ function card_agena(props) {
        
      <div className="botoesAgenda">
      <button className="confirma">
-          <img src={Aceitar} alt="Aceitar" className='imgBtnAgenda' onClick={handleAceitar()}/>
+          <img src={Aceitar} alt="Aceitar" className='imgBtnAgenda' onClick={() => handleAceitar()}/>
           </button>
           <button className="nega" >
-          <img src={Negar} alt="Negar" className='imgBtnAgenda' />
+          <img src={Negar} alt="Negar" className='imgBtnAgenda'/>
           </button>
      </div>
         </div>
     </div>
    
-    
 </div>
   )
 }
 
-export default card_agena
+export default Card_agenda
