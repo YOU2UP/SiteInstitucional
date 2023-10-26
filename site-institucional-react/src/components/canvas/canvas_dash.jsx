@@ -100,7 +100,7 @@ function Canvas_Dash() {
                         <div className="itensRank">
                             {data.map((nome, index) => (
                                 <div key={index} className="itemRank">
-                                    <div className="posicao"><span className="spanPosicao">{index + 1}º</span>  {nome}</div>
+                                    <div className="posicaoRank"><span className="spanPosicao">{index + 1}º</span>  {nome}</div>
                                 </div>
                             ))}
 

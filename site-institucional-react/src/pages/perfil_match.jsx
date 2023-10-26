@@ -5,12 +5,14 @@ import api from '../api'
 import foto from  '../css-images/img/icone_card.png'
 import Menu from '../components/menu/Menu_logado'
 import Barra from '../components/barra/barra'
+import Modal from '../components/modal/modal_agenda'
 
 function Perfil_match() {
     const { id } = useParams();
     const token = sessionStorage.getItem('token');
     const [usuario, setUsuario] = useState([]);
     const [treinos, setTreinos] = useState([]);
+    const [open, setOpen] = useState(false);
 
     const config = {
         headers: {
@@ -83,7 +85,7 @@ function Perfil_match() {
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{usuario.nome}</h1>
                         <span className='descricao'>
-                            Sou muito extrovertida e sempre quis treinar com um parceiro,<br />
+                            Sou muito extrovertido e sempre quis treinar com um parceiro,<br />
                             porém, por conta dos horários não consigo achar ninguém.
                         </span>
                         <br />
@@ -103,7 +105,7 @@ function Perfil_match() {
                             <span className="treinosRealizados">Avaliação: </span> {usuario.notaMedia}
                             </div>
                             <div className="seguraBotao1">
-                                <button className='btnConversaMatch'>Conversar</button>
+                                <button className='btnConversaMatch' onClick={() => setOpen(true)}>Marcar Treino</button>
                             </div>
                         </div>
                     </div>
@@ -123,7 +125,7 @@ function Perfil_match() {
                 </div>
                 </div>
             </div>    
-
+                <Modal setOpen={setOpen} open={open} idUsu={usuario.id}/>
             </>
             )
 }
