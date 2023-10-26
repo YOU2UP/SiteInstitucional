@@ -1,83 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.containerAvaliacao{
+.containerAvaliacao {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: space-between;
 }
 
-.auxiliar{
-    width: 90vw;
+.btnAvaliacao.ativo,
+.btnHistorico.ativo {
+    color: #FF9200;
+    font-size: 25px;
 }
 
-.espaco{
-    height: 30vh;
-    width: 25vw;
-    border-right: 1px solid black;
-}
-
-.botoesAvaliacao{
-    border-right: 1px solid black;
-    width: 30vw;
+.botoesAvaliacao {
     height: 100vh;
+    width: 25vw;
+    border-right: 1px solid #000;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
-.cardsAvaliacao{
+.btnAvaliacao {
+    background-color: white;
+    font-family: 'Inter';
+    width: 335px;
+    height: 70px;
+    font-size: 20px;
+    margin-top: 90px;
+    cursor: pointer;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.btnHistorico {
+    background-color: white;
+    font-family: 'Inter';
+    width: 335px;
+    height: 70px;
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.btnSair {
+    background-color: white;
+    font-family: 'Inter';
+    font-size: 20px;
+    color: red;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.auxiliar {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.agrupaCards{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-top: 30px;
-}
-
-.btnAvaliacao{
-    margin-top: 100px;
-    background-color: white;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 25px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.btnAvaliacao:hover{
-    color: #FF9200;
-}
-
-.btnAvaliacao.ativo {
-    color: #FF9200; 
-}
-
-.btnHistorico{
-    margin-top: 100px;
-    background-color: white;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 25px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.btnHistorico:hover{
-    color: #FF9200;
-}
-
-.btnHistorico.ativo {
-    color: #FF9200; 
 }

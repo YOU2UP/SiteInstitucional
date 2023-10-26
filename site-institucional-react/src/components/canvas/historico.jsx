@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import CardAvaliacao from '../cards/card_avaliacao.jsx'
 import '../../css-images/css/canva_historico.css'
-import Usu from '../../css-images/img/icone_card.png'
 import api from '../../api.js'
+import Breadcrumb from '../Breadcrumb/breadcrumb.jsx'
 
 function Historico() {
 
@@ -18,6 +18,11 @@ function Historico() {
       Authorization: `Bearer ${token}`
     },
   };
+
+  const breadcrumbLinks = [
+    { label: 'Home', to: '/pagina_inicial' },
+    { label: 'Historico', to: '/configuracao' }
+  ];
 
   useEffect(() => {
 
@@ -74,9 +79,16 @@ function Historico() {
 
 
   return (
+    <>
+      <div className="Breadcrub">
+        <Breadcrumb links={breadcrumbLinks} currentPage='/configuracao' />
+      </div>
+    
     <div className='cardsAvaliacao'>
       {historico.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((cards, index) => (
         <CardAvaliacao key={index}
+          idTreino={cards.id}
+          id={cards.avaliado.id}
           img={defineImg(cards)}
           nome={cards.avaliado.nome}
           descricao_pessoa={cards.avaliado.descricao}
@@ -94,6 +106,7 @@ function Historico() {
       </div>
 
     </div>
+    </>
   )
 }
 

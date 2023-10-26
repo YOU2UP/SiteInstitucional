@@ -1,10 +1,21 @@
 import React from 'react'
 import '../../css-images/css/alterar.css'
+import Breadcrumb from '../Breadcrumb/breadcrumb'
 
 function alterar(id, token) {
+
+  const breadcrumbLinks = [
+    { label: 'Home', to: '/pagina_inicial' },
+    { label: 'Perfil', to: '/perfil' },
+    { label: 'Configuração', to: '/configuracao' }
+  ];
   return (
     <>
+    <div className="Breadcrub">
+        <Breadcrumb links={breadcrumbLinks} currentPage='/configuracao' />
+      </div>
       <div className="containerAltera">
+        
 
         <div className="tituloAltera">Alteração de dados da conta</div>
 

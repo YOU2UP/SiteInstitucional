@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Menu from '../components/menu/Menu_logado.jsx';
-import Footer from '../components/footer/footer.jsx';
-import Card from '../components/cards/card_agenda.jsx';
 import '../css-images/css/agenda.css';
 import CardFuturo from '../components/cards/card_agenda_marc.jsx';
 import CardMarcado from '../components/cards/card_agenda.jsx';
-import Julia from '../css-images/img/meninona.png';
-import usu from '../css-images/img/elaine.png';
 import api from '../api';
+import Breadcrumb from '../components/Breadcrumb/breadcrumb';
+
 function Agenda() {
+
+
   const id = sessionStorage.getItem("id");
   const token = sessionStorage.getItem("token");
+
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
     },
   };
+
+  const breadcrumbLinks = [
+    { label: 'Home', to: '/pagina_inicial' },
+    { label: 'Agenda', to: '/agenda' }
+  ];
 
   const [agendamentos, setAgendamentos] = useState([]);
   const [paginaAtual, setPaginaAtual] = useState(0); // Índice inicial da página
@@ -85,32 +91,45 @@ function Agenda() {
   return (
     <>
       <Menu />
+
+      <div className="Breadcrub">
+        <Breadcrumb links={breadcrumbLinks} currentPage='/agenda' />
+      </div>
+
       <div className="containerAgenda">
         <span className="tituloAgenda">
           Esses são os treinos agendados com você
         </span>
         <div className="seguraCard">
-          {agendamentos.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((agenda, index) => (
-            <div className="duplaCard" key={index}>
-              {isDataFutura(agenda.inicioTreino) ? (
-                <CardFuturo
-                  dataTreino={defineData(agenda)}
-                  horaTreino={defineHora(agenda)}
-                  nome={agenda.usuarios[1].nome}
-                  img={defineImg(agenda)}
-                  localTreino={agenda.usuarios[1].localTreino.nome}
-                />
-              ) : (
-                <CardMarcado
-                  dataTreino={defineData(agenda)}
-                  horaTreino={defineHora(agenda)}
-                  nome={agenda.usuarios[1].nome}
-                  img={defineImg(agenda)}
-                  localTreino={agenda.usuarios[1].localTreino.nome}
-                />
-              )}
-            </div>
-          ))}
+          {agendamentos
+            .slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina)
+            .map((agenda, index) => {
+              if (agenda.realizado === true) {
+                return null;
+              }
+              return (
+                <div className="duplaCard" key={index}>
+                  {isDataFutura(agenda.inicioTreino) ? (
+                    <CardFuturo
+                      dataTreino={defineData(agenda)}
+                      horaTreino={defineHora(agenda)}
+                      nome={agenda.usuarios[1].nome}
+                      img={defineImg(agenda)}
+                      localTreino={agenda.usuarios[1].localTreino.nome}
+                    />
+                  ) : (
+                    <CardMarcado
+                      id={agenda.id}
+                      dataTreino={defineData(agenda)}
+                      horaTreino={defineHora(agenda)}
+                      nome={agenda.usuarios[1].nome}
+                      img={defineImg(agenda)}
+                      localTreino={agenda.usuarios[1].localTreino.nome}
+                    />
+                  )}
+                </div>
+              );
+            })}
         </div>
         <div className="botoesNavegacao">
           <button onClick={handlePaginaAnterior} disabled={paginaAtual === 0} className='btnPagina'>
@@ -119,9 +138,10 @@ function Agenda() {
           <button onClick={handleProximaPagina} disabled={(paginaAtual + 1) * cardsPorPagina >= agendamentos.length} className='btnPagina'>
             Próxima Página
           </button>
-        </div> 
+        </div>
       </div>
     </>
   );
 }
+
 export default Agenda;

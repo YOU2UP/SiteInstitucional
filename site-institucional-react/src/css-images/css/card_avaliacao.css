@@ -41,9 +41,17 @@
 
 .pessoaAvaliar{
     width: 110px;
-    height: 100px;
+    height: 110px;
     margin-right: 20px;
+    object-fit: cover;
     cursor: pointer;
+}
+
+.seguraBtnAvaliar{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 .avaliar{
@@ -55,7 +63,6 @@
     font-family: Inter;
     font-size: 20px;
     cursor: pointer;
-    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;

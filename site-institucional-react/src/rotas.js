@@ -10,7 +10,7 @@ import Avaliacao from './pages/avaliacao'
 import Agenda from './pages/agenda_treinos'
 import Configuracao from './pages/config.jsx'
 import Perfil_match from './pages/perfil_match'
-import { RouteProvider } from './routecontext';
+import Chat from './chat/pages/Chat'
 
 
 function Rotas() {
@@ -28,6 +28,7 @@ function Rotas() {
         <Route path="/agenda" element={<Agenda/>}/>
         <Route path='/configuracao' element={<Configuracao/>}/>
         <Route path='/perfil_match/:id' element={<Perfil_match/>}/>
+        <Route path='/chat' element={<Chat/>}/>
   </Routes>
   </BrowserRouter>
   )

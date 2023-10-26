@@ -16,13 +16,15 @@ function    MessageContainer(props) {
     const [messages, setMessages] = useState([]);
     const [mes, setMes] = useState("");
     const [idConversa, setIdConversa] = useState(props.id);
-
+    const idRequisitante = sessionStorage.getItem("idRequisitante");
+    const idRequisitado = sessionStorage.getItem("idRequisitado");
 
     const enviarMensagem = async () => {
         try {
             const docRef = await addDoc(collection(db, `chat/${idConversa}/conversas`), {
                 menssagem: mes,
-                idUsuario: sessionStorage.idUsuario,
+                idRequisitante: idRequisitante,
+                idRequisitado: idRequisitado,
                 timestamp: Timestamp.now()
             });
             const banco = await updateDoc(doc(db, `chat`,idConversa), {
@@ -32,6 +34,7 @@ function    MessageContainer(props) {
 
 
         } catch (e) {
+            console.log(idRequisitante)
             console.error("Error adding document: ", e);
         }
     }
@@ -58,7 +61,7 @@ function    MessageContainer(props) {
 
     return (
         <>
-            <div className="messages">
+            <div className="Chatmessages">
                 {
                     messages.map((m) => {
                         var horario = m.timestamp.toDate();
@@ -68,12 +71,12 @@ function    MessageContainer(props) {
                         }
                         horario = hora+":"+horario.getMinutes();
                         return (
-                            <TextBoxChat horario={horario} menssagem={m.menssagem} idUsuario={m.idUsuario}></TextBoxChat>
+                            <TextBoxChat horario={horario} menssagem={m.menssagem} idUsuario={m.idRequisitado}></TextBoxChat>
                         )
                     })
                 }
             </div>
-            <div className="inputContainer">
+            <div className="ChatinputContainer">
                 <InputBase style={{padding:"10px"}}
                     sx={{ ml: 1, flex: 1 }}
                     placeholder="Insira aqui a sua mensagem"

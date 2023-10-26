@@ -1,4 +1,4 @@
-.container{
+.Chatcontainer{
     display: flex;
     background-color: rgb(255, 255, 255);
     flex-direction: column;
@@ -6,13 +6,13 @@
     width: 80%;
     height: 100%;
 }
-.messages{
+.Chatmessages{
     height: 80%;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.inputContainer {
+.ChatinputContainer {
     display: flex;
     align-items: center;
     justify-content: center;

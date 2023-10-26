@@ -2,6 +2,7 @@ import React, { useState,useEffect} from 'react'
 import '../../css-images/css/canva_historico.css'
 import api from '../../api.js'
 import Card from '../cards/card_avaliacao.jsx'
+import Breadcrumb from '../Breadcrumb/breadcrumb'
 
 function Canva_avalia() {
     const id = sessionStorage.getItem("id");
@@ -16,10 +17,16 @@ function Canva_avalia() {
         },
     };
 
+    const breadcrumbLinks = [
+        { label: 'Home', to: '/pagina_inicial' },
+        { label: 'Avaliações', to: '/avaliacao' }
+    ];
+
     useEffect(() => {
 
         api.get(`/treinos/nao-avaliados/${id}`, config).then((response) => {
             setDadosAvaliacao(response.data)
+            console.log(response.data)
         })
         .catch((error) => {
             console.log("erro", error)
@@ -68,10 +75,19 @@ function Canva_avalia() {
 
 
   return (
+    <>
+    
+    
+    <div className="Breadcrub">
+        <Breadcrumb links={breadcrumbLinks} currentPage='/avaliacao' />
+      </div>
+
     <div className='cardsAvaliacao'>
       {dadosAvaliacao.slice(paginaAtual * cardsPorPagina, (paginaAtual + 1) * cardsPorPagina).map((dados, index) => (
         <Card
           key={index}
+          idTreino={dados.id}
+          id={dados.usuarios[1].id}
           nome={dados.usuarios[1].nome}
           img={defineImg(dados)}
           descricao_pessoa={dados.usuarios[1].descricao}
@@ -87,7 +103,9 @@ function Canva_avalia() {
           </button>
         </div>
     </div>
+  </>
   )
+
 }
 
 export default Canva_avalia

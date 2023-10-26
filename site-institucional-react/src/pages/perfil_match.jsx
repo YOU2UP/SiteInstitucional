@@ -102,8 +102,10 @@ function Perfil_match() {
 
                             <span className="treinosRealizados">Avaliação: </span> {usuario.notaMedia}
                             </div>
+                            <div className="seguraBotao1">
+                                <button className='btnConversaMatch'>Conversar</button>
+                            </div>
                         </div>
-
                     </div>
                     </div>
                 <div className="metasMatch">
