@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import ContainerChat from "../components/Chat/ContainerChat/ContainerChat";
 import SideBarChat from "../components/Chat/SideBarChat/SideBarChat";
 import "../reset.css"
-
+import Menu from "../../components/menu/Menu_logado"
 function Chat() {
 
   const [isActive, setIsActive] = useState(false)
@@ -16,6 +16,8 @@ function Chat() {
 
 
   return (
+    <>
+    <Menu/>
       <Grid container style={{display: "flex", flexDirection: "row", height: "100vh"}} >
        <SideBarChat func={pull_data}  onClick={()=>{
         setIsActive(isActive ? false : true);
@@ -23,6 +25,7 @@ function Chat() {
        
        {isActive? <ContainerChat id={id} /> : <></>}
       </Grid>
+      </>
   );
 }
 

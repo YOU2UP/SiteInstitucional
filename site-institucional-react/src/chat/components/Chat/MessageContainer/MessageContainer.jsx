@@ -61,7 +61,7 @@ function    MessageContainer(props) {
 
     return (
         <>
-            <div className="messages">
+            <div className="Chatmessages">
                 {
                     messages.map((m) => {
                         var horario = m.timestamp.toDate();
@@ -76,7 +76,7 @@ function    MessageContainer(props) {
                     })
                 }
             </div>
-            <div className="inputContainer">
+            <div className="ChatinputContainer">
                 <InputBase style={{padding:"10px"}}
                     sx={{ ml: 1, flex: 1 }}
                     placeholder="Insira aqui a sua mensagem"
