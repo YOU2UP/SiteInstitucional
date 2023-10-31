@@ -21,7 +21,8 @@ function Cadastro() {
     const [cidade, setCidade] = useState("");
     const [uf, setUf] = useState("");
 
-
+    const options_df = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", 
+    "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"]
 
     function cadastrar() {
         const usuarioNovo = {
@@ -143,35 +144,35 @@ function Cadastro() {
                     <div className="cadastro">
 
                         <div className="cadastro1">
-                            <h1 className="titulo">Dados pessoais:</h1>
+                            <span className="titulo">DADOS PESSOAIS</span>
         
                                 <div className="inputs">
                                     <div className="contencao">
                                     <label htmlFor="">Nome:</label>
-                                    <input type="text" onInput={(e) => setNome(e.target.value)} placeholder="Nome" />
+                                    <input type="text" onInput={(e) => setNome(e.target.value)} />
                                     </div>
                                     
-                                    <div>
+                                    <div className="senhas">
                                         <div className="contencao">
                                         <label htmlFor="">Senha:</label>
-                                        <input type="password" placeholder="Senha" onInput={(e) => setSenha(e.target.value)} aria-label="Digite uma senha" />
+                                        <input type="password" onInput={(e) => setSenha(e.target.value)} aria-label="Digite uma senha" />
                                         </div>
                                        <div className="contencao">
-                                       <label htmlFor="">Confirmação senha:</label>
-                                        <input type="password" placeholder="Confirm. Senha" aria-label="Confirme sua senha " />
+                                        <label htmlFor="">Confirmação senha:</label>
+                                        <input type="password" aria-label="Confirme sua senha " />
                                        </div>
                                       
                                     </div>
 
 
                                     <div className="contencao">
-                                    <label htmlFor="">E-mail:</label>
-                                    <input type="email" aria-label="Digite seu e-mail" onInput={(e) => setEmail(e.target.value)} placeholder="E-mail" />
+                                        <label htmlFor="">E-mail:</label>
+                                        <input type="email" aria-label="Digite seu e-mail" onInput={(e) => setEmail(e.target.value)}  />
                                     </div>
                                     
 
-                                    <div className="data contencao">
-                                        <label htmlFor="">Data de nascimento:</label>
+                                    <div className="contencao">
+                                        <label htmlFor="" className="color_data">Data de nascimento:</label>
                                         <input type="date" aria-label="Digite sua data de nascimento" onInput={(e) => setDataNascimento(e.target.value)} />
                                     </div>
 
@@ -179,23 +180,32 @@ function Cadastro() {
                            
 
                             <div className="buttons">
-                                <button onClick={() => mostrarCadastro2()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
+                                <div className="boxSeta1">
+                                    <button onClick={() => mostrarCadastro2()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
+                                </div>
                             </div>
 
                         </div>
                         <div className="cadastro2">
-                            <h1 className="titulo">Qual seu nivel:</h1>
-                            <button className="estagio" onClick={() => funcoes1()} id="button1" aria-label="Básico">Basico</button>
-                            <button className="estagio" onClick={() => funcoes2()} id="button2" aria-label="Intermediario">Intermediario</button>
-                            <button className="estagio" onClick={() => funcoes3()} id="button3" aria-label="Avançado">Avançado</button>
+                            <h1 className="titulo">QUAL SEU NÍVEL</h1>
+                            <div className="estagios">
+                                <div className="estagio" onClick={() => funcoes1()} id="button1" aria-label="Básico"><h1>Basico</h1><h2>Se você está apenas começando ou tem pouca experiência com exercícios, o seu nível é básico</h2></div>
+                                <div className="estagio" onClick={() => funcoes2()} id="button2" aria-label="Intermediario"><h1>Intermediario</h1><h2>Se você já pratica exercícios regularmente e deseja dar um passo adiante, o seu nível é intermediário</h2></div>
+                                <div className="estagio" onClick={() => funcoes3()} id="button3" aria-label="Avançado"><h1>Avançado</h1><h2>
+                                Se você	é um usuário experiente ou um atleta dedicado que deseja levar seu condicionamento físico ao limite, o seu nível é avançado</h2></div>
+                            </div>
                             <div className="divButtons">
-                                <button onClick={() => mostrarCadastro1()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
-                                <button onClick={() => mostrarCadastro3()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
+                                <div className="boxSeta1">
+                                    <button onClick={() => mostrarCadastro1()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
+                                </div>
+                                <div className="boxSeta2">
+                                    <button onClick={() => mostrarCadastro3()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
+                                </div>
 
                             </div>
                         </div>
                         <div className="cadastro3">
-                            <h1 className="titulo">Local de treino:</h1>
+                            <h1 className="titulo">LOCAL DE TREINO</h1>
 
                                 <div className="contencao">
                                     <label htmlFor="">CEP:</label>
@@ -232,42 +242,20 @@ function Cadastro() {
                                 <div className="contencao">
                                 <p>UF:</p>
                                 <select name="UF" id="uf" placeholder="UF" onChange={(e) => setUf(e.target.value)}>
-                                    <option value="AC">AC</option>
-                                    <option value="AL">AL</option>
-                                    <option value="AM">AM</option>
-                                    <option value="AP">AP</option>
-                                    <option value="BA">BA</option>
-                                    <option value="CE">CE</option>
-                                    <option value="DF">DF</option>
-                                    <option value="ES">ES</option>
-                                    <option value="GO">GO</option>
-                                    <option value="MA">MA</option>
-                                    <option value="MG">MG</option>
-                                    <option value="MS">MS</option>
-                                    <option value="MT">MT</option>
-                                    <option value="PA">PA</option>
-                                    <option value="PB">PB</option>
-                                    <option value="PE">PE</option>
-                                    <option value="PI">PI</option>
-                                    <option value="PR">PR</option>
-                                    <option value="RJ">RJ</option>
-                                    <option value="RN">RN</option>
-                                    <option value="RO">RO</option>
-                                    <option value="RR">RR</option>
-                                    <option value="RS">RS</option>
-                                    <option value="SC">SC</option>
-                                    <option value="SE">SE</option>
-                                    <option value="SP">SP</option>
-                                    <option value="TO">TO</option>
-
+                                    {options_df.map(opt => (
+                                        <option key={opt} value={opt}>{opt}</option>
+                                    ))}
                                 </select>
                                 </div>
                              </div>
                             </div>
                             <div className="divButtons">
-                                <button onClick={() => mostrarCadastro2()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
-                                <button onClick={() => cadastrar()}><img src={sucesso} alt="" className="sucesso"/></button>
-
+                                <div className="boxSeta1">
+                                    <button onClick={() => mostrarCadastro2()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
+                                </div>
+                                <div className="boxSeta2">
+                                    <button onClick={() => cadastrar()}><img src={sucesso} alt="" className="sucesso"/></button>
+                                </div>
                             </div>
                            
                             </div>
