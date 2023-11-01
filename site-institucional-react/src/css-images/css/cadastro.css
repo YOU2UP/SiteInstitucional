@@ -40,7 +40,7 @@ li{
     font-family:  'inter';
     color: #ff9200;
     margin-bottom: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-top: 1rem;
 }
@@ -136,6 +136,7 @@ li{
     background-color: #ffffff;
     transition: .5;
     box-sizing: border-box;
+    border: 2px solid #cecece;    
 }
 
 .contencao > input:hover {
@@ -155,7 +156,15 @@ li{
 #cadastro .cadastro1 input{
     padding: .5rem;
     font-size: .8rem;
-    outline: none;
+    outline: none;    
+}
+
+.cadastro1 > input:hover {
+    border: 2px solid #ff9200;
+}
+
+.cadastro1 > input:focus {
+    border: 2px solid #ff9200;
 }
 
 #cadastro .cadastro2{
@@ -180,7 +189,7 @@ li{
     gap: 12px;
 }
 
-.estagio{
+.estagio1, .estagio2, .estagio3{
     outline: none;
     border: none;
     border-radius: 10px;
@@ -189,41 +198,64 @@ li{
     height: 300px;
     width: 200px;
     margin-top: 1rem;
-    cursor: pointer;
     font: 700 1rem 'Nunito', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border: 2px solid #cecece;
 }
 
-.estagio > h1 {
+.info-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #1c1c1c;
+    font-size: 0.8rem;
+    width: 80%;
+    height: 30%;
+}
+
+#estagio > h1 {
     margin-top: 20px;
     font-size: 22px;
 }
 
-.estagio > button {
+#estagio > button {
     margin-bottom: 20px;
     width: 80%;
     height: 40px;
     background-color: #ff9200;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-.estagio > h2 {
+#estagio > h2 {
     width: 70%;
+    height: 70%;
+    padding: auto;
     font-size: 14px;
     text-align: center;
     margin-bottom: 3rem;
     color: #1c1c1c;
 }
 
-#cadastro .cadastro2 button.clicado{
-    background-color: #ff9200;
-    color: #ffffff;
-    font: 700 1rem 'Nunito', sans-serif;
+.estagio1.clicado {
+    border: 2px solid #ff9200;
+
 }
+
+.estagio2.clicado {
+    border: 2px solid #ff9200;
+
+}
+
+.estagio3.clicado {
+    border: 2px solid #ff9200;
+
+}
+
 .divButtons{
     display: flex;
     justify-content: space-between;
@@ -246,27 +278,41 @@ li{
 
 #cadastro .cadastro3{
     background-color: #f4f2f2;
-    padding: 2rem 4rem;
     display: none;
-    /* visibility: hidden; */
-    opacity: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25rem;
-    height: 30rem;
+    padding: 1rem 3rem;
     border-radius: 10px;
     box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
-  
+    width: 25rem;
+    height: 30rem;
 }
+
 #cadastro .cadastro3 input{
-    padding: .5rem .2rem;
-    margin-bottom: 1rem;
-    background-color: #f4f2f2;
-    border: none;
-    border-bottom:2px solid  #1c1c1cca;
+    padding: .5rem;
+    font-size: .8rem;
     outline: none;
 }
+
+.inputsCadastro3 {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cepAndName {
+    display: flex;
+    gap: 12px;
+}
+
+.lastFieldCadastro3 {
+    display: flex;
+    gap: 12px;
+}
+
 #cadatro .cadastro label{
     margin-bottom: 1rem;
 }
@@ -276,27 +322,27 @@ li{
 .inputsLocal input{
     width: 100%;
 }
-#cadastro .cadastro3 select{
-    background-color: #f4f2f2;
-    border: none;
-    border-bottom:2px solid  #1c1c1cca;
-    outline: none;
-    height: 1.5rem;
-}
-#cadastro .cadastro3 select:focus{
-    border-bottom:2px solid  #ff9200;
-    background-color: white;
+
+.contencao > label {
+    margin-top: 4px;
 }
 
-.cidadeUF{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.contencao > select {
+    border-radius: 5px;
+    height: 40px;
+    background-color: #ffffff;
+    transition: .5;
+    box-sizing: border-box;
+    border: 2px solid #cecece;
 }
 
+.contencao > select:hover {
+    border: 2px solid #ff9200;
+}
 
+.contencao > select:focus {
+    border: 2px solid #ff9200;
+}
 
 @media(max-width:768px) {
 #cadastro .cadastro1{
