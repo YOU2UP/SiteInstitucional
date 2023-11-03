@@ -22,7 +22,13 @@ function Login() {
       sessionStorage.setItem("id", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
-      window.location="/pagina_inicial";
+
+      if(email.includes('@you2up.com')){
+        window.location="/painel_adm"
+      }
+      else{
+        window.location="/pagina_inicial";
+      }
     }).catch((error)=>{
       console.log(error);
     })

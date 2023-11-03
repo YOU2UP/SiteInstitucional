@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { Button, Modal, Box, Typography, TextField } from '@mui/material';
+import api from '../../api'
 
-const DateTimePickerModal = () => {
-  const [open, setOpen] = useState(false);
+const DateTimePickerModal = (props) => {
+  
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
+  const token = sessionStorage.getItem("token")
+  const id = sessionStorage.getItem("id")
 
   const handleOpen = () => {
-    setOpen(true);
+    props.setOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    props.setOpen(false);
   };
 
   const handleDateChange = (event) => {
@@ -22,11 +25,47 @@ const DateTimePickerModal = () => {
     setSelectedTime(event.target.value);
   };
 
+  function createLocalDateTime(dateString, timeString) {
+    const isoDateTime = `${dateString}T${timeString}:00`;
+    const localDateTime = new Date(isoDateTime).toISOString();
+    return localDateTime;
+  }
+
+  const handleMarcar = () => {
+      const localDateTime = createLocalDateTime(selectedDate, selectedTime);
+      console.log("teste", localDateTime);
+
+      const headers = {
+        'Authorization': `Bearer ${token}`,
+      };
+
+      const data ={
+        "periodo":"noturno",
+        "inicioTreino": localDateTime,
+        "usuarios": [
+          {
+              "idUsuario": id,
+          },
+          {
+              "idUsuario": props.idUsu
+          }
+
+        ],
+      }
+
+      api.post(`/treinos`, data, { headers }).then((response) => {
+
+      }).catch((error) => {
+        console.log(error)
+      })
+
+      props.setOpen(false)
+  }
+
   return (
     <div>
-      <Button onClick={handleOpen}>Abrir Modal</Button>
       <Modal
-        open={open}
+        open={props.open}
         onClose={handleClose}
         aria-labelledby="datetime-modal-title"
         aria-describedby="datetime-modal-description"
@@ -48,6 +87,7 @@ const DateTimePickerModal = () => {
             fullWidth
           />
           <Button onClick={handleClose}>Fechar</Button>
+          <Button onClick={handleMarcar}>Marcar</Button>
         </Box>
       </Modal>
     </div>

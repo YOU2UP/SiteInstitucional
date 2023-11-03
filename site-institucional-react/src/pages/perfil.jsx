@@ -144,7 +144,7 @@ function Perfil() {
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{nome}</h1>
                         <span className='descricao'>
-                            {usuario.descricao}
+                        Sou um usuário legal
                         </span>
                       
 

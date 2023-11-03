@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+.tituloDash{
+    /* border: 1px solid green; */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff9200
+}
+
+
+.containerPainelAdm{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.seguraDash{
+    /* border: 1px solid red */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.duplaDash{
+    margin-top: 20px;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    height: 57vh;
+    width: 95vw;
+    padding-bottom: 20px;
+}
+
+.dashMatch{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    justify-content: space-around;
+}
+
+.containerDash2{
+    height: 5vh;
+    width: 10vw;
+    /* border: 1px solid blue; */
+}

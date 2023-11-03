@@ -11,7 +11,11 @@ import Agenda from './pages/agenda_treinos'
 import Configuracao from './pages/config.jsx'
 import Perfil_match from './pages/perfil_match'
 import Chat from './chat/pages/Chat'
-
+import Painel_adm from './pages/painel_adm'
+import Teste from './components/dashs/match_mes'
+import Teste2 from './components/dashs/treinos_dash'
+import Teste3 from './components/dashs/perfis_dash'
+import Teste4 from './components/dashs/dash_nivel'
 
 function Rotas() {
   return (
@@ -29,6 +33,11 @@ function Rotas() {
         <Route path='/configuracao' element={<Configuracao/>}/>
         <Route path='/perfil_match/:id' element={<Perfil_match/>}/>
         <Route path='/chat' element={<Chat/>}/>
+        <Route path='/painel_adm' element={<Painel_adm/>}/>
+        <Route path='/teste' element={<Teste/>}/>
+        <Route path='/teste2' element={<Teste2/>}/>
+        <Route path='/teste3' element={<Teste3/>}/>
+        <Route path='/teste4' element={<Teste4/>}/>
   </Routes>
   </BrowserRouter>
   )

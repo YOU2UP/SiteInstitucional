@@ -119,9 +119,9 @@
 }
 
 
-.posicao{
+.posicaoRank{
     width: 300px;
-    height: 200px;
+    height: 120px;
     display: flex;
     font-size: 25px;
 }
