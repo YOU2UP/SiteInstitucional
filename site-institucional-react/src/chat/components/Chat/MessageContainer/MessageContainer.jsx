@@ -19,6 +19,7 @@ function    MessageContainer(props) {
     const idRequisitante = sessionStorage.getItem("idRequisitante");
     const idRequisitado = sessionStorage.getItem("idRequisitado");
 
+
     const enviarMensagem = async () => {
         try {
             const docRef = await addDoc(collection(db, `chat/${idConversa}/conversas`), {
@@ -34,7 +35,7 @@ function    MessageContainer(props) {
 
 
         } catch (e) {
-            console.log(idRequisitante)
+            console.log("requisitante" + idRequisitante)
             console.error("Error adding document: ", e);
         }
     }

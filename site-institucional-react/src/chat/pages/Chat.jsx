@@ -16,7 +16,7 @@ function Chat() {
 
 
   return (
-    <>
+  <>
     <Menu/>
       <Grid container style={{display: "flex", flexDirection: "row", height: "100vh"}} >
        <SideBarChat func={pull_data}  onClick={()=>{
@@ -25,7 +25,8 @@ function Chat() {
        
        {isActive? <ContainerChat id={id} /> : <></>}
       </Grid>
-      </>
+    </body>
+    </>
   );
 }
 

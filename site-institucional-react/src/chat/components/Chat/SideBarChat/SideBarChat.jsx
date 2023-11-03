@@ -23,8 +23,6 @@ const SideBarChat = (props) => {
 
       setListaConversa(
 
-      
-
         querySnapshot.docs.map((doc) => ({
           idRequisitante: doc.data().idRequisitante,
           idRequisitado: doc.data().idRequisitado,
@@ -33,11 +31,10 @@ const SideBarChat = (props) => {
           ultima: doc.data().ultimaMensagem,
           id: doc.id
         })))
-        console.log(sessionStorage.idRequisitado);
+        console.log("requisitado" + sessionStorage.idRequisitado);
         console.log(sessionStorage.idRequisitante);
         console.log(sessionStorage.nomeRequisitado);
     })
-
 
 
     return () => atualiza();
