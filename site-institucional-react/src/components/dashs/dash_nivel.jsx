@@ -42,7 +42,7 @@ const PieChart = () => {
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '415px', width: '320px' }} />;
+  return <ReactEcharts option={option} style={{ height: '400px', width: '320px' }} />;
 };
 
 export default PieChart;

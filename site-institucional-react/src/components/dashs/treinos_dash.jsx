@@ -24,6 +24,12 @@ const BarChart = () => {
       bottom: 10,
       data: ['Treinos Marcados e Realizados', 'Treinos Marcados e Não Realizados', 'Treinos Cancelados'],
     },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow',
+      },
+    },
     series: [
       {
         name: 'Treinos Marcados e Realizados',
@@ -54,7 +60,7 @@ const BarChart = () => {
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '415px', width:'1100px' }} />;
+  return <ReactEcharts option={option} style={{ height: '400px', width:'1000px' }} />;
 };
 
 export default BarChart;

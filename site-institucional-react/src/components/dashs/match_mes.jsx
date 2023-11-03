@@ -24,6 +24,12 @@ const LineChart = () => {
       data: ['Matchs', 'Cadastros'],
       bottom: 10, 
     },
+    tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow',
+            },
+        },
     series: [
       {
         name: 'Matchs',
@@ -46,7 +52,7 @@ const LineChart = () => {
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '415px' , width: '1100px'}} />;
+  return <ReactEcharts option={option} style={{ height: '400px' , width: '1000px'}} />;
 };
 
 export default LineChart;
