@@ -46,14 +46,20 @@ li{
 }
 #cadastro .cadastro1 {
     background-color: #f4f2f2;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 1rem 3rem;
     border-radius: 10px;
     box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
     width: 25rem;
+    height: 30rem;
+}
+
+.cadastro .span_titulo {
+    height: 15%;
+    align-items: center;
 }
 
 .inputData{
@@ -64,6 +70,7 @@ align-items: center;
     justify-content: flex-end;
     align-items:flex-end;
     width: 100%;
+    height: 15%;
 }
 .cadastro1 button{
     background-color: #1c1c1c;
@@ -71,23 +78,38 @@ align-items: center;
     border-radius: 5px;
     outline: none;
     border: none;
-width: 45px;
-height: 45px;
-margin-right: 10px;
-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-margin-top: 1rem;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
 }
+.boxSeta1:hover {
+    transform: scale(1.05);
+}
+
+.boxSeta2:hover {
+    transform: scale(1.05);
+}
+
 .setas{
     width:30px;
     height: 25px;
+    cursor: pointer;
 }
+
 .sucesso{
     width: 30px;
+    cursor: pointer;
 }
+
 .inputs{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
+    height: 70%;
+    gap: 16px;
 }
 .inputs .data{
     width: 100%;
@@ -97,65 +119,148 @@ margin-top: 1rem;
     align-items: center;
 }
 .contencao{
-    display: grid;
-    grid-template-columns: .4fr 1fr;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    gap: 4px;
 }
+
+.contencao > label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contencao > input {
+    border-radius: 5px;
+    height: 40px;
+    background-color: #ffffff;
+    transition: .5;
+    box-sizing: border-box;
+    border: 2px solid #cecece;    
+}
+
+.contencao > input:hover {
+    border: 2px solid #ff9200;
+}
+
+.contencao > input:focus {
+    border: 2px solid #ff9200;
+}
+
+.senhas {
+    display: flex;
+    gap: 12px;
+}
+
+
 #cadastro .cadastro1 input{
-    margin: .5rem;
     padding: .5rem;
-   
-    background-color: #f4f2f2;
-    border: none;
-    border-bottom:2px solid  #1c1c1cca;
-   outline: none;
+    font-size: .8rem;
+    outline: none;    
 }
-#cadastro .cadastro1 input:focus,
-#cadastro .cadastro3 input:focus{
-    border-bottom:2px solid  #ff9200;
-    background-color: white;
+
+.cadastro1 > input:hover {
+    border: 2px solid #ff9200;
 }
+
+.cadastro1 > input:focus {
+    border: 2px solid #ff9200;
+}
+
 #cadastro .cadastro2{
     background-color: #f4f2f2;
-    padding: 2rem 4rem;
+    padding: 1rem 3rem;
     display: none;
     visibility: hidden;
     opacity: 0;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 17rem;
+    width: 40rem;
+    height: 30rem;
     border-radius: 10px;
     box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
 }
 
-#cadastro .cadastro2 button.estagio{
-    width: 100%;
+.estagios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.estagio1, .estagio2, .estagio3{
     outline: none;
     border: none;
     border-radius: 10px;
     color: #ff9200;
-    background-color: white;
-    height: 2.5rem;
-    transition: .2s;
+    background-color: #ffffff;
+    height: 300px;
+    width: 200px;
     margin-top: 1rem;
-    cursor: pointer;
     font: 700 1rem 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #cecece;
 }
 
-#cadastro .cadastro2 button.clicado{
-    background-color: #ff9200;
-    color: #ffffff;
-    font: 700 1rem 'Nunito', sans-serif;
+.info-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #1c1c1c;
+    font-size: 0.8rem;
+    width: 80%;
+    height: 30%;
 }
+
+#estagio > h1 {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+#estagio > button {
+    margin-bottom: 20px;
+    width: 80%;
+    height: 40px;
+    background-color: #ff9200;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#estagio > h2 {
+    width: 70%;
+    height: 70%;
+    padding: auto;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1c1c1c;
+}
+
+.estagio1.clicado {
+    border: 2px solid #ff9200;
+
+}
+
+.estagio2.clicado {
+    border: 2px solid #ff9200;
+
+}
+
+.estagio3.clicado {
+    border: 2px solid #ff9200;
+
+}
+
 .divButtons{
     display: flex;
-    flex-direction: row;
-    width: 100%;
     justify-content: space-between;
-    margin-top: 2rem;
+    width: 100%;
+    height: 15%;
 }
 
 .divButtons button{
@@ -164,34 +269,50 @@ margin-top: 1rem;
     border-radius: 5px;
     outline: none;
     border: none;
-width: 45px;
-height: 45px;
-margin-right: 10px;
-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
 }
+
 #cadastro .cadastro3{
     background-color: #f4f2f2;
-    padding: 2rem 4rem;
     display: none;
-    visibility: hidden;
-    opacity: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20rem;
+    padding: 1rem 3rem;
     border-radius: 10px;
     box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
-  
+    width: 25rem;
+    height: 30rem;
 }
+
 #cadastro .cadastro3 input{
-    padding: .5rem .2rem;
-    margin-bottom: 1rem;
-    background-color: #f4f2f2;
-    border: none;
-    border-bottom:2px solid  #1c1c1cca;
-   outline: none;
+    padding: .5rem;
+    font-size: .8rem;
+    outline: none;
 }
+
+.inputsCadastro3 {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cepAndName {
+    display: flex;
+    gap: 12px;
+}
+
+.lastFieldCadastro3 {
+    display: flex;
+    gap: 12px;
+}
+
 #cadatro .cadastro label{
     margin-bottom: 1rem;
 }
@@ -201,28 +322,27 @@ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 .inputsLocal input{
     width: 100%;
 }
-#cadastro .cadastro3 select{
-    background-color: #f4f2f2;
-    border: none;
-    border-bottom:2px solid  #1c1c1cca;
-   outline: none;
-   height: 1.5rem;
-}
-#cadastro .cadastro3 select:focus{
-    border-bottom:2px solid  #ff9200;
-    background-color: white;
+
+.contencao > label {
+    margin-top: 4px;
 }
 
-.cidadeUF{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
+.contencao > select {
+    border-radius: 5px;
+    height: 40px;
+    background-color: #ffffff;
+    transition: .5;
+    box-sizing: border-box;
+    border: 2px solid #cecece;
 }
 
+.contencao > select:hover {
+    border: 2px solid #ff9200;
+}
 
+.contencao > select:focus {
+    border: 2px solid #ff9200;
+}
 
 @media(max-width:768px) {
 #cadastro .cadastro1{
