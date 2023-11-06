@@ -71,7 +71,7 @@
     width: 60vw;
     margin-right: 330px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
 }
 
 .btnSalvaAltera{

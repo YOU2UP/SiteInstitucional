@@ -5,7 +5,8 @@ import "./estilo.css"
 const TextBoxChat = (props) => {
 
   var flag = false;
-  if (props.idUsuario == sessionStorage.idUsuario) {
+
+  if (props.idRequisitante == sessionStorage.idRequisitante) {
     flag = true;
   }
 

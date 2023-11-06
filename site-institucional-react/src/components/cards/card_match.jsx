@@ -20,48 +20,52 @@ function Card_match(props) {
   };
 
 
-  function atribuicao(id, idMatch, nome) {
-
+  function atribuicao(id, idMatch,nomeMatch, nome) {
     sessionStorage.setItem("idRequisitante", id);
     sessionStorage.setItem("idRequisitado", idMatch);
     sessionStorage.setItem("nomeRequisitado", nome);
-
+  
     console.log("idRequisitante", sessionStorage.getItem("idRequisitante"));
     console.log("idRequisitado", sessionStorage.getItem("idRequisitado"));
-    const bancoDados = query(
-      collection(db, `chat`), orderBy("timestamp", "asc")
-    );
+  
+    const bancoDados = query(collection(db, `chat`), orderBy("timestamp", "asc"));
     const consulta = onSnapshot(bancoDados, (querySnapshot) => {
-
       console.log(idMatch);
       console.log(id);
-
-      const encontrado = querySnapshot.docs.map(doc => doc.data());
+  
+      const encontrado = querySnapshot.docs.map((doc) => doc.data());
       console.log(encontrado);
-      var flag = null;
-
-      encontrado.forEach(elemento =>{
-        if(elemento.idRequisitado.toString() == idMatch.toString() && id.toString() == elemento.idRequisitante.toString()){
-          alert("SEXO ANAL")
-        }else{
-          alert("SEXO ORAL")
-          criacaoChat(id, idMatch, nome)
-        }
-      })
+  
+      const matchingElement = encontrado.find((elemento) => {
+        const match1 = elemento.idRequisitado.toString() === idMatch.toString() &&
+          id.toString() === elemento.idRequisitante.toString();
+  
+        const match2 = elemento.idRequisitado.toString() === id.toString() &&
+          elemento.idRequisitante.toString() === idMatch.toString();
+  
+        return match1 || match2;
+      });
+  
+      if (matchingElement) {
+        consulta(); 
+        navigate(`/chat`);
+      } else {
+        criacaoChat(id, idMatch,nomeMatch,nome);
+        consulta();
+        navigate(`/chat`);
+      }
     });
-
-    //window.location.href = "/chat";
-
   }
+  
+  
 
-
-  const criacaoChat = async (id, idMatch, nome) => {
+  const criacaoChat = async (id, idMatch, nomeMatch, nome) => {
     try {
       const docRef = await addDoc(collection(db, `chat/`), {
-        idRequisitado: id.toString(),
-        idRequisitante: idMatch.toString(),
-        nomeRequisitado: nome,
-        nomeRequisitante: "Foda-se",
+        idRequisitado: idMatch.toString(),
+        idRequisitante: id.toString(),
+        nomeRequisitado: nomeMatch,
+        nomeRequisitante: nome,
         timestamp: Timestamp.now(),
         ultimaMensagem: ""
       });
@@ -92,13 +96,10 @@ function Card_match(props) {
             </div>
           </div>
         </div>
-        <button className="conversar" onClick={() => atribuicao(id, idMatch, props.nome)}>
+        <button className="conversar" onClick={() => atribuicao(id, idMatch, props.nome,sessionStorage.nome)}>
           Conversar
         </button>
       </div>
-
-
-
     </div>
   )
 }

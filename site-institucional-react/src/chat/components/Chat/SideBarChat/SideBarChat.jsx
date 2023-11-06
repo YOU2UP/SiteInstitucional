@@ -5,42 +5,44 @@ import { query, collection, onSnapshot, where, or, orderBy } from "firebase/fire
 import { db } from "../../../firebase";
 
 const SideBarChat = (props) => {
-  const [listaConversa, setListaConversa] = useState([])
+  const [listaConversa, setListaConversa] = useState([]);
+
   useEffect(() => {
 
     const bancoDados = query(
-      collection(db, "chats")
-    );
+      collection(db, "chat"), or(
+        where("idRequisitado", "==", sessionStorage.id),
+        where("idRequisitante", "==", sessionStorage.id)
+      ));
+
     const atualiza = onSnapshot(bancoDados, (querySnapshot) => {
-      console.log(querySnapshot.docs.map((doc) => ({
-        idRequisitante: doc.data().idRequisitante,
-        idRequisitado: doc.data().idRequisitado,
-        nomeUsuario: sessionStorage.getItem("nomeRequisitado"),
-        timestamp: doc.data().timestamp,
-        ultima: doc.data().ultimaMensagem,
-        id: doc.id
-      })))
+      var nome;
+      const chatData = querySnapshot.docs.map((doc) => {
+        const data = doc.data();
+        if(data.idRequisitante == sessionStorage.id){
+          nome = doc.data().nomeRequisitado;
+        }else if(data.idRequisitado == sessionStorage.id){
+          nome = doc.data().nomeRequisitante;
 
-      setListaConversa(
+        }
 
-        querySnapshot.docs.map((doc) => ({
-          idRequisitante: doc.data().idRequisitante,
-          idRequisitado: doc.data().idRequisitado,
-          nomeUsuario: sessionStorage.getItem("nomeRequisitado"),
-          timestamp: doc.data().timestamp,
-          ultima: doc.data().ultimaMensagem,
-          id: doc.id
-        })))
-        console.log("requisitado" + sessionStorage.idRequisitado);
-        console.log(sessionStorage.idRequisitante);
-        console.log(sessionStorage.nomeRequisitado);
-    })
+        return {
+          idRequisitante: data.idRequisitante,
+          idRequisitado: data.idRequisitado,
+          nomeUsuario: nome,
+          timestamp: data.timestamp,
+          ultima: data.ultimaMensagem,
+          id: doc.id,
+        };
+      });
 
+      setListaConversa(chatData);
+    });
 
     return () => atualiza();
   }, []);
 
-  const lastMenssage = (elemento) =>{
+  const lastMenssage = (elemento) => {
     const aux = elemento + "";
     const result = aux.length > 18 ? aux.substring(0, 15) + "..." : aux;
     return result;

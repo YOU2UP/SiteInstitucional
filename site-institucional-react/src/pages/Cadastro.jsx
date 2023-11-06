@@ -6,7 +6,6 @@ import seta from "../css-images/img/next.png";
 import setaE from "../css-images/img/prev.png";
 import sucesso from "../css-images/img/ok.png";
 import "../css-images/css/cadastro.css";
-import ImgInfo from '../css-images/img/info.png'
 function Cadastro() {
 
 
@@ -22,8 +21,7 @@ function Cadastro() {
     const [cidade, setCidade] = useState("");
     const [uf, setUf] = useState("");
 
-    const options_df = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", 
-    "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"]
+
 
     function cadastrar() {
         const usuarioNovo = {
@@ -66,7 +64,7 @@ function Cadastro() {
         document.querySelector(".cadastro2").style.visibility = "hidden";
         document.querySelector(".cadastro3").style.opacity = "0";
         document.querySelector(".cadastro3").style.visibility = "hidden";
-        resetColor()
+
     }
     function mostrarCadastro2() {
         document.querySelector(".cadastro1").style.display = "none";
@@ -78,9 +76,8 @@ function Cadastro() {
         document.querySelector(".cadastro1").style.visibility = "hidden";
         document.querySelector(".cadastro3").style.opacity = "0";
         document.querySelector(".cadastro3").style.visibility = "hidden";
-        resetColor()
-    }
 
+    }
     function mostrarCadastro3() {
         document.querySelector(".cadastro1").style.display = "none";
         document.querySelector(".cadastro2").style.display = "none";
@@ -91,6 +88,7 @@ function Cadastro() {
         document.querySelector(".cadastro1").style.visibility = "hidden";
         document.querySelector(".cadastro2").style.opacity = "0";
         document.querySelector(".cadastro2").style.visibility = "hidden";
+
     }
 
     function funcoes1() {
@@ -98,50 +96,41 @@ function Cadastro() {
         mudarCor1()
     }
     function mudarCor1() {
-        document.querySelector(".estagio1").classList.add('clicado');
-        document.querySelector(".estagio2").classList.remove('clicado');
-        document.querySelector(".estagio3").classList.remove('clicado');
+        document.getElementById("button1").classList.add('clicado');
+        document.getElementById("button2").classList.remove('clicado');
+        document.getElementById("button3").classList.remove('clicado');
     }
-    
     function funcoes2() {
         setEstagio("Intermediario")
         mudarCor2()
     }
+
     function mudarCor2() {
-        document.querySelector(".estagio1").classList.remove('clicado');
-        document.querySelector(".estagio2").classList.add('clicado');
-        document.querySelector(".estagio3").classList.remove('clicado');
+        document.getElementById("button2").classList.add('clicado');
+        document.getElementById("button1").classList.remove('clicado')
+        document.getElementById("button3").classList.remove('clicado')
     }
-    
     function funcoes3() {
         setEstagio("Avancado")
         mudarCor3()
+
     }
     function mudarCor3() {
-        document.querySelector(".estagio1").classList.remove('clicado');
-        document.querySelector(".estagio2").classList.remove('clicado');
-        document.querySelector(".estagio3").classList.add('clicado');
+        document.getElementById("button3").classList.add('clicado');
+        document.getElementById("button2").classList.remove('clicado');
+        document.getElementById("button1").classList.remove('clicado');
     }
-
-    function resetColor() {
-        document.querySelector(".estagio1").classList.remove('clicado');
-        document.querySelector(".estagio2").classList.remove('clicado');
-        document.querySelector(".estagio3").classList.remove('clicado');
-    }
-
     const checkCEP = (e) => {
-        
         const cep = e.target.value.replace(/\D/g, '');
-        if (cep != '') {
-            fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then(res => res.json()).then(data => {
-            console.log(data);
-            document.getElementById("rua").value = data.logradouro;
-            document.getElementById("bairro").value = data.bairro;
-            document.getElementById("cidade").value = data.localidade;
-            document.getElementById("uf").value = data.uf;
-            });
-        } 
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(res => res.json()).then(data => {
+        console.log(data);
+        document.getElementById("rua").value = data.logradouro;
+        document.getElementById("bairro").value = data.bairro;
+        document.getElementById("cidade").value = data.localidade;
+        document.getElementById("uf").value = data.uf;
+
+        });
 
     }
 
@@ -154,32 +143,35 @@ function Cadastro() {
                     <div className="cadastro">
 
                         <div className="cadastro1">
-                            <span className="titulo">DADOS PESSOAIS</span>
+                            <h1 className="titulo">Dados pessoais:</h1>
         
                                 <div className="inputs">
                                     <div className="contencao">
-                                        <label htmlFor="">Nome:</label>
-                                        <input type="text" placeholder="Nome" onInput={(e) => setNome(e.target.value)} />
+                                    <label htmlFor="">Nome:</label>
+                                    <input type="text" onInput={(e) => setNome(e.target.value)} placeholder="Nome" />
                                     </div>
                                     
-                                    <div className="senhas">
+                                    <div>
                                         <div className="contencao">
-                                            <label htmlFor="">Senha:</label>
-                                            <input type="password" placeholder="Senha" onInput={(e) => setSenha(e.target.value)} aria-label="Digite uma senha" />
+                                        <label htmlFor="">Senha:</label>
+                                        <input type="password" placeholder="Senha" onInput={(e) => setSenha(e.target.value)} aria-label="Digite uma senha" />
                                         </div>
                                        <div className="contencao">
-                                            <label htmlFor="">Confirmação senha:</label>
-                                            <input type="password" placeholder="Confirme a senha" aria-label="Confirme sua senha " />
+                                       <label htmlFor="">Confirmação senha:</label>
+                                        <input type="password" placeholder="Confirm. Senha" aria-label="Confirme sua senha " />
                                        </div>
+                                      
                                     </div>
 
-                                    <div className="contencao">
-                                        <label htmlFor="">E-mail:</label>
-                                        <input type="email" placeholder="Email" aria-label="Digite seu e-mail" onInput={(e) => setEmail(e.target.value)}  />
-                                    </div>
 
                                     <div className="contencao">
-                                        <label htmlFor="" className="color_data">Data de nascimento:</label>
+                                    <label htmlFor="">E-mail:</label>
+                                    <input type="email" aria-label="Digite seu e-mail" onInput={(e) => setEmail(e.target.value)} placeholder="E-mail" />
+                                    </div>
+                                    
+
+                                    <div className="data contencao">
+                                        <label htmlFor="">Data de nascimento:</label>
                                         <input type="date" aria-label="Digite sua data de nascimento" onInput={(e) => setDataNascimento(e.target.value)} />
                                     </div>
 
@@ -187,105 +179,101 @@ function Cadastro() {
                            
 
                             <div className="buttons">
-                                <div className="boxSeta1">
-                                    <button onClick={() => mostrarCadastro2()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
-                                </div>
+                                <button onClick={() => mostrarCadastro2()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
                             </div>
 
                         </div>
                         <div className="cadastro2">
-                            <h1 className="titulo">QUAL SEU NÍVEL</h1>
-                            <div className="estagios">
-                                <div className="estagio1" aria-label="Básico" id="estagio">
-                                    <h1>Basico</h1>
-                                    <div className="info-content" id="infoTextBasico">
-                                        <p>Se você está apenas começando ou tem pouca experiência com exercícios, o seu nível é básico!</p>
-                                    </div>
-                                    <button id="button1" onClick={() => funcoes1()}>Escolher nível</button>
-                                </div>
-
-                                <div className="estagio2" aria-label="Intemerdiário" id="estagio">
-                                    <h1>Intermediario</h1>
-                                    <div className="info-content" id="infoTextIntermediario">
-                                        <p>Se você já pratica exercícios regularmente e deseja dar um passo adiante, o seu nível é intermediário!</p>
-                                    </div>
-                                    <button id="button2" onClick={() => funcoes2()}>Escolher nível</button>
-                                </div>
-
-                                <div className="estagio3" aria-label="Avançado" id="estagio">
-                                    <h1>Avançado</h1>
-                                    <div className="info-content" id="infoTextAvancado">
-                                        <p>Se você	é um usuário experiente ou um atleta dedicado que deseja levar seu condicionamento físico ao limite, o seu nível é avançado!</p>
-                                    </div>
-                                    <button id="button3" onClick={() => funcoes3()}>Escolher nível</button>
-                                </div>
-                            </div>
+                            <h1 className="titulo">Qual seu nivel:</h1>
+                            <button className="estagio" onClick={() => funcoes1()} id="button1" aria-label="Básico">Basico</button>
+                            <button className="estagio" onClick={() => funcoes2()} id="button2" aria-label="Intermediario">Intermediario</button>
+                            <button className="estagio" onClick={() => funcoes3()} id="button3" aria-label="Avançado">Avançado</button>
                             <div className="divButtons">
-                                <div className="boxSeta1">
-                                    <button onClick={() => mostrarCadastro1()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
-                                </div>
-                                <div className="boxSeta2">
-                                    <button onClick={() => mostrarCadastro3()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
-                                </div>
+                                <button onClick={() => mostrarCadastro1()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
+                                <button onClick={() => mostrarCadastro3()}> <img src={seta} alt="" srcSet="" className="setas" /> </button>
 
                             </div>
                         </div>
                         <div className="cadastro3">
-                            <h1 className="titulo">LOCAL DE TREINO</h1>
+                            <h1 className="titulo">Local de treino:</h1>
 
-                            <div className="inputsCadastro3"> 
-                                <div className="cepAndName">
-                                    <div className="contencao">
-                                        <label htmlFor="">CEP:</label>
-                                        <input type="text" placeholder="CEP" aria-label="Digite o CEP" onBlur={checkCEP}  />
-                                    </div>
-                                    <div className="contencao">
-                                        <label htmlFor="">Nome da academia:</label>
-                                        <input type="text" placeholder="Nome da academia" onInput={(e) => setAcademia(e.target.value)} aria-label="Digite o nome da academia"/>
-                                    </div>
-                                </div> 
+                                <div className="contencao">
+                                    <label htmlFor="">CEP:</label>
+                                    <input type="text" placeholder="CEP" aria-label="Digite o CEP" onBlur={checkCEP}  />
+                                </div>
+                                <div className="contencao">
+                                    <label htmlFor="">Nome da academia:</label>
+                                    <input type="text" placeholder="Nome da academia" onInput={(e) => setAcademia(e.target.value)} aria-label="Digite o nome da academia"/>
+                                </div>
+                             
                                 <div className="contencao" >
-                                    <label htmlFor="">Rua:</label>
-                                    <input type="text" placeholder="Rua" onInput={(e) => setRua(e.target.value)} id="rua" />
+                                <label htmlFor="">Rua:</label>
+                                <input type="text" placeholder="Rua" onInput={(e) => setRua(e.target.value)} id="rua" />
                                 </div>
-
-                                <div className="contencao">
-                                    <label htmlFor="">Cidade:</label>
-                                    <input type="text" placeholder="Cidade" onInput={(e) => setCidade(e.target.value)}id="cidade" />
+                              <div className="contencao">
+                              <label htmlFor="">Cidade:</label>
+                                <input type="text" placeholder="Cidade" onInput={(e) => setCidade(e.target.value)}id="cidade" />
                                 </div>
+                            
                                 
+                         
                                 <div className="contencao">
-                                    <label htmlFor="">Bairro:</label>
-                                    <input type="text" placeholder="Bairro" onInput={(e) => setBairro(e.target.value)} id="bairro" />    
+                                <label htmlFor="">Bairro:</label>
+                                <input type="text" placeholder="Bairro" onInput={(e) => setBairro(e.target.value)} id="bairro"/>         
                                 </div>
+                    
+                            <div className="cidadeUF">
+                            <div className="contencao">
+                               
+                                <div className="contencao">
+                                <label htmlFor="">N°:</label>
+                                <input type="text" placeholder="N°" onInput={(e) => setNumero(e.target.value)}/>
+                                </div>
+                                <div className="contencao">
+                                <p>UF:</p>
+                                <select name="UF" id="uf" placeholder="UF" onChange={(e) => setUf(e.target.value)}>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AM">AM</option>
+                                    <option value="AP">AP</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MG">MG</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MT">MT</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="PR">PR</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="RS">RS</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SE">SE</option>
+                                    <option value="SP">SP</option>
+                                    <option value="TO">TO</option>
 
-                                <div className="lastFieldCadastro3"> 
-                                    <div className="contencao">
-                                        <label htmlFor="">N°:</label>
-                                        <input type="text" placeholder="N°" onInput={(e) => setNumero(e.target.value)}/>
-                                    </div>
-                                    <div className="contencao">
-                                        <label htmlFor="">UF:</label>
-                                        <select name="UF" id="uf" placeholder="UF" onChange={(e) => setUf(e.target.value)}>
-                                            {options_df.map(opt => (
-                                                <option key={opt} value={opt}>{opt}</option>
-                                            ))}
-                                        </select>
-                                    </div>
+                                </select>
                                 </div>
+                             </div>
                             </div>
                             <div className="divButtons">
-                                    <div className="boxSeta1">
-                                        <button onClick={() => mostrarCadastro2()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
-                                    </div>
-                                    <div className="boxSeta2">
-                                        <button onClick={() => cadastrar()}><img src={sucesso} alt="" className="sucesso"/></button>
-                                    </div>
+                                <button onClick={() => mostrarCadastro2()}> <img src={setaE} alt="" srcSet="" className="setas" /> </button>
+                                <button onClick={() => cadastrar()}><img src={sucesso} alt="" className="sucesso"/></button>
+
                             </div>
-                        </div>
+                           
+                            </div>
+                         </div>
                     </div>
-                </div>
-            </main>
+              </main>
         </>
     )
 }

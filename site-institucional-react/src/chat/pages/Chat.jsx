@@ -7,7 +7,7 @@ import Menu from "../../components/menu/Menu_logado"
 function Chat() {
 
   const [isActive, setIsActive] = useState(false)
-  
+
   const [id, setId] = useState("")
 
   const pull_data = (data) => {
@@ -16,16 +16,15 @@ function Chat() {
 
 
   return (
-  <>
-    <Menu/>
-      <Grid container style={{display: "flex", flexDirection: "row", height: "100vh"}} >
-       <SideBarChat func={pull_data}  onClick={()=>{
-        setIsActive(isActive ? false : true);
-         }}/>
-       
-       {isActive? <ContainerChat id={id} /> : <></>}
+    <>
+      <Menu />
+      <Grid container style={{ display: "flex", flexDirection: "row", height: "100vh" }} >
+        <SideBarChat func={pull_data} onClick={() => {
+          setIsActive(isActive ? false : true);
+        }} />
+
+        {isActive ? <ContainerChat id={id} /> : <></>}
       </Grid>
-    </body>
     </>
   );
 }
