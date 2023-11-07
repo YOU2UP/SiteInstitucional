@@ -24,7 +24,7 @@ overflow-y: hidden;
 .inputField{
     border: 2px solid black;
     border-radius: 10px;
-    text-align: start;
+    text-align: flex-start;
     background-color: red;
     padding: 10px;
     
