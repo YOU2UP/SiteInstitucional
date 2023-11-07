@@ -71,7 +71,7 @@
     width: 60vw;
     margin-right: 330px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .btnSalvaAltera{
@@ -84,6 +84,3 @@
     font-family: 'Inter';
     cursor: pointer;
 }
-
-
-
