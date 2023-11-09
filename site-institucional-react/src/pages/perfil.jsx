@@ -121,6 +121,12 @@ function Perfil() {
     
       }
 
+      function Teste(){
+        console.log("teste")
+      }
+
+      const [decide, setDecide] = useState('1px solid #8888');
+
 
     return (
         <>
@@ -177,8 +183,17 @@ function Perfil() {
 
 
             </div>
-                <Grafico/>
+
             <div className="containerPerfil2">
+                
+                <div className="seguraBtnPerfil">
+                    <button className='btnFotos' style= {{border: '2px solid #8888', borderBottom: `${decide}`}} onClick={() => setDecide('none')}>Fotos</button>
+                </div>
+                <div className="seguraPerfil">
+
+                <Grafico/>
+                </div>
+                
             
             </div>
             

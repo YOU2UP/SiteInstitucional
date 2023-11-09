@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import api from '../../api';
 import Barra from '../dashs/bar_chart'
 import '../../css-images/css/canvas_dash.css'
+import Kpi from './kpi'
 
 function Canvas_Dash() {
 
@@ -77,12 +78,12 @@ function Canvas_Dash() {
         <>
             <div className="containerDash">
                 <div className="graficosUsuario">
+                    <Kpi/>
                     <div className="graficoBarra">
-                        <h1 className='tituloGraficoBarra'>Dias da Semana Em Que Seus Treinos Ocorreram</h1>
                         <Barra className='graficoPerfil'></Barra>
                     </div>
                 </div>
-                <div className="kapis">
+                {/* <div className="kapis">
                     <div className="media">
 
                         <h1 className='tituloAvaliacao'>Sua Avaliação</h1>
@@ -109,7 +110,7 @@ function Canvas_Dash() {
                         </div>
 
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=Karma:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=Karma:wght@300&family=Lato&family=Libre+Baskerville:wght@700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;1,6..12,300&family=Roboto+Condensed&display=swap');
+
+
+.kpiContainer{
+    /* border: 1px solid violet; */
+    height: 110px;
+    width: 72%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.kpi{
+    width: 30%;
+    height: 80px;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 2px 12px 2px rgb(0 0 0 / 20%);
+    margin-bottom: 10px;
+}
+
+.tituloKpi{
+    /* border: 1px solid red; */
+    height: 40%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #716f6f;
+}
+
+.corpoKpi{
+    /* border: 1px solid green; */
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter';
+    /* font-weight: 500; */
+    font-size: 25px;
+}

@@ -12,11 +12,16 @@ function Barra(props) {
     <div className="containerBarra">
 
     <div className="barraDeProgresso">
-        <div className="progresso" style={{ width: `${porcentagem}%` }}></div>
-        
+        <div className="progresso" style={{ width: `${porcentagem}%` }}></div>        
     </div>
         {porcentagem.toFixed(0)}%
     </div>
+    <div className="aa">
+     
+        {porcentagem.toFixed(0) < 50 ? `Sua meta é de ${props.metaTreinos}, não desista!` : `Sua meta é de ${props.metaTreinos}, você está quase lá!`}
+    </div>
+
+
     </>
 
   )

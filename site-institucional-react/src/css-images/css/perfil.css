@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-}
+} 
 
 .seguraBrad{
     width: 95vw;
@@ -23,18 +23,55 @@
 
 .containerPerfil{
     display: flex;
-    width: 80vw;
-    margin-left: 200px;
-    height: 80vh;
+    width: 90vw;
+    margin-left: 50px;
+    height: 45vh;
     justify-content: center;
     flex-direction: column;
+    /* border: 1px solid green; */
 }
 
 .containerPerfil2{
-    height: 20vh;
-    width: 100vw;
-    justify-content: flex-start;
-    margin-bottom: 100px;
+    width: 90vw;
+    height: 100vh;
+    margin-top: 40px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    /* border: 1px solid red; */
+}
+
+.seguraBtnPerfil{
+    margin-top: 40px;
+    /* border: 1px solid blue; */
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: end;
+}
+
+.btnFotos{
+    margin-left: 20px;
+    /* border: 2px solid #8888; */
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+
+.seguraPerfil{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #8888;
+    border-radius: 10px;
+
 }
 
 
