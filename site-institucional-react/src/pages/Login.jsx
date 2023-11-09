@@ -44,11 +44,20 @@ function Login() {
         
       <div className="container">
         <div className="login">
-          <h1 className="titulo">Login</h1>
-       
-            <input type="text" placeholder="Email" onInput={(p) => getEmail(p.target.value)} aria-label="Digite seu e-mail"/>
-            <input type="password" onKeyPress={(event) => {if(event.key === 'Enter') logar()}} placeholder="Senha" onInput={(p)=> getSenha(p.target.value)} aria-label="Digite sua senha"/>
-            <button onClick={() => logar()}>Entrar</button>
+          <h1 className="titulo">LOGIN</h1>
+
+          <div className="loginContainer">
+            <div>
+              <label className="containerName">Email:</label>
+              <input type="text" placeholder="Email" onInput={(p) => getEmail(p.target.value)} aria-label="Digite seu e-mail"/>
+            </div>
+            <div>
+              <label className="containerName">Senha:</label>
+              <input type="password" onKeyPress={(event) => {if(event.key === 'Enter') logar()}} placeholder="Senha" onInput={(p)=> getSenha(p.target.value)} aria-label="Digite sua senha"/>
+            </div>
+          </div>
+
+          <button onClick={() => logar()}>Entrar</button>
          
         </div>
       </div>

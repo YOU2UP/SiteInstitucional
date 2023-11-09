@@ -44,7 +44,7 @@ function home(){
     </section>
     <section id="sobre">
         <div className="containerGrid">
-            <div>
+            <div className="divContainer">
                 <p className="title">O que é a YOU2UP?</p>
                 <p className="textoQuemSomos">Somos uma comunidade de entusiastas do fitness, conectando pessoas determinadas a alcançar seus objetivos de treinamento. Nossa plataforma cria oportunidades para compartilhar conhecimento, motivação e apoio mútuo. Unimos aqueles que desejam transformar seus estilos de vida, promovendo o bem-estar e a força da coletividade. Junte-se a nós enquanto trilhamos o caminho para a superação e o sucesso juntos.</p>
             </div>
@@ -76,7 +76,7 @@ function home(){
     </section>
 
     <section id="ajuda">
-        <div className="container">
+        <div className="containerContato">
             <p className="titleBranco">
                 Precisa de ajuda?
             </p>
