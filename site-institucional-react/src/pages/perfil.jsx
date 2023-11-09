@@ -186,12 +186,12 @@ function Perfil() {
 
             <div className="containerPerfil2">
                 
+              
+                <div className="seguraPerfil">
                 <div className="seguraBtnPerfil">
                     <button className='btnFotos' style= {{border: '2px solid #8888', borderBottom: `${decide}`}} onClick={() => setDecide('none')}>Fotos</button>
                 </div>
-                <div className="seguraPerfil">
-
-                <Grafico/>
+                {/* <Grafico/> */}
                 </div>
                 
             

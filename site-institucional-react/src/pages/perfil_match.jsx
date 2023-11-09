@@ -5,6 +5,7 @@ import api from '../api'
 import foto from  '../css-images/img/icone_card.png'
 import Menu from '../components/menu/Menu_logado'
 import Barra from '../components/barra/barra'
+import Bread from '../components/Breadcrumb/breadcrumb'
 import Modal from '../components/modal/modal_agenda'
 
 function Perfil_match() {
@@ -19,6 +20,14 @@ function Perfil_match() {
             Authorization: `Bearer ${token}`
         },
     };
+
+
+    const breadcrumbLinks = [
+        { label: 'Home', to: '/pagina_inicial' },
+        { label: 'Perfil', to: `/perfil_match/${id}` },
+    ];
+
+    const currentPage = '/perfil_match/:id';
 
     useEffect(() => {
         api.get(`/usuarios/${id}`, config).then((response) => {
@@ -71,6 +80,8 @@ function Perfil_match() {
     return (
         <>
             <Menu />
+
+            <Bread links={breadcrumbLinks} currentPage={currentPage} />
 
 
             <div className="containerPerfil">

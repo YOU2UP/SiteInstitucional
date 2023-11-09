@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../../css-images/img/logo.png"
 import Close from '../../css-images/img/close.png'
 import More from '../../css-images/img/more.png'
+import Icon from '../../css-images/img/icon_usu.png'
 import "../../css-images/css/menuIndex.css"
 function MenuIndex(){
     function abrir(){
@@ -19,10 +20,11 @@ function MenuIndex(){
        
     }
 return(
+
     <>
     <header id="MenuIndex">
         <div id="logo">
-           <img src={Logo} alt="" />
+           <img src={Logo} style={{width: '200px', marginLeft: '40px'}} alt="" />
                 
         </div>
         <nav id="menuMenor">
@@ -31,8 +33,8 @@ return(
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Ajuda</a></li>
                 <li><a href="#">Contato</a></li>
-                <li><a href="/login"><button className="buttonLogin">Login</button></a></li>
                 <li><a href="/cadastro"><button className="buttonCadastro">Cadastro</button></a></li>
+                <li><a href="/login"><button className="buttonLogin"><img src={Icon} style={{width: '50px', height:'50px'}} alt="" /></button></a></li>
             </ul>
             <img src={Close} className="icon close" alt="" onClick={() => fechar()}></img>
         </nav>

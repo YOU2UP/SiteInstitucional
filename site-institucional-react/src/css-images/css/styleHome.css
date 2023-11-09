@@ -82,21 +82,34 @@ section{
 #sobre{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100vw;
     position: relative;
-    height: 300px;
+    height: 200px;
     text-align: center;
    margin-bottom: 15rem;
 
 }
 .containerGrid{
-    margin-top: 125px;
-    width: 80%;
+    margin-top: 100px;
+    width: 100%;
+    /* border: 1px solid red; */
 }
 .containerGrid img{
     width: 400px;
+    height: 450px;
 
  
+    
+}
+
+.containerQuemSomos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid orange; */
+    height: 40vh;
 }
 .title{
     font-size: 30px;
@@ -105,14 +118,27 @@ section{
     margin-bottom: 10px;
   
 }
+
+.titleQuemSomos{
+    font-size: 30px;
+    font-weight: 700;
+    color:#ff9200 ;
+    width: 50%;
+    /* border: 1px solid blue; */
+    margin-bottom: 10px;
+}
 .text{
     font-size:1rem;
+    
 }
 
 .textoQuemSomos{
+    /* border: 1px solid red; */
     font-size: 20px;
-    margin-top: 40px;
+    line-height: 1.5rem;
+    /* margin-top: 40px; */
     width: 81%;
+    height: 60%;
 }
 
 #propaganda{
@@ -127,26 +153,29 @@ section{
 }
 #propaganda .textoEmCima{
    position: absolute;
+   z-index: 10000;
 }
 #propaganda .sobreposicao{
     width: 100%;
     height: 100%;
-    background-color: #00000089;
+    background-color: rgba(0, 0, 0, 0.767);
     position: absolute;
     top: 0;
-
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+     right: 0;
+     backdrop-filter: blur(2px);
     
 }
 #propaganda .textoEmcima{
-    width: 80%;
-    position: relative;
+    width: 40%;
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    z-index: 10000;
+    text-align: center;
 }
 #propaganda .text{
     color: white;
+    margin-top: 2rem;
 }
 .botaoinscreva{
     background-color: #ff9200;
@@ -356,8 +385,28 @@ footer .menu ul{
 footer .name{
     color: white;
 }
+
+footer .social{
+    display: flex;
+    flex-direction: column;
+}
+footer .seguraIconesFooter{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+
+}
+
 footer .social icon{
     cursor: pointer;
+    width: 200px;
+   
+}
+
+footer .iconFooter{
+    width: 30px;
+    margin-right: 1rem;
+
 }
 footer .contact{
     margin-top: 2rem;
