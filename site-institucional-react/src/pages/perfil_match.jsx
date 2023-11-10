@@ -4,7 +4,7 @@ import '../css-images/css/perfil.css'
 import api from '../api'
 import foto from  '../css-images/img/icone_card.png'
 import Menu from '../components/menu/Menu_logado'
-import Barra from '../components/barra/barra'
+import Barra from '../components/barra/barra_match'
 import Bread from '../components/Breadcrumb/breadcrumb'
 import Modal from '../components/modal/modal_agenda'
 
@@ -96,8 +96,7 @@ function Perfil_match() {
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{usuario.nome}</h1>
                         <span className='descricao'>
-                            Sou muito extrovertido e sempre quis treinar com um parceiro,<br />
-                            porém, por conta dos horários não consigo achar ninguém.
+                            {usuario.descricao}
                         </span>
                         <br />
                         <br />
@@ -123,6 +122,10 @@ function Perfil_match() {
                     </div>
                 <div className="metasMatch">
 
+                    <div className="tituloMatch">
+                        Meta
+                    </div>
+
                     
                   
 
@@ -131,7 +134,7 @@ function Perfil_match() {
                             <span>Esse usuário não possui metas </span>
                         </div>
                     ) : (            
-                     <Barra qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos}/>
+                     <Barra nome={usuario.nome} qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos}/>
                     )}
                 </div>
                 </div>
