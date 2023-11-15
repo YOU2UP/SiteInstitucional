@@ -34,7 +34,7 @@
 .containerPerfil2{
     width: 90vw;
     height: 100vh;
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 50px;
     display: flex;
     flex-direction: column;
@@ -47,29 +47,35 @@
 .seguraBtnPerfil{
     margin-top: 40px;
     /* border: 1px solid blue; */
-    width: 90%;
+    width: 85%;
     height: 10%;
     display: flex;
     align-items: end;
+    justify-content: flex-start;
 }
 
 .btnFotos{
-    /*margin-left: 20px;
-    margin-top: 30px;
-    border: 2px solid #8888; */
+    border: 2px solid #8888;
+    border-bottom: none;
     width: 200px;
-    position: absolute; 
     height: 30px;
     cursor: pointer;
-    background-color: white;
-    left: -0.2%;
-    top: -4%;
+    background-color: #ffff;
+}
+
+.btnGraficos{
+    margin-left: 20px;
+    border: 2px solid #8888;
+    border-bottom: none;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #ffff;
 }
 
 
 
 .seguraPerfil{
-    position: relative;
     width: 90%;
     height: 100%;
     display: flex;
@@ -77,7 +83,6 @@
     align-items: center;
     border: 2px solid #8888;
     border-radius: 10px;
-border-top-left-radius: 0;
 }
 
 

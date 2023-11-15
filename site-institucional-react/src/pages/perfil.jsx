@@ -117,15 +117,26 @@ function Perfil() {
         }
     
         return imagem;
-    
-    
+        
       }
 
-      function Teste(){
-        console.log("teste")
-      }
 
-      const [decide, setDecide] = useState('1px solid #8888');
+      const [corTextoFotos, setCorTextoFotos] = useState('#000');
+      const [corTextoGraficos, setCorTextoGraficos] = useState('#000');
+      const [componente, setComponente] = useState('');
+
+      function decideComponente(componente){
+            if(componente === 'fotos'){
+                return "teste"
+            }
+
+            else if(componente === 'graficos'){
+                return <Grafico/>
+            }
+            else{
+                return null;
+            }
+      }
 
 
     return (
@@ -187,11 +198,12 @@ function Perfil() {
             <div className="containerPerfil2">
                 
               
-                <div className="seguraPerfil">
                 <div className="seguraBtnPerfil">
-                    <button className='btnFotos' style= {{border: '2px solid #8888', borderBottom: `${decide}`}} onClick={() => setDecide('none')}>Fotos</button>
+                    <button className='btnFotos'  style={{ color: corTextoFotos }} onClick={() => {setCorTextoFotos('#FF9200'); setCorTextoGraficos('#000'); setComponente('fotos')}}>Fotos</button>
+                    <button className='btnGraficos' style={{ color: corTextoGraficos}} onClick={() => {setCorTextoFotos('#000'); setCorTextoGraficos('#FF9200'); setComponente('graficos')}}>Graficos</button>
                 </div>
-                {/* <Grafico/> */}
+                <div className="seguraPerfil">
+                    {decideComponente(componente)}
                 </div>
                 
             

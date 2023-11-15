@@ -78,39 +78,11 @@ function Canvas_Dash() {
         <>
             <div className="containerDash">
                 <div className="graficosUsuario">
-                    <Kpi/>
                     <div className="graficoBarra">
                         <Barra className='graficoPerfil'></Barra>
                     </div>
+                    <Kpi/>
                 </div>
-                {/* <div className="kapis">
-                    <div className="media">
-
-                        <h1 className='tituloAvaliacao'>Sua Avaliação</h1>
-
-
-                        <span className='avaliacao'>{media}</span>
-
-
-                        <h1 className='subTituloAvaliacao'>Média das avaliações que seus parceiros te Deram</h1>
-                    </div>
-                    <div className="rankingTreino">
-                        <h1 className="tituloRank">
-                            Parceiros Com quem <br />Você mais Treinou
-                        </h1>
-                        <div className="itensRank">
-                            {data.map((nome, index) => (
-                                <div key={index} className="itemRank">
-                                    <div className="posicaoRank"><span className="spanPosicao">{index + 1}º</span>  {nome}</div>
-                                </div>
-                            ))}
-
-                           
-
-                        </div>
-
-                    </div>
-                </div> */}
             </div>
         </>
     )

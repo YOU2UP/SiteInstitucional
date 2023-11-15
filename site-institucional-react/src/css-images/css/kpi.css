@@ -3,11 +3,12 @@
 
 
 .kpiContainer{
-    /* border: 1px solid violet; */
-    height: 110px;
+    border: 1px solid violet;
+    height: 590px;
     width: 72%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
 } 
 
