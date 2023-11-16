@@ -11,12 +11,10 @@ function Feed(props) {
         <div className="containerFeed">
             {
                 fotos === undefined ? <p>Carregando...</p> :
-                fotos === null ? <p>Não há fotos cadastradas</p> :
                 fotos.map((foto) => {
                     <div className="cardFoto">
                         {/* <img src={foto.url} alt="" /> */}
                         {/* {foto.url} */}
-                        a
                     </div>
                 })
             }
