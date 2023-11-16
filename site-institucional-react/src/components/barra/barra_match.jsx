@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css-images/css/barra.css'
 
-function Barra(props) {
+function Barra_Match(props) {
 
 
     const porcentagem = (props.qtdTreinos / props.metaTreinos) * 100; 
@@ -10,6 +10,7 @@ function Barra(props) {
     <>
 
     <div className="containerBarra">
+        
 
     <div className="barraDeProgresso">
         <div className="progresso" style={{ width: `${porcentagem}%` }}></div>        
@@ -17,8 +18,7 @@ function Barra(props) {
         {porcentagem.toFixed(0)}%
     </div>
     <div className="aa">
-     
-        {porcentagem.toFixed(0) < 50 ? `Sua meta é de ${props.metaTreinos}, não desista!` : `Sua meta é de ${props.metaTreinos}, você está quase lá!`}
+        A Meta de {props.nome} é de {props.metaTreinos} treinos. 
     </div>
 
 
@@ -27,4 +27,4 @@ function Barra(props) {
   )
 }
 
-export default Barra
+export default Barra_Match

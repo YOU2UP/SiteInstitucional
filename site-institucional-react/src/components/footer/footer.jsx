@@ -2,7 +2,7 @@ import React from 'react'
 import '../../css-images/css/footer_logado.css'
 import logo from '../../css-images/img/logo.png'
 import Copy from '../../css-images/img/copyright.png'
-import face from '../../css-images/img/facebook.png'
+import Face from '../../css-images/img/facebook.png'
 import insta from '../../css-images/img/instagram.png'
 import twitter from '../../css-images/img/twitter.png'
 
@@ -33,7 +33,7 @@ function Footer() {
               </span>
 
               <div className="icones_redes">
-                <img src={face} alt="" className="icone_footer" />
+                <img src={Face} alt="" className="icone_footer" />
                 <img src={insta} alt="" className="icone_footer" />
                 <img src={twitter} alt="" className="icone_footer" />
               </div>

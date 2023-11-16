@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import api from '../../api';
 import Barra from '../dashs/bar_chart'
 import '../../css-images/css/canvas_dash.css'
+import Kpi from './kpi'
 
 function Canvas_Dash() {
 
@@ -78,37 +79,9 @@ function Canvas_Dash() {
             <div className="containerDash">
                 <div className="graficosUsuario">
                     <div className="graficoBarra">
-                        <h1 className='tituloGraficoBarra'>Dias da Semana Em Que Seus Treinos Ocorreram</h1>
                         <Barra className='graficoPerfil'></Barra>
                     </div>
-                </div>
-                <div className="kapis">
-                    <div className="media">
-
-                        <h1 className='tituloAvaliacao'>Sua Avaliação</h1>
-
-
-                        <span className='avaliacao'>{media}</span>
-
-
-                        <h1 className='subTituloAvaliacao'>Média das avaliações que seus parceiros te Deram</h1>
-                    </div>
-                    <div className="rankingTreino">
-                        <h1 className="tituloRank">
-                            Parceiros Com quem <br />Você mais Treinou
-                        </h1>
-                        <div className="itensRank">
-                            {data.map((nome, index) => (
-                                <div key={index} className="itemRank">
-                                    <div className="posicaoRank"><span className="spanPosicao">{index + 1}º</span>  {nome}</div>
-                                </div>
-                            ))}
-
-                           
-
-                        </div>
-
-                    </div>
+                    <Kpi/>
                 </div>
             </div>
         </>

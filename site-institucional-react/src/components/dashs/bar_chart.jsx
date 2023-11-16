@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Chart, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import ReactEcharts from 'echarts-for-react'
 import api from '../../api';
 import '../../css-images/css/bar.css';
 
 
-Chart.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
-
-function Bar_chart() {
+const Bar_chart = () => {
   const [dias, setDias] = useState([]);
 
   const id = sessionStorage.getItem("id");
@@ -33,26 +30,48 @@ function Bar_chart() {
       
   }, []);
 
-  const data = {
-    labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
-    datasets: [
-      {
-        label: 'Treinos',
-        data: dias,
-        backgroundColor: '#ff9200',
-        borderColor: 'black',
-        borderWidth: 1,
+  const option ={
+    backgroundColor: '#f6f6f6',
+    title: {
+        text: 'SEUS TREINOS NA SEMANA',
+        subtext: 'Aqui estão os dias que você mais treina na semana',
+        left: 'center',
+        top: 5,
+        textStyle: {
+            fontSize: 16,
+        },
+    },
+    xAxis: {
+      type: 'category',
+      data: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+    }, 
+    yAxis: {
+      type: 'value',
+    },
+    legend: {
+      bottom: 10,
+      data: ['Treinos'],
+    },
+    tooltip: {  
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow', 
       },
-    ],
+    },
+    series: [
+      {
+        name: 'Treinos',
+        data: dias,
+        type: 'bar',
+        itemStyle: {
+          color: '#ff9200'
+        },
+      },
+    ]
   };
 
-  const options = {};
+  return <ReactEcharts option={option} style={{ height: '500px', width:'1000px' }} />;
 
-  return (
-    <div>
-      <Bar data={data} options={options} className='Grafiquinho' />
-    </div>
-  );
 }
 
 export default Bar_chart;

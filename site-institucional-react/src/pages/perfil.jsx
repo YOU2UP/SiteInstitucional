@@ -7,6 +7,8 @@ import Config from '../css-images/img/config.png'
 import Grafico from '../components/canvas/canvas_dash'
 import Barra from '../components/barra/barra'
 import Breadcrumb from '../components/Breadcrumb/breadcrumb';
+import FeedFoto from '../components/fotos/feed'
+
 
 function Perfil() {
 
@@ -37,7 +39,7 @@ function Perfil() {
 
         api.get(`/usuarios/${id}`, config).then((response) => {
             setUsuario(response.data)
-            console.log(response.data)
+            console.log("olha aqui", response.data)
         }).catch((error) => {   
             console.log("Erro: ", error)
         })
@@ -117,8 +119,25 @@ function Perfil() {
         }
     
         return imagem;
-    
-    
+        
+      }
+
+
+      const [corTextoFotos, setCorTextoFotos] = useState('#FF9200');
+      const [corTextoGraficos, setCorTextoGraficos] = useState('#000');
+      const [componente, setComponente] = useState('fotos');
+
+      function decideComponente(componente){
+            if(componente === 'fotos'){
+                return <FeedFoto fotos= {usuario.feedFotos} />
+            }
+
+            else if(componente === 'graficos'){
+                return <Grafico/>
+            }
+            else{
+                return null;
+            }
       }
 
 
@@ -177,8 +196,18 @@ function Perfil() {
 
 
             </div>
-                <Grafico/>
+
             <div className="containerPerfil2">
+                
+              
+                <div className="seguraBtnPerfil">
+                    <button className='btnFotos'  style={{ color: corTextoFotos }} onClick={() => {setCorTextoFotos('#FF9200'); setCorTextoGraficos('#000'); setComponente('fotos')}}>Fotos</button>
+                    <button className='btnGraficos' style={{ color: corTextoGraficos}} onClick={() => {setCorTextoFotos('#000'); setCorTextoGraficos('#FF9200'); setComponente('graficos')}}>Graficos</button>
+                </div>
+                <div className="seguraPerfil">
+                    {decideComponente(componente)}
+                </div>
+                
             
             </div>
             

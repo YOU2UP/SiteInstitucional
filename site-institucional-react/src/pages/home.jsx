@@ -44,8 +44,8 @@ function home(){
     </section>
     <section id="sobre">
         <div className="containerGrid">
-            <div className="divContainer">
-                <p className="title">O que é a YOU2UP?</p>
+            <div className="containerQuemSomos">
+                <p className="titleQuemSomos">O que é a YOU2UP?</p>
                 <p className="textoQuemSomos">Somos uma comunidade de entusiastas do fitness, conectando pessoas determinadas a alcançar seus objetivos de treinamento. Nossa plataforma cria oportunidades para compartilhar conhecimento, motivação e apoio mútuo. Unimos aqueles que desejam transformar seus estilos de vida, promovendo o bem-estar e a força da coletividade. Junte-se a nós enquanto trilhamos o caminho para a superação e o sucesso juntos.</p>
             </div>
             <img src={Foto1 } alt=""/>
@@ -56,12 +56,13 @@ function home(){
     <section id="propaganda">
         <div className="containerGrid">
             
-            <div className="sobreposicao">
-                <div className="textoEmcima">
+        <div className="textoEmcima">
                 <p className="title">Como funciona a YOU2UP?</p>
                 <p className="text">Nossa plataforma tem finalidade de juntar você nosso usuario a um futuro parceiro para que vocês dois treinem juntos, podendo assim conhecer novas pessoas.</p>
                 <button className="botaoinscreva">Inscreva-se</button>
-            </div></div>
+                </div>
+            <div className="sobreposicao">
+            </div>
           
            
         </div>
@@ -105,9 +106,11 @@ function home(){
                 <p className="name">
                     Siga-nos nas redes sociais
                 </p>
-                <img src={Face} alt="facebook" className="icon"/>
-                <img src={Insta} alt="instagram" className="icon"/>
-                <img src={Yout} alt="youtube" className="icon"/>
+                <div className="seguraIconesFooter">
+                <img src={Face} alt="facebook" className="iconFooter"/>
+                <img src={Insta} alt="instagram" className="iconFooter"/>
+                <img src={Yout} alt="youtube" className="iconFooter"/>
+                </div>
             </div>
             <div className="contact">
                 <p className="name">Contate-nos </p>
@@ -122,14 +125,14 @@ function home(){
                
                 
             </div>
-            <div className="menu">
+            {/* <div className="menu">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
-            </div>
+            </div> */}
         </div>
         <div className="divisao"></div>
         <div className="copy">
