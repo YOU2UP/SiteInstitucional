@@ -41,31 +41,43 @@ main#Login{
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
     width: 17rem;
     border-radius: 10px;
     box-shadow:0px 4px 7px rgba(0, 0, 0, 0.25);
     margin-top: 5rem;
+    gap: 16px;
 }
 .fundo .container .login .titulo{
     font-family:  'inter';
     color: #ff9200;
-    margin-bottom: 2rem;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    height: 10%;
 }
 .fundo .container .login input{
-        padding: .5rem .2rem;
-    margin-bottom: 3rem;
-    background-color: #f4f2f2;
-    border: none;
-    border-bottom:2px solid  #1c1c1cca;
-   outline: none;
-   width: 100%;
+    padding: .5rem .2rem;
+    margin-bottom: 2rem;
+    margin-top: 0.4rem;
+    background-color: #ffffff;
+    border: 2px solid #cecece;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    transition: .5;      
+    font-size: 0.8rem;
 }
+
+.containerName {
+    font-size: 0.9rem;
+}
+
 .fundo .container .login button{
+    height: 10%;
     background-color: #ff9200;
     padding: .3rem 2rem;
     border-radius: 5px;
@@ -80,8 +92,22 @@ main#Login{
 }
 .fundo .container .login button:hover{
     background-color: #ffffffcc;
-    color: #ff9200;
-   
+    color: #ff9200;  
+}
+
+.loginContainer > input:hover {
+    border: 2px solid #ff9200;
+}
+
+.loginContainer > input:focus {
+    border: 2px solid #ff9200;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
 }
 
 @media(max-width : 768px){

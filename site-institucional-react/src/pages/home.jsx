@@ -77,7 +77,7 @@ function home(){
     </section>
 
     <section id="ajuda">
-        <div className="container">
+        <div className="containerContato">
             <p className="titleBranco">
                 Precisa de ajuda?
             </p>

@@ -22,7 +22,7 @@
 
 .contatos_footer{
     width: 210px;
-    height: 120px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -37,7 +37,7 @@
 
 .redes_footer{
     width: 150px;
-    height: 120px;
+    height: 90px;
     margin-right: 100px;
     display: flex;
     align-items: center;
@@ -65,11 +65,7 @@
 .parte_baixo{
     border-top: 3px solid white;
     width: 90vw;
-    height: 40px;
-}
-
-.texto_footer{
-    margin-top: 200px;
+    height: 30px;
 }
 
 .copy_footer{
