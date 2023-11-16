@@ -19,8 +19,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80vw;
-    border: 1px  solid blue;
+    width: 100%;
+    /* border: 1px  solid blue; */
     height: 80vh;
 
 }

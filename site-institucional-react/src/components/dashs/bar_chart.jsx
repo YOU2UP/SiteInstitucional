@@ -52,6 +52,12 @@ const Bar_chart = () => {
       bottom: 10,
       data: ['Treinos'],
     },
+    tooltip: {  
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow', 
+      },
+    },
     series: [
       {
         name: 'Treinos',

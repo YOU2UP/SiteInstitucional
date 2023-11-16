@@ -7,6 +7,8 @@ import Config from '../css-images/img/config.png'
 import Grafico from '../components/canvas/canvas_dash'
 import Barra from '../components/barra/barra'
 import Breadcrumb from '../components/Breadcrumb/breadcrumb';
+import FeedFoto from '../components/fotos/feed'
+
 
 function Perfil() {
 
@@ -37,7 +39,7 @@ function Perfil() {
 
         api.get(`/usuarios/${id}`, config).then((response) => {
             setUsuario(response.data)
-            console.log(response.data)
+            console.log("olha aqui", response.data)
         }).catch((error) => {   
             console.log("Erro: ", error)
         })
@@ -121,13 +123,13 @@ function Perfil() {
       }
 
 
-      const [corTextoFotos, setCorTextoFotos] = useState('#000');
+      const [corTextoFotos, setCorTextoFotos] = useState('#FF9200');
       const [corTextoGraficos, setCorTextoGraficos] = useState('#000');
-      const [componente, setComponente] = useState('');
+      const [componente, setComponente] = useState('fotos');
 
       function decideComponente(componente){
             if(componente === 'fotos'){
-                return "teste"
+                return <FeedFoto fotos= {usuario.feedFotos} />
             }
 
             else if(componente === 'graficos'){
