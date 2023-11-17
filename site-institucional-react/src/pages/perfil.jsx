@@ -131,7 +131,6 @@ function Perfil() {
             if(componente === 'fotos'){
                 return <FeedFoto fotos= {usuario.feedFotos} />
             }
-
             else if(componente === 'graficos'){
                 return <Grafico/>
             }
@@ -163,7 +162,7 @@ function Perfil() {
                     <div className="informacoes">
                         <h1 className='nomeUsuarioPerfil'>{nome}</h1>
                         <span className='descricao'>
-                        Sou um usuário legal
+                        {usuario.descricao}
                         </span>
                       
 

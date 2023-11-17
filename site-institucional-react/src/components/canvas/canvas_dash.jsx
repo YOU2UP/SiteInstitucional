@@ -39,6 +39,7 @@ function Canvas_Dash() {
 
         api.get(`/treinos/contagem-treinos/${id}`, config).then((response) => {
             setRanking(response.data)
+            console.log("ranking", response.data)
         }).catch((error) => {
             console.log("Erro:", error);
         })
@@ -81,7 +82,7 @@ function Canvas_Dash() {
                     <div className="graficoBarra">
                         <Barra className='graficoPerfil'></Barra>
                     </div>
-                    <Kpi/>
+                    <Kpi  />
                 </div>
             </div>
         </>

@@ -9,15 +9,7 @@ function Feed(props) {
     return(
         <>
         <div className="containerFeed">
-            {
-                fotos === undefined ? <p>Carregando...</p> :
-                fotos.map((foto) => {
-                    <div className="cardFoto">
-                        {/* <img src={foto.url} alt="" /> */}
-                        {/* {foto.url} */}
-                    </div>
-                })
-            }
+            
            
         </div>
         </>
