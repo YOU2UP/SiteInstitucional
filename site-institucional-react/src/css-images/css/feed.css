@@ -1,14 +1,37 @@
 .containerFeed{
-    width: 100%;
+    width: 60%;
     height: 100%;
     border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    
 }
 
 .cardFoto{
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+    background-color: rgb(180, 175, 175);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotoFeed{
     width: 200px;
-    height: 300px;
-    background-color: gray;
+    height: 200px;
+    object-fit: cover;
+}
+
+.uploadFoto{
+    width: 250px;
+    height: 250px;
+    background-color: #FF9200;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
 }

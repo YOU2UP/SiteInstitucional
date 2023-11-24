@@ -24,6 +24,7 @@ function Canvas_Dash() {
     useEffect(() => {
         api.get(`/treinos/contagem-treinos/${id}`, config).then((response) => {
             setTreinos(response.data)
+            console.log("deus me ajude", response.data)
 
         }).catch((error) => {
             console.log("Erro: ", error)

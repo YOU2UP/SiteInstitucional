@@ -9,9 +9,20 @@ function Feed(props) {
     return(
         <>
         <div className="containerFeed">
+            <div className="uploadFoto">
+                a
+            </div>
+            {fotos.map((foto) => (
+                <div className="cardFoto">
+                    <img src={foto.url} className="fotoFeed" />
+                </div>
             
-           
+            ))}
+               <div className="paginaFotos">
+                a
+               </div>
         </div>
+
         </>
     )  
 }
