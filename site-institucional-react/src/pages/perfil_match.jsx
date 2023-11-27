@@ -49,7 +49,6 @@ function Perfil_match() {
 
   const qtdTreinos = treinos.length;
 
-
   return (
     <>
       <Menu />
@@ -59,7 +58,7 @@ function Perfil_match() {
           <div className="infosMatch">
             <div className='fotosInfo'>
               <div className="foto">
-                <img src={usuario.fotoPerfil.url} alt={usuario.nome} className='imgPerfil' />
+                <img src={usuario.fotoPerfil?.url || ''} alt={usuario.nome} className='imgPerfil' />
               </div>
               <div className="informacoes">
                 <h1 className='nomeUsuarioPerfil'>{usuario.nome}</h1>
@@ -94,13 +93,14 @@ function Perfil_match() {
                   <Barra nome={usuario.nome} qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos} />
                 )}
             </div>
-
           </div>
         )}
       </div>
-            <div className='seguraFeedPerfil'>
-              <Feed id={id} fotos={usuario.feedFotos} />
-            </div>
+      <div className='seguraFeedPerfil'>
+        {usuario && usuario.feedFotos && (
+          <Feed id={id} fotos={usuario.feedFotos} />
+        )}
+      </div>
       <Modal setOpen={setOpen} open={open} idUsu={usuario?.id} />
     </>
   )

@@ -171,6 +171,12 @@
     color: #FF9200;
 }
 
+.tituloMatch{
+    font-family: inter;
+    font-size:  40px;
+    color: #FF9200;
+}
+
 .btnMeta{
     width: 531px;
     height: 60px;

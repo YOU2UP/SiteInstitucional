@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import setaDireita from '../../css-images/img/seta_feed_direita.png'
 import setaEsquerda from '../../css-images/img/seta_feed_esquerda.png'
 import Adicionar from '../../css-images/img/adicionar.png'
-import Modal from '../modal/modal_foto';
+import Modal_foto from '../modal/modal_foto';
 import '../../css-images/css/feed.css';
 
 function Feed(props) {
@@ -79,6 +79,7 @@ function Feed(props) {
                             <img className='imgBtnFeed' src={setaDireita} alt="" />
                         </button>
                     </div>
+                    <Modal_foto setOpen={setOpen} open={open}/>
                 </div>
             ) : (
                 <div className="seguraFeed">
@@ -106,7 +107,6 @@ function Feed(props) {
                             <img className='imgBtnFeed' src={setaDireita} alt="" />
                         </button>
                     </div>
-                    <Modal setOpen={setOpen} open={open}/>
                 </div>
             )}
         </>

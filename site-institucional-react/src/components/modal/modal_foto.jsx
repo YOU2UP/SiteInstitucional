@@ -28,7 +28,7 @@ const Modal_foto = (props) => {
   };
 
   return (
-    <Modal open={props.Open} 
+    <Modal open={props.open} 
     onClose={handleClose}>
       <Box
         sx={{
@@ -37,18 +37,29 @@ const Modal_foto = (props) => {
           left: '50%',
           transform: 'translate(-50%, -50%)',
           width: 400,
+          height: 200,
           bgcolor: 'background.paper',
           boxShadow: 24,
           p: 4,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+      
         }}
       >
         <Typography variant="h6" component="div">
           Selecione uma foto
         </Typography>
         <Input type="file" onChange={handleFileChange} />
-        <Button variant="contained" onClick={handleUpload}>
+        <Box>
+        <Button variant="contained" onClick={handleUpload} sx={{ backgroundColor: '#FF9200'}}>
           Enviar Foto
         </Button>
+        <Button variant='contained' onClick={handleClose} sx={{marginLeft: '20px', backgroundColor: '#FF9200'}}>
+          fechar
+        </Button>
+        </Box>
       </Box>
     </Modal>
   );
