@@ -10,6 +10,7 @@ const DateTimePickerModal = (props) => {
   const id = sessionStorage.getItem("id")
 
   const handleOpen = () => {
+    console.log('Abrindo o modal');
     props.setOpen(true);
   };
 

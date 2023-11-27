@@ -38,10 +38,14 @@
 .corpoKpi{
     /* border: 1px solid green; */
     height: 60%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-family: 'Inter';
     /* font-weight: 500; */
-    font-size: 25px;
+    font-size: 24px;
+    color:#716f6f;
+    margin-bottom: 20px;
 }

@@ -1,10 +1,22 @@
-.containerFeed{
-    width: 60%;
+.seguraFeed{
+    /* border: 1px solid green; */
     height: 100%;
-    border: 1px solid red;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerFeed{
+    width: 70%;
+    height: 85%;
+    /* border: 1px solid red; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
     
 }
 
@@ -12,26 +24,72 @@
     width: 250px;
     height: 250px;
     margin-top: 10px;
-    background-color: rgb(180, 175, 175);
+    /* background-color: rgb(180, 175, 175);     */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .fotoFeed{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
 }
 
 .uploadFoto{
     width: 250px;
     height: 250px;
-    background-color: #FF9200;
+    background-color: #CCC;
     border: none;
     color: white;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.adicionarImg{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.txtUpload{
+    /* margin-bottom: 30px; */
+    font-family: 'Inter';
+}
+
+.paginaFotos{
+    width: 40%;
+    height: 69px;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btnPagFeed{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #FF9200;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 10px; */
+}
+
+.imgBtnFeed{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }

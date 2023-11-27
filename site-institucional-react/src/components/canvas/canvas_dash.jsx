@@ -80,7 +80,7 @@ function Canvas_Dash() {
         <>
             <div className="containerDash">
                 <div className="graficosUsuario">
-                    <div className="graficoBarra">
+                    <div className="graficoBarra"> 
                         <Barra className='graficoPerfil'></Barra>
                     </div>
                     <Kpi  />

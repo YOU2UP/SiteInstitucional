@@ -117,7 +117,7 @@ function Perfil() {
 
   const decideComponente = (componente) => {
     if (componente === 'fotos') {
-      return usuario && usuario.feedFotos ? <FeedFoto fotos={usuario.feedFotos} /> : null;
+      return usuario && usuario.feedFotos ? <FeedFoto fotos={usuario.feedFotos}  id={id}/> : null;
     } else if (componente === 'graficos') {
       return <Grafico />;
     } else {
