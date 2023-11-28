@@ -70,7 +70,7 @@ const Bar_chart = () => {
     ]
   };
 
-  return <ReactEcharts option={option} style={{ height: '500px', width:'1000px' }} />;
+  return <ReactEcharts option={option} style={{ height: '500px', width:'800px' }} />;
 
 }
 

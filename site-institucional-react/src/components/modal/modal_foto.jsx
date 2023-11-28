@@ -1,8 +1,25 @@
 import React, { useState } from 'react';
 import { Button, Modal, Box, Input, Typography } from '@mui/material';
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  list,
+} from "firebase/storage";
+import { storage } from "../../chat/firebase/index";
+import { v4 } from "uuid";
+import api from '../../api'
+import { set } from 'date-fns';
+
 
 const Modal_foto = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUrls, setImageUrls] = useState([]);
+
+  const id = sessionStorage.getItem('id');
+  const token = sessionStorage.getItem('token');
 
   const handleOpen = () => {
     props.setOpen(true);
@@ -18,10 +35,42 @@ const Modal_foto = (props) => {
   };
 
   const handleUpload = () => {
-    // Lógica para fazer upload do arquivo
-    // Aqui você pode implementar a lógica para enviar a foto para o servidor
-    // e realizar qualquer outra manipulação necessária.
-    console.log('Arquivo selecionado:', selectedFile);
+
+    console.log(selectedFile)
+    // console.log("img upload", imageUpload)
+   
+    const foto = {
+      "url":"",
+      "usuario":{
+        "idUsuario": id
+      }
+    }
+
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+    };
+
+   
+
+    const imagesListRef = ref(storage, "images/");
+
+    if (selectedFile== null) return;
+    const imageRef = ref(storage, `images/${selectedFile.name + v4()}`);
+    console.log(imageRef)
+    uploadBytes(imageRef, selectedFile).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrls((prev) => [...prev, url]);
+        alert(url)
+        console.log(url)
+        foto.url = url;
+        api.post("/fotos", foto, config)
+      });
+    });
+  
+
 
     // Fechar o modal após o upload
     props.setOpen(false);

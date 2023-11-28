@@ -12,10 +12,8 @@
     width: 70%;
     height: 85%;
     /* border: 1px solid red; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 25px;
     
 }

@@ -6,7 +6,7 @@ const Breadcrumb = ({ links, currentPage}) => {
     return (
         <Breadcrumbs separator={
             <span style={{ fontSize: '1.2rem', margin: '0 8px' }}>
-                &lt;
+                &gt;
             </span>
             }
             aria-label="breadcrumb"
