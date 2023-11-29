@@ -17,8 +17,10 @@ function Barra(props) {
         {porcentagem.toFixed(0)}%
     </div>
     <div className="aa">
-     
-        {porcentagem.toFixed(0) < 50 ? `Sua meta é de ${props.metaTreinos}, não desista!` : `Sua meta é de ${props.metaTreinos}, você está quase lá!`}
+      
+      {porcentagem.toFixed(0) < 50 ? `Sua meta é de ${props.metaTreinos}, não desista!` 
+          : porcentagem.toFixed(0) === 100 ? `Parabéns! Você alcançou sua meta de ${props.metaTreinos}!` 
+          : `Sua meta é de ${props.metaTreinos}, você está quase lá!`}
     </div>
 
 
