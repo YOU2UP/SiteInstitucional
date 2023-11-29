@@ -21,6 +21,8 @@ const Modal_foto_perfil = (props) => {
   const id = sessionStorage.getItem('id');
   const token = sessionStorage.getItem('token');
 
+  console.log(token)
+
   const handleOpen = () => {
     props.setOpen(true);
   };
@@ -39,40 +41,48 @@ const Modal_foto_perfil = (props) => {
     console.log(selectedFile)
     // console.log("img upload", imageUpload)
 
-
+    // const body = {
+    //   fotoPerfil: {
+    //     "url": "",
+    //     "id": id
+    //   }
+    // }
+    
     const config = {
       headers: {
         Authorization: `Bearer ${token}`
       },
-      body:{
-        fotoPerfil: {
-            "url":"",
-            "usuario":{
-                "id": id
-            }
-            
-        }
-      }
     };
 
-   
-
     const imagesListRef = ref(storage, "images/");
-
-    if (selectedFile== null) return;
+    
+    if (selectedFile == null) return;
     const imageRef = ref(storage, `images/${selectedFile.name + v4()}`);
     console.log(imageRef)
     uploadBytes(imageRef, selectedFile).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
         console.log(url)
-        fotoPerfil.url = url;
-        config.body.fotoPerfil.url = url;
-        api.put(`/usuarios/${id}`, config)
-        window.location.reload();
+        
+        const body = {
+            "url": url,
+            "usuario": {
+              "idUsuario": id
+            }
+        }
+          console.log("corpinho", body)
+        // body.fotoPerfil.url = url;
+        api.put(`/fotos/perfil/${id}` , body, config).then((response) => {
+          console.log("ver aqui", response.data)
+          console.log("foiiii")
+        }).catch((error) => {
+          console.log("erro", error)
+        
+        })
+        // window.location.reload();
       });
     });
-  
+
 
 
     // Fechar o modal após o upload
@@ -80,8 +90,8 @@ const Modal_foto_perfil = (props) => {
   };
 
   return (
-    <Modal open={props.open} 
-    onClose={handleClose}>
+    <Modal open={props.open}
+      onClose={handleClose}>
       <Box
         sx={{
           position: 'absolute',
@@ -97,7 +107,7 @@ const Modal_foto_perfil = (props) => {
           flexDirection: 'column',
           justifyContent: 'space-between',
           alignItems: 'center'
-      
+
         }}
       >
         <Typography variant="h6" component="div">
@@ -105,12 +115,12 @@ const Modal_foto_perfil = (props) => {
         </Typography>
         <Input type="file" onChange={handleFileChange} />
         <Box>
-        <Button variant="contained" onClick={handleUpload} sx={{ backgroundColor: '#FF9200'}}>
-          Enviar Foto
-        </Button>
-        <Button variant='contained' onClick={handleClose} sx={{marginLeft: '20px', backgroundColor: '#FF9200'}}>
-          fechar
-        </Button>
+          <Button variant="contained" onClick={handleUpload} sx={{ backgroundColor: '#FF9200' }}>
+            Enviar Foto
+          </Button>
+          <Button variant='contained' onClick={handleClose} sx={{ marginLeft: '20px', backgroundColor: '#FF9200' }}>
+            fechar
+          </Button>
         </Box>
       </Box>
     </Modal>

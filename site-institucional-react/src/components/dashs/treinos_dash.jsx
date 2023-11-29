@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactEcharts from 'echarts-for-react';
+import api from '../../api';
+import { isAfter, isBefore, startOfMonth, addMonths, format } from 'date-fns';
 
 const BarChart = () => {
+  const token = sessionStorage.getItem('token');
+  const [treinos, setTreinos] = useState([]);
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  useEffect(() => {
+    api.get('/treinos', config)
+      .then((response) => {
+        console.log('treinos', response.data);
+        setTreinos(response.data);
+      })
+      .catch((error) => {
+        console.log('Erro: ', error);
+      });
+  }, []);
+
+  // Filtrando treinos realizados e não realizados
+  const treinosRealizados = treinos.filter((treino) => treino.realizado === true);
+  const treinosNaoRealizados = treinos.filter((treino) => treino.realizado === false);
+  };
+
+  // Contando treinos realizados por mês
+  treinosRealizados.forEach((treino) => {
+    const mes = format(new Date(treino.dataInicio), 'MMMM', { locale: 'pt-BR' });
+    contadorTreinosPorMes[mes].realizados += 1;
+  });
+
+  // Contando treinos não realizados por mês
+  treinosNaoRealizados.forEach((treino) => {
+    const mes = format(new Date(treino.dataInicio), 'MMMM', { locale: 'pt-BR' });
+    contadorTreinosPorMes[mes].naoRealizados += 1;
+  });
+
+  // Obtendo dados formatados para o gráfico
+  const dadosRealizados = Object.values(contadorTreinosPorMes).map((item) => item.realizados);
+  const dadosNaoRealizados = Object.values(contadorTreinosPorMes).map((item) => item.naoRealizados);
+
   const option = {
     backgroundColor: '#f0f0f0',
     title: {
@@ -22,39 +65,30 @@ const BarChart = () => {
     },
     legend: {
       bottom: 10,
-      data: ['Treinos Marcados e Realizados', 'Treinos Marcados e Não Realizados', 'Treinos Cancelados'],
+      data: ['Treinos Marcados e Realizados', 'Treinos Marcados e Não Realizados'],
     },
     series: [
       {
         name: 'Treinos Marcados e Realizados',
-        data: [80, 90, 100, 70, 120, 110, 130, 85, 95, 105],
+        data: dadosRealizados,
         type: 'bar',
         itemStyle: {
-          color: '#ff9200', // Cor das barras de treinos marcados e realizados
-          borderColor: 'black'
+          color: '#ff9200',
+          borderColor: 'black',
         },
       },
       {
         name: 'Treinos Marcados e Não Realizados',
-        data: [20, 30, 25, 10, 40, 35, 45, 22, 32, 27],
+        data: dadosNaoRealizados,
         type: 'bar',
         itemStyle: {
-          color: '#1C1C1C', // Cor das barras de treinos marcados e não realizados
-        },
-      },
-      {
-        name: 'Treinos Cancelados',
-        data: [5, 8, 7, 4, 10, 9, 12, 6, 10, 8],
-        type: 'bar',
-        itemStyle: {
-          color: '#FF4242', // Cor das barras de treinos cancelados
-          borderColor: 'black',
+          color: '#1C1C1C',
         },
       },
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '400px', width:'1100px' }} />;
+  return <ReactEcharts option={option} style={{ height: '400px', width: '1100px' }} />;
 };
 
 export default BarChart;

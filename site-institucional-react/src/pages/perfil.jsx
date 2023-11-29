@@ -8,12 +8,14 @@ import Grafico from '../components/canvas/canvas_dash';
 import Barra from '../components/barra/barra';
 import Breadcrumb from '../components/Breadcrumb/breadcrumb';
 import FeedFoto from '../components/fotos/feed';
+import Modal from '../components/modal/modal_foto_perfil'
 
 function Perfil() {
   const nome = sessionStorage.getItem('nome');
   const id = sessionStorage.getItem('id');
   const token = sessionStorage.getItem('token');
   const [usuario, setUsuario] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const config = {
     headers: {
@@ -124,7 +126,7 @@ function Perfil() {
               <img src={usuario.fotoPerfil.url} alt={nome} className="imgPerfil" />
               <div className="seguraBtnFotoPerfil">
                 <button className='btnFotoPerfil'>
-                  <img className='imgAdiciona' src={Adicionar} alt="" />
+                  <img className='imgAdiciona' src={Adicionar} alt="" onClick={() => setOpen(true)}/>
                 </button>
               </div>
             </div>
@@ -177,6 +179,7 @@ function Perfil() {
         </div>
         <div className="seguraPerfil">{decideComponente(componente)}</div>
       </div>
+      <Modal open={open} setOpen={setOpen}/>
     </>
   );
 }

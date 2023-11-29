@@ -30,7 +30,7 @@ const LineChart = () => {
 
     api.get('/matches', config)
       .then((response) => {
-        // console.log('Matches', response.data);
+        console.log('Matches', response.data);
         setMatches(response.data);
       }).catch((error) => {
         console.log('Erro: ', error);
