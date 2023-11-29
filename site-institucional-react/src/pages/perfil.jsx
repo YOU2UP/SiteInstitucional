@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Menu from '../components/menu/Menu_logado';
 import api from '../api';
 import '../css-images/css/perfil.css';
-import foto from '../css-images/img/icone_card.png';
+import Adicionar from '../css-images/img/adicionar.png';
 import Config from '../css-images/img/config.png';
 import Grafico from '../components/canvas/canvas_dash';
 import Barra from '../components/barra/barra';
@@ -122,6 +122,11 @@ function Perfil() {
           <div className="infos">
             <div className="foto">
               <img src={usuario.fotoPerfil.url} alt={nome} className="imgPerfil" />
+              <div className="seguraBtnFotoPerfil">
+                <button className='btnFotoPerfil'>
+                  <img className='imgAdiciona' src={Adicionar} alt="" />
+                </button>
+              </div>
             </div>
             <div className="informacoes">
               <h1 className="nomeUsuarioPerfil">{nome}</h1>

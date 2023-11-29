@@ -54,7 +54,7 @@ const BarChart = () => {
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '415px', width:'1100px' }} />;
+  return <ReactEcharts option={option} style={{ height: '400px', width:'1100px' }} />;
 };
 
 export default BarChart;

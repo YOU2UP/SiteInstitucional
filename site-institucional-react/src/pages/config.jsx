@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Menu from '../components/menu/Menu_logado.jsx';
 import '../css-images/css/config.css';
-import Altera from '../components/comp_config/alterar.jsx';
+import Altera from '../components/comp_config/alterar.jsx'
 import Meta from '../components/comp_config/meta.jsx'
 import Breadcrumb from '../components/Breadcrumb/breadcrumb';
 

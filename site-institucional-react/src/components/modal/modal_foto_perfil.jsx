@@ -13,7 +13,7 @@ import api from '../../api'
 import { set } from 'date-fns';
 
 
-const Modal_foto = (props) => {
+const Modal_foto_perfil = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
@@ -38,19 +38,21 @@ const Modal_foto = (props) => {
 
     console.log(selectedFile)
     // console.log("img upload", imageUpload)
-   
-    const foto = {
-      "url":"",
-      "usuario":{
-        "idUsuario": id
-      }
-    }
 
 
     const config = {
       headers: {
         Authorization: `Bearer ${token}`
       },
+      body:{
+        fotoPerfil: {
+            "url":"",
+            "usuario":{
+                "id": id
+            }
+            
+        }
+      }
     };
 
    
@@ -64,8 +66,9 @@ const Modal_foto = (props) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
         console.log(url)
-        foto.url = url;
-        api.post("/fotos", foto, config)
+        fotoPerfil.url = url;
+        config.body.fotoPerfil.url = url;
+        api.put(`/usuarios/${id}`, config)
         window.location.reload();
       });
     });
@@ -114,4 +117,4 @@ const Modal_foto = (props) => {
   );
 };
 
-export default Modal_foto;
+export default Modal_foto_perfil;

@@ -3,7 +3,6 @@ import Menu from "../components/menu/Menu.jsx";
 import api from "../api";
 import { useState } from "react";
 import "../css-images/css/login.css"
-import Modal from '../components/modal/modal_carregar.jsx'
 
 function Login() {
   const[email,getEmail]=useState("");

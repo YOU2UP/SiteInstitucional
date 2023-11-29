@@ -123,7 +123,7 @@ const DoughnutChart = () => {
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '415px', width: '320px' }} />;
+  return <ReactEcharts option={option} style={{ height: '400px', width: '300px' }} />;
 };
 
 export default DoughnutChart;
