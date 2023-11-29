@@ -27,6 +27,19 @@ const BarChart = () => {
   // Filtrando treinos realizados e não realizados
   const treinosRealizados = treinos.filter((treino) => treino.realizado === true);
   const treinosNaoRealizados = treinos.filter((treino) => treino.realizado === false);
+
+  // Criando objeto para armazenar contagem de treinos por mês
+  const contadorTreinosPorMes = {
+    'Janeiro': { realizados: 0, naoRealizados: 0 },
+    'Fevereiro': { realizados: 0, naoRealizados: 0 },
+    'Março': { realizados: 0, naoRealizados: 0 },
+    'Abril': { realizados: 0, naoRealizados: 0 },
+    'Maio': { realizados: 0, naoRealizados: 0 },
+    'Junho': { realizados: 0, naoRealizados: 0 },
+    'Julho': { realizados: 0, naoRealizados: 0 },
+    'Agosto': { realizados: 0, naoRealizados: 0 },
+    'Setembro': { realizados: 0, naoRealizados: 0 },
+    'Outubro': { realizados: 0, naoRealizados: 0 },
   };
 
   // Contando treinos realizados por mês
