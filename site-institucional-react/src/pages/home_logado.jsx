@@ -45,7 +45,14 @@ function Home_logado() {
     })
       .catch((error) => {
         console.log("Erro: ", error)
+      });
+
+      api.get(`/matches/montaMatches/${id}`, config).then((response) => {
+        console.log(response.data)
       })
+        .catch((error) => {
+          console.log("Erro: ", error)
+        });
 
   }, [])
 

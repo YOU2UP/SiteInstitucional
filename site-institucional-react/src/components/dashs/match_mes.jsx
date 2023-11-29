@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactEcharts from 'echarts-for-react';
-import {parseISO, getMonth} from 'date-fns';
+import { parseISO, getMonth } from 'date-fns';
 import api from '../../api';
 import { DataObject } from '@mui/icons-material';
 
@@ -8,6 +8,7 @@ const LineChart = () => {
 
   const token = sessionStorage.getItem('token');
   const [usuarios, setUsuarios] = useState([]);
+  const [matches, setMatches] = useState([]);
 
   const config = {
     headers: {
@@ -20,44 +21,103 @@ const LineChart = () => {
   useEffect(() => {
     api.get('/usuarios', config)
       .then((response) => {
-        console.log('treinos', response.data);
+        // console.log('treinos', response.data);
         setUsuarios(response.data);
       })
       .catch((error) => {
         console.log('Erro: ', error);
       });
+
+    api.get('/matches', config)
+      .then((response) => {
+        // console.log('Matches', response.data);
+        setMatches(response.data);
+      }).catch((error) => {
+        console.log('Erro: ', error);
+      });
   }, []);
 
-  console.log("teste", usuarios)
+  function countDatesByMonthFromResponse(response) {
 
-   function countDatesByMonthFromResponse(response) {
-     // Mapeia o array de objetos e converte o campo 'inicioTreino' para objetos Date
-   const dateObjects = response.map(item => ({
-    dataCriacaoConta: parseISO(item.dataCriacaoConta),
-    }));
-    
-    console.log("testezinho", dateObjects)
+    if (!Array.isArray(response)) {
+      console.error('A resposta não é um array válido.');
+      return [];
+    }
 
-     // Cria um objeto representando todos os meses com contagem inicial zero
+    // Mapeia o array de objetos e converte o campo 'dataCriacaoConta' para objetos Date
+    const dateObjects = response
+      .filter(item => item && item.dataCriacaoConta) // Filtra itens undefined ou sem dataCriacaoConta
+      .map(item => ({
+        dataCriacaoConta: parseISO(item.dataCriacaoConta),
+      }));
+
+    // console.log("dateObjects:", dateObjects);
+
+    // Cria um objeto representando todos os meses com contagem inicial zero
     const countByMonth = Array.from({ length: 12 }, (_, index) => ({
-       month: index,
-       count: 0,
+      month: index,
+      count: 0,
     }));
 
-    console.log("testezinho2", countByMonth)
-  
-     // Incrementa as posições correspondentes para cada data encontrada
-     dateObjects.forEach(dateObject => {
-       const month = getMonth(dateObject.dataCriacaoConta);
-       countByMonth[month].count += 1;
-     });
-  
-     console.log("testezinho3", countByMonth)
+    // console.log("countByMonth:", countByMonth);
+
+    // Incrementa as posições correspondentes para cada data encontrada
+    dateObjects.forEach(dateObject => {
+      const month = getMonth(dateObject.dataCriacaoConta);
+      if (month >= 0 && month < 12) {
+        countByMonth[month].count += 1;
+      } else {
+        console.warn('Mês fora do intervalo esperado.');
+      }
+    });
+
+    // console.log("countByMonth:", countByMonth);
     return countByMonth;
-   }
+  }
+
+  function countDatesByMonthFromResponseMatch(jsonResponse) {
+    // Verifica se jsonResponse é um objeto válido
+    if (!jsonResponse || typeof jsonResponse !== 'object') {
+      console.error('A resposta não é um objeto válido.');
+      return [];
+    }
+
+    // Filtra os objetos de usuário válidos e extrai os meses
+    const dateObjects = Object.values(jsonResponse)
+      .filter(user => user && user.dataMatch)
+      .map(user => ({
+        month: getMonth(parseISO(user.dataMatch)),
+      }));
+
+    // console.log("dateObjects:", dateObjects);
+
+    // Cria um objeto representando todos os meses do ano com contagem inicial zero
+    const countByMonth = Array.from({ length: 12 }, (_, index) => ({
+      month: index + 1,
+      count: 0,
+    }));
+
+    // console.log("countByMonth:", countByMonth);
+
+    // Incrementa as posições correspondentes para cada mês encontrado
+    dateObjects.forEach(dateObject => {
+      const month = dateObject.month;
+      if (month >= 1 && month <= 12) {
+        countByMonth[month - 1].count += 1;
+      } else {
+        console.warn('Mês fora do intervalo esperado.');
+      }
+    });
+
+    // console.log("countByMonth:", countByMonth);
+    return countByMonth;
+  }
+
 
   const contagem = countDatesByMonthFromResponse(usuarios);
-  console.log("aaaa", contagem)
+  const contagemMatch = countDatesByMonthFromResponseMatch(matches);
+  // console.log("aaaa", contagem)
+  // console.log("aaaa", contagemMatch)
 
   const option = {
     backgroundColor: '#f0f0f0',
@@ -79,18 +139,18 @@ const LineChart = () => {
     },
     legend: {
       data: ['Matchs', 'Cadastros'],
-      bottom: 10, 
+      bottom: 10,
     },
-    tooltip: {  
+    tooltip: {
       trigger: 'axis',
       axisPointer: {
-        type: 'shadow', 
+        type: 'shadow',
       },
     },
     series: [
       {
         name: 'Matchs',
-        data: [10, 12, 15, 8, 20, 18, 22, 30, 21],
+        data: contagemMatch.map((mes) => (mes.count)),
         type: 'line',
         smooth: true,
         itemStyle: {
@@ -109,7 +169,7 @@ const LineChart = () => {
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '415px' , width: '1100px'}} />;
+  return <ReactEcharts option={option} style={{ height: '415px', width: '1100px' }} />;
 };
 
 export default LineChart;

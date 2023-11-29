@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
+.seguraTudoAdm{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
 .tituloDash{
     /* border: 1px solid green; */
     height: 80px;
@@ -15,16 +21,17 @@
 
 
 .containerPainelAdm{
-    width: 100vw;
-    height: 100vh;
+    width: 90%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-left: 125px;
 }
 
 .seguraDash{
     /* border: 1px solid red */
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,8 +42,8 @@
     margin-top: 20px;
     /* border: 1px solid blue; */
     display: flex;
-    justify-content: space-between;
-    height: 57vh;
+    justify-content: space-evenly;
+    height: 60%;
     width: 95vw;
     padding-bottom: 20px;
 }

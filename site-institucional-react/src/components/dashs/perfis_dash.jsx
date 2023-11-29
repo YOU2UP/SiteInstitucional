@@ -1,7 +1,86 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactEcharts from 'echarts-for-react';
+import api from '../../api';
 
 const DoughnutChart = () => {
+
+  const token = sessionStorage.getItem('token');
+  const [usuarios, setUsuarios] = useState([]);
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  // console.log(token)
+
+  useEffect(() => {
+    api.get('/usuarios', config)
+      .then((response) => {
+        console.log('usuarios', response.data);
+        setUsuarios(response.data);
+      })
+      .catch((error) => {
+        console.log('Erro: ', error);
+      });
+  }, []);
+
+
+  function filterUsersByRecentTraining(users) {
+    if (!Array.isArray(users)) {
+      console.error('Entrada inválida.');
+      return [];
+    }
+
+    const filteredUsers = users.filter(user => {
+      const treinos = user.treinos || [];
+      const ultimoTreino = treinos.length > 0 ? treinos[treinos.length - 1] : null;
+
+      if (ultimoTreino) {
+        const dataHoraTreino = new Date(ultimoTreino.dataHora);
+        const seisMesesAtras = new Date();
+        seisMesesAtras.setMonth(seisMesesAtras.getMonth() - 6);
+
+        return dataHoraTreino > seisMesesAtras;
+      }
+
+      return false;
+    });
+
+    return filteredUsers;
+  }
+
+  function filterUsersByOldTraining(users) {
+    if (!Array.isArray(users)) {
+      console.error('Entrada inválida.');
+      return [];
+    }
+
+    const filteredUsers = users.filter(user => {
+      const treinos = user.treinos || [];
+      const ultimoTreino = treinos.length > 0 ? treinos[treinos.length - 1] : null;
+
+      if (ultimoTreino) {
+        const dataHoraTreino = new Date(ultimoTreino.dataHora);
+        const seisMesesAtras = new Date();
+        seisMesesAtras.setMonth(seisMesesAtras.getMonth() - 6);
+
+        return dataHoraTreino <= seisMesesAtras;
+      }
+
+      return false;
+    });
+
+    return filteredUsers;
+  }
+
+  const Ativos = filterUsersByRecentTraining(usuarios);
+  const Inativos = filterUsersByOldTraining(usuarios);
+
+  console.log('Ativos:', Ativos);
+  console.log('Inativos:', Inativos);
+
   const option = {
     backgroundColor: '#f0f0f0',
     title: {
@@ -33,8 +112,8 @@ const DoughnutChart = () => {
           formatter: '{b}: {c} ({d}%)',
         },
         data: [
-          { value: 70, name: 'Perfis Ativos', itemStyle: { color: '#1C1C1C' } }, // Substitua os valores com dados reais
-          { value: 30, name: 'Perfis Não Ativos', itemStyle: { color: '#ff9200' }}, // Substitua os valores com dados reais
+          { value: Ativos.length, name: 'Perfis Ativos', itemStyle: { color: '#FF9200' } }, // Substitua os valores com dados reais
+          { value: Inativos.length, name: 'Perfis Não Ativos', itemStyle: { color: '#1C1C1C' } }, // Substitua os valores com dados reais
         ],
         itemStyle: {
           borderWidth: 2,
@@ -44,7 +123,7 @@ const DoughnutChart = () => {
     ],
   };
 
-  return <ReactEcharts option={option} style={{ height: '415px' , width: '320px'}} />;
+  return <ReactEcharts option={option} style={{ height: '415px', width: '320px' }} />;
 };
 
 export default DoughnutChart;

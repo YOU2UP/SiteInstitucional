@@ -3,10 +3,12 @@ import Menu from "../components/menu/Menu.jsx";
 import api from "../api";
 import { useState } from "react";
 import "../css-images/css/login.css"
+import Modal from '../components/modal/modal_carregar.jsx'
 
 function Login() {
   const[email,getEmail]=useState("");
   const[senha,getSenha]=useState("");
+  const [open, setOpen] = useState(false);
 
   function logar(){
     const usuario={
@@ -22,7 +24,7 @@ function Login() {
       sessionStorage.setItem("id", id)
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("nome", nome)
-
+      
       if(email.includes('@you2up.com')){
         window.location="/painel_adm"
       }
@@ -31,6 +33,7 @@ function Login() {
       }
     }).catch((error)=>{
       console.log(error);
+      alert("Email ou senha incorretos")
     })
   }
   return (
@@ -64,6 +67,7 @@ function Login() {
       <div className="sobreposicao"></div>
     </div>
    </main>
+
     
     </>
   );

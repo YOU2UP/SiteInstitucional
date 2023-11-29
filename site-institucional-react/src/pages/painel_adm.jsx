@@ -10,12 +10,14 @@ function Painel_adm() {
     return (
         <>
 
+        <div className="seguraTudoAdm">
+
             <Menu />
+
+            <div className="containerPainelAdm">
             <div className="tituloDash">
                 Analise de dados Projeto You2Up
             </div>
-
-            <div className="containerPainelAdm">
                 <div className="seguraDash">
                     <div className="duplaDash">
 
@@ -28,6 +30,7 @@ function Painel_adm() {
                         <Dash4 />
                     </div>
                 </div>
+            </div>
             </div>
         </>
     )
