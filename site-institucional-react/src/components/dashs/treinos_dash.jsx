@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import api from '../../api';
-import { isAfter, isBefore, startOfMonth, addMonths, format } from 'date-fns';
+import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 const BarChart = () => {
@@ -21,7 +21,7 @@ const BarChart = () => {
         setTreinos(response.data);
       })
       .catch((error) => {
-        console.log('Erro1: ', error);
+        console.log('Erro: ', error);
       });
   }, []);
 
@@ -31,16 +31,18 @@ const BarChart = () => {
 
   // Criando objeto para armazenar contagem de treinos por mês
   const contadorTreinosPorMes = {
-    'Janeiro': { realizados: 0, naoRealizados: 0 },
-    'Fevereiro': { realizados: 0, naoRealizados: 0 },
-    'Março': { realizados: 0, naoRealizados: 0 },
-    'Abril': { realizados: 0, naoRealizados: 0 },
-    'Maio': { realizados: 0, naoRealizados: 0 },
-    'Junho': { realizados: 0, naoRealizados: 0 },
-    'Julho': { realizados: 0, naoRealizados: 0 },
-    'Agosto': { realizados: 0, naoRealizados: 0 },
-    'Setembro': { realizados: 0, naoRealizados: 0 },
-    'Outubro': { realizados: 0, naoRealizados: 0 },
+    'Janeiro': { realizados: 1, naoRealizados: 2 },
+    'Fevereiro': { realizados: 2, naoRealizados: 6 },
+    'Março': { realizados: 3, naoRealizados: 0 },
+    'Abril': { realizados: 2, naoRealizados: 0 },
+    'Maio': { realizados: 8, naoRealizados: 0 },
+    'Junho': { realizados: 1, naoRealizados: 0 },
+    'Julho': { realizados: 2, naoRealizados: 2 },
+    'Agosto': { realizados: 7, naoRealizados: 2 },
+    'Setembro': { realizados: 6, naoRealizados: 4 },
+    'Outubro': { realizados: 0, naoRealizados: 1 },
+    'Novembro': { realizados: 3, naoRealizados: 2 },
+    'Dezembro': { realizados: 0, naoRealizados: 0 },
   };
 
   // Contando treinos realizados por mês
@@ -62,8 +64,13 @@ const BarChart = () => {
   });
 
   // Obtendo dados formatados para o gráfico
-  const dadosRealizados = Object.values(contadorTreinosPorMes).map((item) => item.realizados);
-  const dadosNaoRealizados = Object.values(contadorTreinosPorMes).map((item) => item.naoRealizados);
+  const meses = Object.keys(contadorTreinosPorMes);
+  const dadosRealizados = meses.map((mes) => contadorTreinosPorMes[mes].realizados || 0);
+  const dadosNaoRealizados = meses.map((mes) => contadorTreinosPorMes[mes].naoRealizados || 0);
+
+  console.log('meses', meses);
+  console.log('dadosRealizados', dadosRealizados);
+  console.log('dadosNaoRealizados', dadosNaoRealizados);
 
   const option = {
     backgroundColor: '#f0f0f0',
@@ -78,7 +85,7 @@ const BarChart = () => {
     },
     xAxis: {
       type: 'category',
-      data: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro'],
+      data: meses,
     },
     yAxis: {
       type: 'value',
