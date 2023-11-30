@@ -35,6 +35,8 @@ function Historico() {
 
   }, [])
 
+  console.log('historico', historico)
+
   function defineImg(historico) {
     var imagem;
 
@@ -89,7 +91,7 @@ function Historico() {
         <CardAvaliacao key={index}
           idTreino={cards.id}
           id={cards.avaliado.id}
-          img={defineImg(cards)}
+          img={cards.avaliado.fotoPerfil.url}
           nome={cards.avaliado.nome}
           descricao_pessoa={cards.avaliado.descricao}
           nota={cards.nota}

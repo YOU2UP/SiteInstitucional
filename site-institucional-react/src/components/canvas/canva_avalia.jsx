@@ -89,7 +89,7 @@ function Canva_avalia() {
           idTreino={dados.id}
           id={dados.usuarios[1].id}
           nome={dados.usuarios[1].nome}
-          img={defineImg(dados)}
+          img={dados.usuarios[1].fotoPerfil.url}
           descricao_pessoa={dados.usuarios[1].descricao}
           nota="Avaliar"
           />

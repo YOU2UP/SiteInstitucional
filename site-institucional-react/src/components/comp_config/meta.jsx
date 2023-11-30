@@ -40,6 +40,13 @@ function Meta() {
     api.put(`/usuarios/${id}`, { metaTreinos: metaInput }, config).then((response) => {
       alert('Meta definida com sucesso!');
       console.log('Meta definida com sucesso!', response.data);
+
+      api.put(`/usuarios/${id}`, { metaTreinos: metaInput }, config).then((response) => {
+        console.log('Meta definida com sucesso!', response.data);
+      }
+      ).catch((error) => {
+        console.log('Erro: ', error);
+      });
     }).catch((error) => {
       console.log('Erro: ', error);
     });

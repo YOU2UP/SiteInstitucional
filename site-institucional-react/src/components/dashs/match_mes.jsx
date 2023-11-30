@@ -21,7 +21,7 @@ const LineChart = () => {
   useEffect(() => {
     api.get('/usuarios', config)
       .then((response) => {
-        // console.log('treinos', response.data);
+        console.log('treinos', response.data);
         setUsuarios(response.data);
       })
       .catch((error) => {

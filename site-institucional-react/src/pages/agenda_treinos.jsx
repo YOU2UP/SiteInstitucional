@@ -114,7 +114,7 @@ function Agenda() {
                       dataTreino={defineData(agenda)}
                       horaTreino={defineHora(agenda)}
                       nome={agenda.usuarios[1].nome}
-                      img={defineImg(agenda)}
+                      img={agenda.usuarios[1].fotoPerfil.url}
                       localTreino={agenda.usuarios[1].localTreino.nome}
                     />
                   ) : (
@@ -123,7 +123,7 @@ function Agenda() {
                       dataTreino={defineData(agenda)}
                       horaTreino={defineHora(agenda)}
                       nome={agenda.usuarios[1].nome}
-                      img={defineImg(agenda)}
+                      img={agenda.usuarios[1].fotoPerfil.url}
                       localTreino={agenda.usuarios[1].localTreino.nome}
                     />
                   )}

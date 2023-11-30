@@ -139,9 +139,11 @@ function Perfil() {
               <div className="metas">
                 <h1 className="meta">Meta</h1>
                 {usuario.metaTreinos === 0 ? (
-                  <div>
-                    <span>Você ainda não Possui Metas</span>
+                  <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', height: '30000px'}}>
+                    
+                    <a href="/configuracao">
                     <button className="btnMeta">Defina Uma Meta</button>
+                    </a>
                   </div>
                 ) : (
                   <Barra qtdTreinos={qtdTreinos} metaTreinos={usuario.metaTreinos} />

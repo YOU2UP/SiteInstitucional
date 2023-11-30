@@ -22,7 +22,7 @@ const DoughnutChart = () => {
         setUsuarios(response.data);
       })
       .catch((error) => {
-        console.log('Erro: ', error);
+        console.log('Erro1: ', error);
       });
   }, []);
 

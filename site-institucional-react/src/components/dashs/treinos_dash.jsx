@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import api from '../../api';
 import { isAfter, isBefore, startOfMonth, addMonths, format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 const BarChart = () => {
   const token = sessionStorage.getItem('token');
@@ -20,7 +21,7 @@ const BarChart = () => {
         setTreinos(response.data);
       })
       .catch((error) => {
-        console.log('Erro: ', error);
+        console.log('Erro1: ', error);
       });
   }, []);
 
@@ -44,14 +45,20 @@ const BarChart = () => {
 
   // Contando treinos realizados por mês
   treinosRealizados.forEach((treino) => {
-    const mes = format(new Date(treino.dataInicio), 'MMMM', { locale: 'pt-BR' });
-    contadorTreinosPorMes[mes].realizados += 1;
+    const dataInicioTreino = new Date(treino.dataInicio);
+    if (!isNaN(dataInicioTreino.getTime())) { // Verifica se a data é válida
+      const mes = format(dataInicioTreino, 'MMMM', { locale: ptBR });
+      contadorTreinosPorMes[mes].realizados += 1;
+    }
   });
 
   // Contando treinos não realizados por mês
   treinosNaoRealizados.forEach((treino) => {
-    const mes = format(new Date(treino.dataInicio), 'MMMM', { locale: 'pt-BR' });
-    contadorTreinosPorMes[mes].naoRealizados += 1;
+    const dataInicioTreino = new Date(treino.dataInicio);
+    if (!isNaN(dataInicioTreino.getTime())) { // Verifica se a data é válida
+      const mes = format(dataInicioTreino, 'MMMM', { locale: ptBR });
+      contadorTreinosPorMes[mes].naoRealizados += 1;
+    }
   });
 
   // Obtendo dados formatados para o gráfico
